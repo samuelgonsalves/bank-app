@@ -18,19 +18,26 @@ ActiveRecord::Schema.define(version: 20170218210439) do
   create_table "accounts", force: :cascade do |t|
     t.float    "balance"
     t.integer  "status"
+    t.bigint   "account_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_accounts_on_user_id", using: :btree
   end
 
   create_table "admins", force: :cascade do |t|
     t.integer  "predefined"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_admins_on_user_id", using: :btree
   end
 
   create_table "friends", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "friend_id"
+    t.index ["friend_id", "user_id"], name: "index_friends_on_friend_id_and_user_id", unique: true, using: :btree
+    t.index ["user_id", "friend_id"], name: "index_friends_on_user_id_and_friend_id", unique: true, using: :btree
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -40,16 +47,18 @@ ActiveRecord::Schema.define(version: 20170218210439) do
     t.datetime "finish"
     t.integer  "type"
     t.float    "amount"
-    t.bigint   "source"
+    t.integer  "account_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["account_id"], name: "index_transactions_on_account_id", using: :btree
   end
 
   create_table "transfers", force: :cascade do |t|
-    t.bigint   "destination"
+    t.integer  "account_id"
     t.integer  "transaction_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.index ["account_id"], name: "index_transfers_on_account_id", using: :btree
     t.index ["transaction_id"], name: "index_transfers_on_transaction_id", using: :btree
   end
 
@@ -62,4 +71,9 @@ ActiveRecord::Schema.define(version: 20170218210439) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
+  add_foreign_key "accounts", "users"
+  add_foreign_key "admins", "users"
+  add_foreign_key "transactions", "accounts"
+  add_foreign_key "transfers", "accounts"
+  add_foreign_key "transfers", "transactions"
 end

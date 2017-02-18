@@ -2619,3 +2619,316 @@ Completed 200 OK in 46ms (Views: 45.4ms | ActiveRecord: 0.0ms)
 [2017-02-18 16:32:34] INFO --Completed 200 OK in 192ms (Views: 183.7ms | ActiveRecord: 0.0ms)
 
 
+[2017-02-18 16:43:40] DEBUG --  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3222953513815996590);[0m
+[2017-02-18 16:43:40] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 16:43:40] DEBUG --  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+[2017-02-18 16:43:40] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 16:43:40] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 16:43:40] DEBUG --  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3222953513815996590)[0m
+[2017-02-18 16:43:40] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 16:51:05] DEBUG --  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3222953513815996590);[0m
+[2017-02-18 16:51:05] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 16:51:05] DEBUG --  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+[2017-02-18 16:51:05] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 16:51:05] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 16:51:05] DEBUG --  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3222953513815996590)[0m
+[2017-02-18 16:51:05] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 16:51:22] INFO --Started GET "/" for 127.0.0.1 at 2017-02-18 16:51:22 -0500
+[2017-02-18 16:51:22] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 16:51:22] INFO --Processing by StaticPagesController#home as HTML
+[2017-02-18 16:51:22] INFO --  Rendering static_pages/home.html.erb within layouts/application
+[2017-02-18 16:51:23] INFO --  Rendered static_pages/home.html.erb within layouts/application (121.8ms)
+[2017-02-18 16:51:23] INFO --  Rendered layouts/_shim.html.erb (0.2ms)
+[2017-02-18 16:51:23] INFO --  Rendered layouts/_header.html.erb (0.5ms)
+[2017-02-18 16:51:23] INFO --  Rendered layouts/_footer.html.erb (0.3ms)
+[2017-02-18 16:51:23] INFO --Completed 200 OK in 186ms (Views: 177.4ms | ActiveRecord: 0.0ms)
+
+
+[2017-02-18 16:58:09] DEBUG --  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3222953513815996590);[0m
+[2017-02-18 16:58:09] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 16:58:09] DEBUG --  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+[2017-02-18 16:58:09] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 16:58:09] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 16:58:09] DEBUG --  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3222953513815996590)[0m
+[2017-02-18 16:58:09] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 16:58:42] DEBUG --  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3222953513815996590);[0m
+[2017-02-18 16:58:42] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 16:58:42] DEBUG --  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+[2017-02-18 16:58:42] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 16:58:42] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 16:58:42] DEBUG --  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3222953513815996590)[0m
+[2017-02-18 16:58:42] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:00:43] DEBUG --  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3222953513815996590);[0m
+[2017-02-18 17:00:43] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:00:43] INFO --Migrating to CreateTs (20170218215924)
+[2017-02-18 17:00:43] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:00:44] DEBUG --  [1m[35m (165.7ms)[0m  [1m[35mCREATE TABLE "ts" ("id" serial primary key, "name" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_aaf8b0a11e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+[2017-02-18 17:00:44] DEBUG --  [1m[35m (44.3ms)[0m  [1m[35mCREATE  INDEX  "index_ts_on_user_id" ON "ts"  ("user_id")[0m
+[2017-02-18 17:00:44] DEBUG --  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218215924"]]
+[2017-02-18 17:00:44] DEBUG --  [1m[35m (16.8ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:00:44] DEBUG --  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+[2017-02-18 17:00:44] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:00:44] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:00:44] DEBUG --  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3222953513815996590)[0m
+[2017-02-18 17:00:44] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:05:18] DEBUG --  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3222953513815996590);[0m
+[2017-02-18 17:05:18] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:05:18] DEBUG --  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+[2017-02-18 17:05:18] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:05:18] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:05:18] DEBUG --  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3222953513815996590)[0m
+[2017-02-18 17:05:18] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:05:48] DEBUG --  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3222953513815996590);[0m
+[2017-02-18 17:05:48] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:05:48] DEBUG --  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+[2017-02-18 17:05:48] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:05:48] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:05:48] DEBUG --  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3222953513815996590)[0m
+[2017-02-18 17:05:48] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:06:11] DEBUG --  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3222953513815996590);[0m
+[2017-02-18 17:06:11] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:06:11] DEBUG --  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+[2017-02-18 17:06:11] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:06:11] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:06:11] DEBUG --  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3222953513815996590)[0m
+[2017-02-18 17:06:11] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:06:14] DEBUG --  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3222953513815996590);[0m
+[2017-02-18 17:06:14] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:06:14] DEBUG --  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+[2017-02-18 17:06:14] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:06:14] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:06:14] DEBUG --  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3222953513815996590)[0m
+[2017-02-18 17:06:14] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (101.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (95.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3222953513815996590);[0m
+[2017-02-18 17:09:26] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:09:26] INFO --Migrating to CreateUsers (20170215004650)
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (77.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+[2017-02-18 17:09:26] DEBUG --  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170215004650"]]
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (15.9ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:09:26] INFO --Migrating to AddIndexToUsersEmail (20170215164310)
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (42.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+[2017-02-18 17:09:26] DEBUG --  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170215164310"]]
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:09:26] INFO --Migrating to AddPasswordDigestToUsers (20170215170438)
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" character varying[0m
+[2017-02-18 17:09:26] DEBUG --  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170215170438"]]
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:09:26] INFO --Migrating to CreateAdmins (20170218204744)
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (37.9ms)[0m  [1m[35mCREATE TABLE "admins" ("id" serial primary key, "predefined" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_378b9734e4"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (38.8ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_user_id" ON "admins"  ("user_id")[0m
+[2017-02-18 17:09:26] DEBUG --  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218204744"]]
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:09:26] INFO --Migrating to CreateAccounts (20170218205509)
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:09:26] DEBUG --  [1m[35m (37.1ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" serial primary key, "balance" float, "status" integer, "account_id" bigint, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b1e30bebc8"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (38.3ms)[0m  [1m[35mCREATE  INDEX  "index_accounts_on_user_id" ON "accounts"  ("user_id")[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218205509"]]
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (22.2ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:09:27] INFO --Migrating to CreateFriends (20170218205539)
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (40.0ms)[0m  [1m[35mCREATE TABLE "friends" ("id" serial primary key, "user_id" integer, "friend_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9cfeeb4593"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_56804a6ce7"
+FOREIGN KEY ("friend_id")
+  REFERENCES "friends" ("id")
+)[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (36.3ms)[0m  [1m[35mCREATE  INDEX  "index_friends_on_user_id" ON "friends"  ("user_id")[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (30.3ms)[0m  [1m[35mCREATE  INDEX  "index_friends_on_friend_id" ON "friends"  ("friend_id")[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218205539"]]
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (10.2ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:09:27] INFO --Migrating to CreateTransactions (20170218210049)
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (39.2ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" serial primary key, "status" integer, "admin_status" integer, "start" timestamp, "finish" timestamp, "type" integer, "amount" float, "source" bigint, "account_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_01f020e267"
+FOREIGN KEY ("account_id")
+  REFERENCES "accounts" ("id")
+)[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (52.0ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_account_id" ON "transactions"  ("account_id")[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218210049"]]
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:09:27] INFO --Migrating to CreateTransfers (20170218210439)
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (39.8ms)[0m  [1m[35mCREATE TABLE "transfers" ("id" serial primary key, "destination" bigint, "transaction_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_3729299052"
+FOREIGN KEY ("transaction_id")
+  REFERENCES "transactions" ("id")
+)[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (29.4ms)[0m  [1m[35mCREATE  INDEX  "index_transfers_on_transaction_id" ON "transfers"  ("transaction_id")[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218210439"]]
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (18.2ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:09:27] INFO --Migrating to CreateTs (20170218215924)
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (89.0ms)[0m  [1m[35mCREATE TABLE "ts" ("id" serial primary key, "name" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_aaf8b0a11e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (37.9ms)[0m  [1m[35mCREATE  INDEX  "index_ts_on_user_id" ON "ts"  ("user_id")[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218215924"]]
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (16.5ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-18 22:09:27 UTC], ["updated_at", 2017-02-18 22:09:27 UTC]]
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(3222953513815996590)[0m
+[2017-02-18 17:09:27] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:11:17] DEBUG --  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3222953513815996590);[0m
+[2017-02-18 17:11:17] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:11:17] DEBUG --  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+[2017-02-18 17:11:17] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:11:17] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:11:17] DEBUG --  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3222953513815996590)[0m
+[2017-02-18 17:11:17] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (97.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (88.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3222953513815996590);[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:25:36] INFO --Migrating to CreateUsers (20170215004650)
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (67.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170215004650"]]
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (12.3ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:25:36] INFO --Migrating to AddIndexToUsersEmail (20170215164310)
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (33.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170215164310"]]
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (10.2ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:25:36] INFO --Migrating to AddPasswordDigestToUsers (20170215170438)
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" character varying[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170215170438"]]
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:25:36] INFO --Migrating to CreateAdmins (20170218204744)
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (51.2ms)[0m  [1m[35mCREATE TABLE "admins" ("id" serial primary key, "predefined" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_378b9734e4"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (48.6ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_user_id" ON "admins"  ("user_id")[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218204744"]]
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:25:36] INFO --Migrating to CreateAccounts (20170218205509)
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (38.6ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" serial primary key, "balance" float, "status" integer, "account_id" bigint, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b1e30bebc8"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (38.1ms)[0m  [1m[35mCREATE  INDEX  "index_accounts_on_user_id" ON "accounts"  ("user_id")[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218205509"]]
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (19.9ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:25:36] INFO --Migrating to CreateFriends (20170218205539)
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (41.0ms)[0m  [1m[35mCREATE TABLE "friends" ("id" serial primary key, "user_id" integer, "friend_id" integer)[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (39.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_friends_on_user_id_and_friend_id" ON "friends"  ("user_id", "friend_id")[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (39.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_friends_on_friend_id_and_user_id" ON "friends"  ("friend_id", "user_id")[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218205539"]]
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (18.5ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:25:36] INFO --Migrating to CreateTransactions (20170218210049)
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (31.7ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" serial primary key, "status" integer, "admin_status" integer, "start" timestamp, "finish" timestamp, "type" integer, "amount" float, "source" bigint, "account_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_01f020e267"
+FOREIGN KEY ("account_id")
+  REFERENCES "accounts" ("id")
+)[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (38.7ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_account_id" ON "transactions"  ("account_id")[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218210049"]]
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (18.2ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:25:36] INFO --Migrating to CreateTransfers (20170218210439)
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:25:36] DEBUG --  [1m[35m (23.9ms)[0m  [1m[35mCREATE TABLE "transfers" ("id" serial primary key, "destination" bigint, "transaction_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_3729299052"
+FOREIGN KEY ("transaction_id")
+  REFERENCES "transactions" ("id")
+)[0m
+[2017-02-18 17:25:37] DEBUG --  [1m[35m (38.3ms)[0m  [1m[35mCREATE  INDEX  "index_transfers_on_transaction_id" ON "transfers"  ("transaction_id")[0m
+[2017-02-18 17:25:37] DEBUG --  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218210439"]]
+[2017-02-18 17:25:37] DEBUG --  [1m[35m (14.8ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:25:37] DEBUG --  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+[2017-02-18 17:25:37] DEBUG --  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:25:37] DEBUG --  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-18 22:25:37 UTC], ["updated_at", 2017-02-18 22:25:37 UTC]]
+[2017-02-18 17:25:37] DEBUG --  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:25:37] DEBUG --  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(3222953513815996590)[0m
+[2017-02-18 17:25:37] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (86.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (95.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3222953513815996590);[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 17:31:48] INFO --Migrating to CreateUsers (20170215004650)
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (71.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170215004650"]]
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (12.9ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:31:48] INFO --Migrating to AddIndexToUsersEmail (20170215164310)
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (41.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170215164310"]]
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:31:48] INFO --Migrating to AddPasswordDigestToUsers (20170215170438)
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" character varying[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170215170438"]]
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:31:48] INFO --Migrating to CreateAdmins (20170218204744)
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (39.0ms)[0m  [1m[35mCREATE TABLE "admins" ("id" serial primary key, "predefined" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_378b9734e4"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (38.3ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_user_id" ON "admins"  ("user_id")[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218204744"]]
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:31:48] INFO --Migrating to CreateAccounts (20170218205509)
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (38.0ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" serial primary key, "balance" float, "status" integer, "account_id" bigint, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b1e30bebc8"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (41.5ms)[0m  [1m[35mCREATE  INDEX  "index_accounts_on_user_id" ON "accounts"  ("user_id")[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218205509"]]
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (19.9ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:31:48] INFO --Migrating to CreateFriends (20170218205539)
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (40.9ms)[0m  [1m[35mCREATE TABLE "friends" ("id" serial primary key, "user_id" integer, "friend_id" integer)[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (38.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_friends_on_user_id_and_friend_id" ON "friends"  ("user_id", "friend_id")[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (39.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_friends_on_friend_id_and_user_id" ON "friends"  ("friend_id", "user_id")[0m
+[2017-02-18 17:31:48] DEBUG --  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218205539"]]
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (18.4ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:31:48] INFO --Migrating to CreateTransactions (20170218210049)
+[2017-02-18 17:31:48] DEBUG --  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:31:49] DEBUG --  [1m[35m (52.6ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" serial primary key, "status" integer, "admin_status" integer, "start" timestamp, "finish" timestamp, "type" integer, "amount" float, "account_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_01f020e267"
+FOREIGN KEY ("account_id")
+  REFERENCES "accounts" ("id")
+)[0m
+[2017-02-18 17:31:49] DEBUG --  [1m[35m (27.9ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_account_id" ON "transactions"  ("account_id")[0m
+[2017-02-18 17:31:49] DEBUG --  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218210049"]]
+[2017-02-18 17:31:49] DEBUG --  [1m[35m (17.2ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:31:49] INFO --Migrating to CreateTransfers (20170218210439)
+[2017-02-18 17:31:49] DEBUG --  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:31:49] DEBUG --  [1m[35m (33.8ms)[0m  [1m[35mCREATE TABLE "transfers" ("id" serial primary key, "account_id" integer, "transaction_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e33bbc3d7d"
+FOREIGN KEY ("account_id")
+  REFERENCES "accounts" ("id")
+, CONSTRAINT "fk_rails_3729299052"
+FOREIGN KEY ("transaction_id")
+  REFERENCES "transactions" ("id")
+)[0m
+[2017-02-18 17:31:49] DEBUG --  [1m[35m (37.2ms)[0m  [1m[35mCREATE  INDEX  "index_transfers_on_account_id" ON "transfers"  ("account_id")[0m
+[2017-02-18 17:31:49] DEBUG --  [1m[35m (39.7ms)[0m  [1m[35mCREATE  INDEX  "index_transfers_on_transaction_id" ON "transfers"  ("transaction_id")[0m
+[2017-02-18 17:31:49] DEBUG --  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218210439"]]
+[2017-02-18 17:31:49] DEBUG --  [1m[35m (15.9ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:31:49] DEBUG --  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+[2017-02-18 17:31:49] DEBUG --  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 17:31:49] DEBUG --  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-18 22:31:49 UTC], ["updated_at", 2017-02-18 22:31:49 UTC]]
+[2017-02-18 17:31:49] DEBUG --  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 17:31:49] DEBUG --  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3222953513815996590)[0m
+[2017-02-18 17:31:49] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m

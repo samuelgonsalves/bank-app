@@ -7,8 +7,8 @@ class CreateTransactions < ActiveRecord::Migration[5.0]
       t.datetime :finish
       t.integer :type
       t.float :amount
-      t.bigint :source
-      
+      t.references :account, foreign_key: true
+
       t.timestamps
     end
   end

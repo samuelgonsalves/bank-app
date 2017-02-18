@@ -4,7 +4,8 @@ class CreateAccounts < ActiveRecord::Migration[5.0]
       t.float :balance
       t.integer :status
       t.bigint :account_id
-      t.references :user
+      t.references :user, foreign_key: true
+      
       t.timestamps
     end
   end
