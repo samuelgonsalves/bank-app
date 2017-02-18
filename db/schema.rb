@@ -10,10 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170215170438) do
+ActiveRecord::Schema.define(version: 20170218210439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.float    "balance"
+    t.integer  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "admins", force: :cascade do |t|
+    t.integer  "predefined"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "friends", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer  "status"
+    t.integer  "admin_status"
+    t.datetime "start"
+    t.datetime "finish"
+    t.integer  "type"
+    t.float    "amount"
+    t.bigint   "source"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "transfers", force: :cascade do |t|
+    t.bigint   "destination"
+    t.integer  "transaction_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["transaction_id"], name: "index_transfers_on_transaction_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
