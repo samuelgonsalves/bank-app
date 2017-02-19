@@ -3060,3 +3060,187 @@ puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 [2017-02-18 21:57:04] INFO --  Rendering /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
 [2017-02-18 21:57:04] INFO --  Rendered /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
 [2017-02-18 21:57:04] INFO --  Rendered /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/index.html.erb (58.4ms)
+[2017-02-19 12:51:46] INFO --Started GET "/" for 127.0.0.1 at 2017-02-19 12:51:46 -0800
+[2017-02-19 12:51:46] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (5.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-19 12:51:47] INFO --Processing by WelcomeController#home as HTML
+[2017-02-19 12:51:47] INFO --Redirected to http://localhost:3000/login
+[2017-02-19 12:51:47] INFO --Filter chain halted as :authenticate_user! rendered or redirected
+[2017-02-19 12:51:47] INFO --Completed 302 Found in 37ms (ActiveRecord: 0.0ms)
+
+
+[2017-02-19 12:51:47] INFO --Started GET "/login" for 127.0.0.1 at 2017-02-19 12:51:47 -0800
+[2017-02-19 12:51:47] INFO --Processing by SessionsController#new as HTML
+[2017-02-19 12:51:47] INFO --  Rendering sessions/new.html.erb within layouts/application
+[2017-02-19 12:51:47] INFO --  Rendered sessions/new.html.erb within layouts/application (34.2ms)
+[2017-02-19 12:52:01] INFO --  Rendered layouts/_shim.html.erb (1.8ms)
+[2017-02-19 12:52:01] INFO --  Rendered layouts/_header.html.erb (1.5ms)
+[2017-02-19 12:52:01] INFO --  Rendered layouts/_footer.html.erb (0.5ms)
+[2017-02-19 12:52:01] INFO --Completed 200 OK in 14293ms (Views: 14288.1ms | ActiveRecord: 0.0ms)
+
+
+[2017-02-19 12:52:01] INFO --Started GET "/assets/custom.self-2b640fbbf7fad6dee316a8adc51cd278a2533bd9ff2608d346a4bf6f82fba4d7.css?body=1" for 127.0.0.1 at 2017-02-19 12:52:01 -0800
+[2017-02-19 12:52:01] INFO --Started GET "/assets/custom_BASE_22882.self-cd22af2d0270701f120ee604591a74611aabfa4d76f63ee9dc20b9e9a89fc225.css?body=1" for 127.0.0.1 at 2017-02-19 12:52:01 -0800
+[2017-02-19 12:52:02] INFO --Started GET "/assets/custom_LOCAL_22882.self-e81bfed3e8273a31978816139b7a24382b29e10d739daa5992bf97c7d697b972.css?body=1" for 127.0.0.1 at 2017-02-19 12:52:02 -0800
+[2017-02-19 12:52:02] INFO --Started GET "/assets/custom_BACKUP_22882.self-c92f6b917ab205ee656c10d60e8c9033938caad614a800bed085f1d9b30f3cb9.css?body=1" for 127.0.0.1 at 2017-02-19 12:52:02 -0800
+[2017-02-19 12:52:02] INFO --Started GET "/assets/custom_REMOTE_22882.self-1719a50df11600357a99230f4d6d0396e482dc13b8a0825c72c524fd4be821d6.css?body=1" for 127.0.0.1 at 2017-02-19 12:52:02 -0800
+[2017-02-19 12:52:03] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-19 12:52:03] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (3.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-19 12:52:03] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (14.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-19 12:52:21] INFO --Started GET "/signup" for 127.0.0.1 at 2017-02-19 12:52:21 -0800
+[2017-02-19 12:52:21] INFO --Processing by UsersController#new as HTML
+[2017-02-19 12:52:21] INFO --(UsersController) (new) -- Entering the SignUp page
+[2017-02-19 12:52:22] INFO --  Rendering users/new.html.erb within layouts/application
+[2017-02-19 12:52:22] INFO --  Rendered shared/_error_messages.html.erb (0.7ms)
+[2017-02-19 12:52:22] INFO --  Rendered users/new.html.erb within layouts/application (43.9ms)
+[2017-02-19 12:52:22] INFO --  Rendered layouts/_shim.html.erb (0.4ms)
+[2017-02-19 12:52:22] INFO --  Rendered layouts/_header.html.erb (6.4ms)
+[2017-02-19 12:52:22] INFO --  Rendered layouts/_footer.html.erb (2.4ms)
+[2017-02-19 12:52:22] INFO --Completed 200 OK in 981ms (Views: 746.6ms | ActiveRecord: 41.4ms)
+
+
+[2017-02-19 12:52:36] INFO --Started POST "/signup" for 127.0.0.1 at 2017-02-19 12:52:36 -0800
+[2017-02-19 12:52:36] INFO --Processing by UsersController#create as HTML
+[2017-02-19 12:52:36] INFO --  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZZAIVAB+XcgTovpMcPD7cpfZlUSnsqYuPFRqSAXaVRWFmi0kTLi8/xfEDi+hEboLnUVU1GsHPd5RrpftZi5btw==", "user"=>{"name"=>"darshan", "email"=>"p29darshan@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[2017-02-19 12:52:36] INFO --(UsersController) (create) -- Model action to create a new user in db
+[2017-02-19 12:52:36] DEBUG --  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+[2017-02-19 12:52:36] DEBUG --  [1m[35m (3.2ms)[0m  [1m[35mBEGIN[0m
+[2017-02-19 12:52:36] DEBUG --  [1m[36mUser Exists (6.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "p29darshan@gmail.com"], ["LIMIT", 1]]
+[2017-02-19 12:52:36] DEBUG --  [1m[35mSQL (4.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "darshan"], ["email", "p29darshan@gmail.com"], ["created_at", 2017-02-19 20:52:36 UTC], ["updated_at", 2017-02-19 20:52:36 UTC], ["password_digest", "$2a$10$WyL8dkU97GMuJhZIZZs3gO8ffoLKWSZMe1uNQQhiiqaXLSiS69Pbi"]]
+[2017-02-19 12:52:36] DEBUG --  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-19 12:52:36] INFO --Redirected to http://localhost:3000/login
+[2017-02-19 12:52:36] INFO --Completed 302 Found in 284ms (ActiveRecord: 32.9ms)
+
+
+[2017-02-19 12:52:36] INFO --Started GET "/login" for 127.0.0.1 at 2017-02-19 12:52:36 -0800
+[2017-02-19 12:52:36] INFO --Processing by SessionsController#new as HTML
+[2017-02-19 12:52:36] INFO --  Rendering sessions/new.html.erb within layouts/application
+[2017-02-19 12:52:36] INFO --  Rendered sessions/new.html.erb within layouts/application (10.1ms)
+[2017-02-19 12:52:37] INFO --  Rendered layouts/_shim.html.erb (0.4ms)
+[2017-02-19 12:52:37] DEBUG --  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[2017-02-19 12:52:37] INFO --  Rendered layouts/_header.html.erb (8.2ms)
+[2017-02-19 12:52:37] INFO --  Rendered layouts/_footer.html.erb (7.5ms)
+[2017-02-19 12:52:37] INFO --Completed 200 OK in 465ms (Views: 458.8ms | ActiveRecord: 0.9ms)
+
+
+[2017-02-19 12:52:45] INFO --Started POST "/login" for 127.0.0.1 at 2017-02-19 12:52:45 -0800
+[2017-02-19 12:52:45] INFO --Processing by SessionsController#create as HTML
+[2017-02-19 12:52:45] INFO --  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RND0wfpqSsVzUyTriJKZAkAFljdeQf+QRcoAs5uNzMKk2tGxtqyr8nc10IhZc9h7SplXp5L0ZGAoMP0W+HnCYA==", "session"=>{"email"=>"p29darshan@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+[2017-02-19 12:52:45] DEBUG --  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "p29darshan@gmail.com"], ["LIMIT", 1]]
+[2017-02-19 12:52:45] DEBUG --  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+[2017-02-19 12:52:45] DEBUG --  [1m[35mSQL (2.3ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_digest", "$2a$10$Nsxs0LkJLHREA/9uN.ll8e4cfg2zqb7X8mP2rlRmq7MJeVPRwg6mi"], ["updated_at", 2017-02-19 20:52:45 UTC], ["id", 2]]
+[2017-02-19 12:52:45] DEBUG --  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-19 12:52:45] INFO --Redirected to http://localhost:3000/
+[2017-02-19 12:52:45] INFO --Completed 302 Found in 288ms (ActiveRecord: 8.5ms)
+
+
+[2017-02-19 12:52:45] INFO --Started GET "/" for 127.0.0.1 at 2017-02-19 12:52:45 -0800
+[2017-02-19 12:52:45] INFO --Processing by WelcomeController#home as HTML
+[2017-02-19 12:52:45] DEBUG --  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[2017-02-19 12:52:45] INFO --(WelcomeController) (home) -- Entering Bank App Home Page
+[2017-02-19 12:52:45] INFO --  Rendering welcome/home.html.erb within layouts/application
+[2017-02-19 12:52:45] INFO --  Rendered shared/_error_messages.html.erb (0.6ms)
+[2017-02-19 12:52:45] INFO --  Rendered welcome/home.html.erb within layouts/application (2.6ms)
+[2017-02-19 12:52:46] INFO --  Rendered layouts/_shim.html.erb (0.4ms)
+[2017-02-19 12:52:46] INFO --  Rendered layouts/_header.html.erb (1.3ms)
+[2017-02-19 12:52:46] INFO --  Rendered layouts/_footer.html.erb (0.7ms)
+[2017-02-19 12:52:46] INFO --Completed 200 OK in 246ms (Views: 234.3ms | ActiveRecord: 2.8ms)
+
+
+[2017-02-19 12:53:20] INFO --Started GET "/admins" for 127.0.0.1 at 2017-02-19 12:53:20 -0800
+[2017-02-19 12:53:21] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-19 12:53:21] INFO --Processing by AdminController#index as HTML
+[2017-02-19 12:53:21] INFO --(AdminController) (index) -- Entering the admin index page
+[2017-02-19 12:53:21] DEBUG --  [1m[36mAdmin Load (3.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-19 12:53:21] INFO --  Rendering admin/index.html.erb within layouts/application
+[2017-02-19 12:53:21] INFO --  Rendered admin/index.html.erb within layouts/application (15.9ms)
+[2017-02-19 12:53:22] INFO --  Rendered layouts/_shim.html.erb (0.5ms)
+[2017-02-19 12:53:22] DEBUG --  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[2017-02-19 12:53:22] INFO --  Rendered layouts/_header.html.erb (69.3ms)
+[2017-02-19 12:53:22] INFO --  Rendered layouts/_footer.html.erb (0.6ms)
+[2017-02-19 12:53:22] INFO --Completed 200 OK in 1409ms (Views: 1319.4ms | ActiveRecord: 26.4ms)
+
+
+[2017-02-19 12:53:32] INFO --Started GET "/admins/1" for 127.0.0.1 at 2017-02-19 12:53:32 -0800
+[2017-02-19 12:53:32] INFO --Processing by AdminController#home as HTML
+[2017-02-19 12:53:32] INFO --  Parameters: {"id"=>"1"}
+[2017-02-19 12:53:32] INFO --(AdminController) (home) -- Entering the admin home page
+[2017-02-19 12:53:32] DEBUG --  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-19 12:53:32] INFO --  Rendering admin/home.html.erb within layouts/application
+[2017-02-19 12:53:32] INFO --  Rendered admin/home.html.erb within layouts/application (0.8ms)
+[2017-02-19 12:53:32] INFO --  Rendered layouts/_shim.html.erb (0.5ms)
+[2017-02-19 12:53:32] DEBUG --  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[2017-02-19 12:53:32] INFO --  Rendered layouts/_header.html.erb (4.5ms)
+[2017-02-19 12:53:32] INFO --  Rendered layouts/_footer.html.erb (0.9ms)
+[2017-02-19 12:53:32] INFO --Completed 200 OK in 289ms (Views: 281.9ms | ActiveRecord: 1.0ms)
+
+
+[2017-02-19 12:53:56] INFO --Started GET "/admins/1" for 127.0.0.1 at 2017-02-19 12:53:56 -0800
+[2017-02-19 12:53:56] INFO --Processing by AdminController#home as HTML
+[2017-02-19 12:53:56] INFO --  Parameters: {"id"=>"1"}
+[2017-02-19 12:53:56] INFO --(AdminController) (home) -- Entering the admin home page
+[2017-02-19 12:53:56] DEBUG --  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-19 12:53:56] INFO --  Rendering admin/home.html.erb within layouts/application
+[2017-02-19 12:53:56] INFO --  Rendered admin/home.html.erb within layouts/application (0.9ms)
+[2017-02-19 12:53:56] INFO --  Rendered layouts/_shim.html.erb (0.4ms)
+[2017-02-19 12:53:56] DEBUG --  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[2017-02-19 12:53:56] INFO --  Rendered layouts/_header.html.erb (2.6ms)
+[2017-02-19 12:53:56] INFO --  Rendered layouts/_footer.html.erb (0.5ms)
+[2017-02-19 12:53:56] INFO --Completed 200 OK in 244ms (Views: 239.8ms | ActiveRecord: 0.8ms)
+
+
+[2017-02-19 12:54:56] INFO --Started GET "/admins/1/manage_users" for 127.0.0.1 at 2017-02-19 12:54:56 -0800
+[2017-02-19 12:54:56] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-19 12:54:56] INFO --Processing by AdminController#manage_users as HTML
+[2017-02-19 12:54:56] INFO --  Parameters: {"id"=>"1"}
+[2017-02-19 12:54:56] INFO --(AdminController) (manage_users) -- Entering the manage users page
+[2017-02-19 12:54:56] DEBUG --  [1m[36mAdmin Load (6.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-19 12:54:56] INFO --  Rendering admin/manage_users.html.erb within layouts/application
+[2017-02-19 12:54:56] INFO --  Rendered admin/manage_users.html.erb within layouts/application (22.5ms)
+[2017-02-19 12:54:58] INFO --  Rendered layouts/_shim.html.erb (0.7ms)
+[2017-02-19 12:54:58] DEBUG --  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[2017-02-19 12:54:58] INFO --  Rendered layouts/_header.html.erb (64.3ms)
+[2017-02-19 12:54:58] INFO --  Rendered layouts/_footer.html.erb (0.9ms)
+[2017-02-19 12:54:58] INFO --Completed 200 OK in 1883ms (Views: 1728.5ms | ActiveRecord: 33.2ms)
+
+
+[2017-02-19 12:54:59] INFO --Started GET "/admins/1" for 127.0.0.1 at 2017-02-19 12:54:59 -0800
+[2017-02-19 12:55:00] INFO --Processing by AdminController#home as HTML
+[2017-02-19 12:55:00] INFO --  Parameters: {"id"=>"1"}
+[2017-02-19 12:55:00] INFO --(AdminController) (home) -- Entering the admin home page
+[2017-02-19 12:55:00] DEBUG --  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-19 12:55:00] INFO --  Rendering admin/home.html.erb within layouts/application
+[2017-02-19 12:55:00] INFO --  Rendered admin/home.html.erb within layouts/application (2.9ms)
+[2017-02-19 12:55:00] INFO --  Rendered layouts/_shim.html.erb (0.4ms)
+[2017-02-19 12:55:00] DEBUG --  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[2017-02-19 12:55:00] INFO --  Rendered layouts/_header.html.erb (9.4ms)
+[2017-02-19 12:55:00] INFO --  Rendered layouts/_footer.html.erb (0.6ms)
+[2017-02-19 12:55:00] INFO --Completed 200 OK in 369ms (Views: 362.5ms | ActiveRecord: 1.6ms)
+
+
+[2017-02-19 12:55:03] INFO --Started GET "/admins/1/manage_admins" for 127.0.0.1 at 2017-02-19 12:55:03 -0800
+[2017-02-19 12:55:03] INFO --Processing by AdminController#manage_admins as HTML
+[2017-02-19 12:55:03] INFO --  Parameters: {"id"=>"1"}
+[2017-02-19 12:55:03] INFO --(AdminController) (manage_admins) -- Entering the manage admins page
+[2017-02-19 12:55:03] DEBUG --  [1m[36mAdmin Load (2.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-19 12:55:03] INFO --  Rendering admin/manage_admins.html.erb within layouts/application
+[2017-02-19 12:55:03] INFO --  Rendered admin/manage_admins.html.erb within layouts/application (1.0ms)
+[2017-02-19 12:55:03] INFO --  Rendered layouts/_shim.html.erb (0.4ms)
+[2017-02-19 12:55:03] DEBUG --  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[2017-02-19 12:55:03] INFO --  Rendered layouts/_header.html.erb (8.2ms)
+[2017-02-19 12:55:03] INFO --  Rendered layouts/_footer.html.erb (0.6ms)
+[2017-02-19 12:55:03] INFO --Completed 200 OK in 296ms (Views: 286.9ms | ActiveRecord: 2.9ms)
+
+
+[2017-02-19 12:55:06] INFO --Started GET "/admins/1/create_admin" for 127.0.0.1 at 2017-02-19 12:55:06 -0800
+[2017-02-19 12:55:06] INFO --Processing by AdminController#create_admin as HTML
+[2017-02-19 12:55:06] INFO --  Parameters: {"id"=>"1"}
+[2017-02-19 12:55:06] INFO --(AdminController) (create_admin) -- Entering the create admin page
+[2017-02-19 12:55:06] INFO --  Rendering admin/create_admin.html.erb within layouts/application
+[2017-02-19 12:55:06] INFO --  Rendered admin/create_admin.html.erb within layouts/application (2.7ms)
+[2017-02-19 12:55:06] INFO --  Rendered layouts/_shim.html.erb (0.4ms)
+[2017-02-19 12:55:06] DEBUG --  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[2017-02-19 12:55:06] INFO --  Rendered layouts/_header.html.erb (2.6ms)
+[2017-02-19 12:55:06] INFO --  Rendered layouts/_footer.html.erb (0.5ms)
+[2017-02-19 12:55:06] INFO --Completed 200 OK in 247ms (Views: 242.5ms | ActiveRecord: 0.4ms)
+
+
