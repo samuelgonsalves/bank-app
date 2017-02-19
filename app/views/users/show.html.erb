@@ -4,11 +4,21 @@
 		<section class="user-info">
 	
 			<h1>
-				<%= @user.name %>
-				<%= gravatar_for @user %>
-			</h1>	
+				USER DETAILS:	
+			</h1>
+			<ul type="none">
+				
+				<li>
+					Name: <%= @user.name %>	
+				</li>
+				<li>
+					Email ID: <%= @user.email %>	
+				</li>
+				
+			</ul>
+				
+				<!--<%= gravatar_for @user %>-->
+				
 		</section>
 	</aside>
 </div>
-
-
