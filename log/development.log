@@ -2932,3 +2932,131 @@ FOREIGN KEY ("transaction_id")
 [2017-02-18 17:31:49] DEBUG --  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
 [2017-02-18 17:31:49] DEBUG --  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3222953513815996590)[0m
 [2017-02-18 17:31:49] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3222953513815996590);[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 21:56:53] INFO --Migrating to CreateUsers (20170215004650)
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170215004650"]]
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 21:56:53] INFO --Migrating to AddIndexToUsersEmail (20170215164310)
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170215164310"]]
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 21:56:53] INFO --Migrating to AddPasswordDigestToUsers (20170215170438)
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" character varying[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170215170438"]]
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 21:56:53] INFO --Migrating to CreateAdmins (20170218204744)
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "admins" ("id" serial primary key, "predefined" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_378b9734e4"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_user_id" ON "admins"  ("user_id")[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218204744"]]
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 21:56:53] INFO --Migrating to CreateAccounts (20170218205509)
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" serial primary key, "balance" float, "status" integer, "account_id" bigint, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b1e30bebc8"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_accounts_on_user_id" ON "accounts"  ("user_id")[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218205509"]]
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 21:56:53] INFO --Migrating to CreateFriends (20170218205539)
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "friends" ("id" serial primary key, "user_id" integer, "friend_id" integer)[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_friends_on_user_id_and_friend_id" ON "friends"  ("user_id", "friend_id")[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_friends_on_friend_id_and_user_id" ON "friends"  ("friend_id", "user_id")[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218205539"]]
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 21:56:53] INFO --Migrating to CreateTransactions (20170218210049)
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" serial primary key, "status" integer, "admin_status" integer, "start" timestamp, "finish" timestamp, "type" integer, "amount" float, "account_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_01f020e267"
+FOREIGN KEY ("account_id")
+  REFERENCES "accounts" ("id")
+)[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_account_id" ON "transactions"  ("account_id")[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218210049"]]
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 21:56:53] INFO --Migrating to CreateTransfers (20170218210439)
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "transfers" ("id" serial primary key, "account_id" integer, "transaction_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_e33bbc3d7d"
+FOREIGN KEY ("account_id")
+  REFERENCES "accounts" ("id")
+, CONSTRAINT "fk_rails_3729299052"
+FOREIGN KEY ("transaction_id")
+  REFERENCES "transactions" ("id")
+)[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_transfers_on_account_id" ON "transfers"  ("account_id")[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (7.2ms)[0m  [1m[35mCREATE  INDEX  "index_transfers_on_transaction_id" ON "transfers"  ("transaction_id")[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170218210439"]]
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 21:56:53] INFO --Migrating to AddRememberDigestToUsers (20170219013653)
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_digest" character varying[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170219013653"]]
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-19 05:56:53 UTC], ["updated_at", 2017-02-19 05:56:53 UTC]]
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[35m (2.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3222953513815996590)[0m
+[2017-02-18 21:56:53] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 21:57:04] INFO --Started GET "/admins/index" for 127.0.0.1 at 2017-02-18 21:57:04 -0800
+[2017-02-18 21:57:04] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-18 21:57:04] FATAL --  
+[2017-02-18 21:57:04] FATAL --ActionController::RoutingError (No route matches [GET] "/admins/index"):
+[2017-02-18 21:57:04] FATAL --  
+[2017-02-18 21:57:04] FATAL --actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.0) lib/puma/configuration.rb:226:in `call'
+puma (3.7.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.0) lib/puma/server.rb:415:in `process_client'
+puma (3.7.0) lib/puma/server.rb:275:in `block in run'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `call'
+puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+[2017-02-18 21:57:04] INFO --  Rendering /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+[2017-02-18 21:57:04] INFO --  Rendering /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+[2017-02-18 21:57:04] INFO --  Rendered /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.2ms)
+[2017-02-18 21:57:04] INFO --  Rendered collection of /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [16 times] (29.3ms)
+[2017-02-18 21:57:04] INFO --  Rendered /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (28.8ms)
+[2017-02-18 21:57:04] INFO --  Rendering /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+[2017-02-18 21:57:04] INFO --  Rendered /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (46.9ms)
+[2017-02-18 21:57:04] INFO --  Rendered /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (186.7ms)
+[2017-02-18 21:57:04] INFO --  Rendering /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/index.html.erb
+[2017-02-18 21:57:04] INFO --  Rendered /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+[2017-02-18 21:57:04] INFO --  Rendering /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/console.js.erb within layouts/javascript
+[2017-02-18 21:57:04] INFO --  Rendering /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+[2017-02-18 21:57:04] INFO --  Rendered /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+[2017-02-18 21:57:04] INFO --  Rendering /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+[2017-02-18 21:57:04] INFO --  Rendered /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+[2017-02-18 21:57:04] INFO --  Rendering /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+[2017-02-18 21:57:04] INFO --  Rendered /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+[2017-02-18 21:57:04] INFO --  Rendered /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.8ms)
+[2017-02-18 21:57:04] INFO --  Rendering /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/main.js.erb within layouts/javascript
+[2017-02-18 21:57:04] INFO --  Rendered /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+[2017-02-18 21:57:04] INFO --  Rendering /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+[2017-02-18 21:57:04] INFO --  Rendered /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+[2017-02-18 21:57:04] INFO --  Rendered /home/darshanypatel/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-3.4.0/lib/web_console/templates/index.html.erb (58.4ms)
