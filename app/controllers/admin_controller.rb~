@@ -1,0 +1,27 @@
+class AdminController < ApplicationController
+
+  	def index
+		@admin = Admin.find(2)
+	end
+
+	def home
+		@admin = Admin.find(2)
+	end
+
+	def manage_admins
+		@admin = Admin.find(2)
+	end
+
+	def manage_users
+		@admin = Admin.find(2)
+	end
+
+	def view_users
+		@users = User.all
+	end
+
+	def manage_accounts
+		@admin = Admin.find(2)
+	end
+
+end
