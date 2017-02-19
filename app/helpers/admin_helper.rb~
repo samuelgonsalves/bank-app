@@ -1,9 +1,0 @@
-module AdminHelper
-	def get_all_users(admins)
-		users = []
-		admins.each do |admin| 
-			users << User.find_by(id: admin.user_id)
-		end
-		users
-	end
-end
