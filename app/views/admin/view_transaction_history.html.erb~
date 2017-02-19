@@ -1,0 +1,33 @@
+<div class="center jumbotron">
+<h2>Transactions of <%= @user.name %></h2>
+<br>
+Accounts of this user:
+<% @accounts.each do |account| %>
+<%= account.account_id %>
+<% end %>
+  <h4>
+	<% @transactions.each do |transaction| %>
+		<div>
+			<%= transaction.id %>
+			<%= transaction.status %>
+			<%= transaction.start %>
+			<%= transaction.finish %>
+			<%= transaction.type %>
+			<%= transaction.amount %>
+			<%= transaction.account_id %>
+			<% if transaction.type == 3 %>
+				// display transfer
+			<% end %>
+				// status pending-0 approved-1 declined-2, type withdraw-1, deposit-2, transfer-3
+			<% if transaction.status == 0 && transaction.type != 3 %>
+				<%= link_to "approve transaction", _path(transaction, 1) %>
+				<%= link_to "decline transaction", _path(transaction, 2) %>
+			<% end %>
+		</div>
+	<% end %>
+  </h4>
+<br>
+  <%= link_to "Back to list of users", view_users_path() %>
+</div>
+
+

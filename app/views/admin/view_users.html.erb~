@@ -4,15 +4,18 @@
   <h4>
 	<% @users.each do |user| %>
 		<div>
-			<%= user.name %>
-			<%= user.email %>
-			<%= link_to "view transaction history", view_transaction_history_path(user) %>
-			<%= link_to "delete this user", delete_user_path(user) %>
+			<%= "Name: #{user.name}" %><br>
+			<%= "Email: #{user.email}" %><br>
+			<%= link_to "view transaction history\n", view_transaction_history_path(user) %><br>
+			<% if user.id != 1 %>
+				<%= link_to "delete this user\n", destroy_user_path(user) %><br>
+			<% end %>
 		</div>
+		<br><br>
 	<% end %>
   </h4>
 <br>
-  <%= link_to "Log out", admin_index_path() %>
+  <%= link_to "Back to manage users page", manage_users_path() %>
 </div>
 
 

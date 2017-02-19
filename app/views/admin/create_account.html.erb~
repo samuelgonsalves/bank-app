@@ -1,0 +1,22 @@
+<div class="center jumbotron">
+<h2>Requests for creating account</h2>
+<br>
+  <h4>
+	<% if !@accounts.nil? %> 
+	<% @accounts.each do |account| %>
+		<div>
+			<%= "Account ID: #{account.id}" %><br>
+			<% params = Hash.new %>
+			<% params[:account_id] = account.id %> 
+			<%= link_to "Approve account", approve_or_decline_account_path(params[:decision] = 1) %>
+			<%= link_to "Decline account", approve_or_decline_account_path(params[:decision] = 0) %><br>
+		<br><br>
+		</div>
+	<% end %>
+	<% end %>
+  </h4>
+<br>
+  <%= link_to "Back to manage accounts", manage_accounts_path() %>
+</div>
+
+

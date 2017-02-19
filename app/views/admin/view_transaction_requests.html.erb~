@@ -1,0 +1,21 @@
+<div class="center jumbotron">
+<h2>Transaction requests</h2>
+<br>
+  <h4>
+	<% @transactions.each do |t| %>
+		<div>
+			<%= "Transaction ID: #{t.id}" %><br>
+			<%= "Amount: #{t.amount}" %><br>
+			<%= "Type: #{t.type}" %><br>
+			<%= "Requested at: #{t.created_at}" %><br>
+			<%= link_to "Approve transaction", _path(1) %>
+			<%= link_to "Decline transaction", _path(2) %>
+		</div>
+		<br><br>
+	<% end %>
+  </h4>
+<br>
+  <%= link_to "Back to manage accounts", manage_accounts_path() %>
+</div>
+
+
