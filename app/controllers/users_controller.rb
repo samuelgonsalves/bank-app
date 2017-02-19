@@ -22,9 +22,41 @@ class UsersController < ApplicationController
   	end	
   end
 
+  def edit
+  	@user = User.find(params[:id])
+  end
+
+  def update
+  	@user = User.find(params[:id])
+  	if @user.update_attributes(user_params)
+  		flash[:success] = "Profile updated"
+    	redirect_to @user
+  	else
+  		render 'edit'
+  	end
+
+  end
+
+  def account
+  	@user = User.find(params[:id])
+  	@accounts = Account.where(user_id: params[:id]) #ALL USER ACCOUNTS!!!
+  	respond_to do |format|
+      format.html 
+      format.json { render json: @accounts }
+    end
+
+  end
+
+  def new_account
+    render 'home'
+  end
+
   private
- 	 def user_params
-  		params.require(:user).permit(:name, :email,:password,:password_confirmation)
-  	 end
+  
+  def user_params
+  	params.require(:user).permit(:name, :email,:password,:password_confirmation)
+  end
+
+
 
 end
