@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-  get '/edit' , to: 'users#edit'
-  get 'users/:id/account_details' , to: 'users#account_details'
-  patch '/edit' , to: 'users#update' #CHECK!
 
+  resources :users 
+  #get '/edit' , to: 'users#edit'
+  #get 'account_details' , to: 'users#account_details'
+  #patch '/edit' , to: 'users#update' #CHECK!
+  get 'users/:id/account' => 'users#account' , as: :account
 
-  resources :users
+ 
 end

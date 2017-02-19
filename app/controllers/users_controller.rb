@@ -37,14 +37,18 @@ class UsersController < ApplicationController
 
   end
 
-  def account_details
+  def account
   	@user = User.find(params[:id])
-  	@accounts = Account.all
+  	@accounts = Account.where(user_id: params[:id]) #ALL USER ACCOUNTS!!!
   	respond_to do |format|
       format.html 
       format.json { render json: @accounts }
     end
 
+  end
+
+  def new_account
+    render 'home'
   end
 
   private
