@@ -33,6 +33,16 @@ class UsersController < ApplicationController
 
   end
 
+  def account_details
+  	@user = User.find(params[:id])
+  	@accounts = Account.all
+  	respond_to do |format|
+      format.html 
+      format.json { render json: @accounts }
+    end
+
+  end
+
   private
   
   def user_params

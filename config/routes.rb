@@ -11,12 +11,14 @@ Rails.application.routes.draw do
 
   get '/signup' , to: 'users#new'
 
-  post '/signup' , to: 'users#create'
-
   get '/edit' , to: 'users#edit'
 
+  get 'users/:id/account_details' , to: 'users#account_details'
+ 
   patch '/edit' , to: 'users#update' #CHECK!
 
+  post '/signup' , to: 'users#create'
+  
   resources :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
