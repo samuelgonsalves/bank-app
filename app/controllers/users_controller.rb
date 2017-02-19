@@ -34,6 +34,12 @@ class UsersController < ApplicationController
 
   def edit
   	@user = User.find(params[:id])
+    if get_id(@user) != get_id(current_user)
+      flash[:error] = "Invalid Operation"
+      redirect_to root_url
+    else
+      @user
+    end
   end
 
   def update
@@ -44,7 +50,6 @@ class UsersController < ApplicationController
   	else
   		render 'edit'
   	end
-
   end
 
   def account
