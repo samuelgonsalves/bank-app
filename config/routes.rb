@@ -9,18 +9,12 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-<<<<<<< HEAD
 
   resources :users 
   #get '/edit' , to: 'users#edit'
   #get 'account_details' , to: 'users#account_details'
   #patch '/edit' , to: 'users#update' #CHECK!
   get 'users/:id/account' => 'users#account' , as: :account
-
- 
-=======
-  resources :users
-
 
   get '/admins/' => 'admin#index', as: :admin_index
   get '/admins/:id' => 'admin#home', as: :admin_home
@@ -39,8 +33,4 @@ Rails.application.routes.draw do
   get '/admins/:id/manage_admins' => 'admin#manage_admins', as: :manage_admins
   get '/admins/:id/create_admin' => 'admin#create_admin', as: :create_admin
   get '/admins/:id/view_admins' => 'admin#view_admins', as: :view_admins
-
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
->>>>>>> dpatel12
 end
