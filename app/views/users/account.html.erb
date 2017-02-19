@@ -1,0 +1,21 @@
+<table id = "account_table">
+<h1>Account Details</h1>
+<tr>
+
+
+<td>Account ID</td>
+<td>Balance</td>
+
+</tr>
+
+<% @accounts.each do |account| %> 
+
+<tr>
+
+<td> <%= account.account_id %></td>
+<td> <%= account.balance %></td>
+
+</tr>
+
+<% end %>
+</table>

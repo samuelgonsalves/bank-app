@@ -1,5 +1,7 @@
 <h2>Hello World</h2>
 <p>
+<%= render 'shared/error_messages' %>
   The time is now: <%= Time.now %><br>
   Hi! <%= @user.name %>
+  <%= link_to "New Account", account_url(id: @user.id) %>
 </p>
