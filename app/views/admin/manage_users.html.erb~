@@ -1,0 +1,13 @@
+<div class="center jumbotron">
+  <h2>Manage Users</h2>
+<br>
+  <h4>
+    <ol>
+	<li><%= link_to "view all the users", view_users_path(@admin) %></li>
+    </ol>
+  </h4>
+<br>
+  <%= link_to "Back to home page", admin_home_path(@admin) %>
+</div>
+
+
