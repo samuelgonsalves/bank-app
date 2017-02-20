@@ -39,12 +39,35 @@ class UsersController < ApplicationController
 
   def account
   	@user = User.find(params[:id])
-  	@accounts = Account.where(user_id: params[:id]) #ALL USER ACCOUNTS!!!
-  	respond_to do |format|
-      format.html 
-      format.json { render json: @accounts }
-    end
+  	@accounts = Account.where(:user_id => params[:id]) #ALL USER ACCOUNTS!!
 
+  	  respond_to do |format|
+        format.html 
+        format.json { render json: @accounts }
+      end 
+  end
+
+
+  def account_create_request
+
+    @user = User.find(params[:id])
+   
+    account = Account.create(:user_id => @user.id,:balance => 0, :status => 3, :account_id => 100000000)
+
+    if account.save
+      flash[:success] = "Your request for a new account is awaiting administrator approval."
+    else
+      flash[:error] = "Request for a new account failed!"
+    end
+  end
+
+  #BROKEN!!
+  def search_for_users
+    @users = User.search(params[:search])
+  end
+
+  def show_friends
+    @friends = Friend.all
   end
 
   def new_account

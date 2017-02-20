@@ -1,6 +1,9 @@
 <h2>Hello World</h2>
 <p>
   The time is now: <%= Time.now %><br>
-  Hi! <%= @user.name %>
-  <%= link_to "New Account", account_url(id: @user.id) %>
+  Hi! <%= @user.name %><br>
+  <%= link_to "Account details", account_url(id: @user.id) %><br>
+  <%= link_to "Create New Account", account_create_request_url(id: @user.id) %><br>
+  <%= link_to "Search for other users", search_for_users_url(id: @user.id) %><br>
+  <%= link_to "Show Friends", show_friends_url(id: @user.id) %>
 </p>

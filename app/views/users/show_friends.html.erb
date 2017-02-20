@@ -1,0 +1,13 @@
+<h1>ALL Friends</h1>
+<table class = "tables">
+	<tr>
+		<td>User ID</td>
+		<td>Friend ID</td>
+	</tr>
+<% @friends.each do |friend| %>
+	<tr>
+		<td><%= friend.user_id %></td>
+		<td><%= friend.friend_id %></td>
+	</tr>
+<% end %>	
+</table>
