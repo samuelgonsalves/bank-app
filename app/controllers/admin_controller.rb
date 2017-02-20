@@ -56,11 +56,11 @@ class AdminController < ApplicationController
 		#@user = User.find(params[:id])
 	    	@user = User.find(1)
 		@accounts = Account.find_by(user_id: @user.id)
-		@transactions = Array.new
+		@transactions = nil
 		@transfers = Array.new
 		@accounts.each do |account|
 			@transactions += Transaction.find_by(account_id: account.id)
-			@transfers += Transfer.find_by(account_id: account.id)
+			@transactions.transfers << Transfer.find_by(trnsactio_id: account.id)
 			@transfers.each do |t|
 				@transactions += Transaction.find_by(id: t.transaction_id)	
 			end

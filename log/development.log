@@ -3244,3 +3244,60 @@ puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 [2017-02-19 12:55:06] INFO --Completed 200 OK in 247ms (Views: 242.5ms | ActiveRecord: 0.4ms)
 
 
+[2017-02-19 13:23:23] INFO --Started GET "/admins/1/manage_accounts" for 127.0.0.1 at 2017-02-19 13:23:23 -0800
+[2017-02-19 13:23:23] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-19 13:23:23] INFO --Processing by AdminController#manage_accounts as HTML
+[2017-02-19 13:23:23] INFO --  Parameters: {"id"=>"1"}
+[2017-02-19 13:23:23] INFO --(AdminController) (manage_accounts) -- Entering the manage accounts page
+[2017-02-19 13:23:23] DEBUG --  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-19 13:23:23] INFO --  Rendering admin/manage_accounts.html.erb within layouts/application
+[2017-02-19 13:23:23] INFO --  Rendered admin/manage_accounts.html.erb within layouts/application (12.1ms)
+[2017-02-19 13:23:40] INFO --  Rendered layouts/_shim.html.erb (1.8ms)
+[2017-02-19 13:23:40] DEBUG --  [1m[36mUser Load (11.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[2017-02-19 13:23:40] INFO --  Rendered layouts/_header.html.erb (136.6ms)
+[2017-02-19 13:23:40] INFO --  Rendered layouts/_footer.html.erb (1.0ms)
+[2017-02-19 13:23:40] INFO --Completed 200 OK in 16511ms (Views: 16416.1ms | ActiveRecord: 40.0ms)
+
+
+[2017-02-19 13:23:49] INFO --Started GET "/admins/1" for 127.0.0.1 at 2017-02-19 13:23:49 -0800
+[2017-02-19 13:23:49] INFO --Processing by AdminController#home as HTML
+[2017-02-19 13:23:49] INFO --  Parameters: {"id"=>"1"}
+[2017-02-19 13:23:49] INFO --(AdminController) (home) -- Entering the admin home page
+[2017-02-19 13:23:49] DEBUG --  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-19 13:23:49] INFO --  Rendering admin/home.html.erb within layouts/application
+[2017-02-19 13:23:49] INFO --  Rendered admin/home.html.erb within layouts/application (1.3ms)
+[2017-02-19 13:23:49] INFO --  Rendered layouts/_shim.html.erb (2.8ms)
+[2017-02-19 13:23:49] DEBUG --  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[2017-02-19 13:23:49] INFO --  Rendered layouts/_header.html.erb (2.5ms)
+[2017-02-19 13:23:49] INFO --  Rendered layouts/_footer.html.erb (0.8ms)
+[2017-02-19 13:23:49] INFO --Completed 200 OK in 327ms (Views: 318.7ms | ActiveRecord: 0.7ms)
+
+
+[2017-02-19 13:23:51] INFO --Started GET "/admins/1/manage_admins" for 127.0.0.1 at 2017-02-19 13:23:51 -0800
+[2017-02-19 13:23:51] INFO --Processing by AdminController#manage_admins as HTML
+[2017-02-19 13:23:51] INFO --  Parameters: {"id"=>"1"}
+[2017-02-19 13:23:51] INFO --(AdminController) (manage_admins) -- Entering the manage admins page
+[2017-02-19 13:23:51] DEBUG --  [1m[36mAdmin Load (1.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-19 13:23:51] INFO --  Rendering admin/manage_admins.html.erb within layouts/application
+[2017-02-19 13:23:51] INFO --  Rendered admin/manage_admins.html.erb within layouts/application (0.9ms)
+[2017-02-19 13:23:51] INFO --  Rendered layouts/_shim.html.erb (0.4ms)
+[2017-02-19 13:23:51] DEBUG --  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[2017-02-19 13:23:51] INFO --  Rendered layouts/_header.html.erb (2.8ms)
+[2017-02-19 13:23:51] INFO --  Rendered layouts/_footer.html.erb (0.5ms)
+[2017-02-19 13:23:51] INFO --Completed 200 OK in 304ms (Views: 296.8ms | ActiveRecord: 2.1ms)
+
+
+[2017-02-19 13:23:54] INFO --Started GET "/admins/1/view_admins" for 127.0.0.1 at 2017-02-19 13:23:54 -0800
+[2017-02-19 13:23:54] INFO --Processing by AdminController#view_admins as HTML
+[2017-02-19 13:23:54] INFO --  Parameters: {"id"=>"1"}
+[2017-02-19 13:23:54] DEBUG --  [1m[36mAdmin Load (2.0ms)[0m  [1m[34mSELECT "admins".* FROM "admins"[0m
+[2017-02-19 13:23:54] DEBUG --  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-19 13:23:54] INFO --  Rendering admin/view_admins.html.erb within layouts/application
+[2017-02-19 13:23:54] INFO --  Rendered admin/view_admins.html.erb within layouts/application (3.2ms)
+[2017-02-19 13:23:54] INFO --  Rendered layouts/_shim.html.erb (0.3ms)
+[2017-02-19 13:23:54] DEBUG --  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[2017-02-19 13:23:54] INFO --  Rendered layouts/_header.html.erb (2.2ms)
+[2017-02-19 13:23:54] INFO --  Rendered layouts/_footer.html.erb (0.5ms)
+[2017-02-19 13:23:54] INFO --Completed 200 OK in 288ms (Views: 278.3ms | ActiveRecord: 5.1ms)
+
+
