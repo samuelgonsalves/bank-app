@@ -1,0 +1,23 @@
+<div class="center jumbotron">
+<h2>Users</h2>
+<br>
+  <h4>
+	<% if !@users.nil? %>
+	<% @users.each do |user| %>
+		<div>
+			<%= "Name: #{user.name}" %><br>
+			<%= "Email: #{user.email}" %><br>
+			<%= link_to "view transaction history\n", view_transaction_history_path(user) %><br>
+			<% if user.id != 1 %>
+				<%= link_to "delete this user\n", destroy_user_path(user) %><br>
+			<% end %>
+		</div>
+		<br><br>
+	<% end %>
+	<% end %>
+  </h4>
+<br>
+  <%= link_to "Back to manage users page", manage_users_path() %>
+</div>
+
+

@@ -30,6 +30,8 @@ class User < ApplicationRecord
 
   end
 
+  attr_accessor :is_admin, :admin
+
 	# Returns the hash digest of the given string.
   	def User.digest(string)
     	cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

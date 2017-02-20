@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  
+  include UsersHelper
+
   def new
     logger.info("(#{self.class.to_s}) (#{action_name}) -- Entering the SignUp page")
   	@user = User.new
@@ -12,11 +13,20 @@ class UsersController < ApplicationController
   
   def create
     logger.info("(#{self.class.to_s}) (#{action_name}) -- Model action to create a new user in db")
-  	@user = User.new(user_params)
+    #Check if the user already exists in the DB if so redirect to error with message user already exists
+    puts params[:email]
+    @user = User.find_by_email(params[:email])
+    if !@user.nil?
+      #User already exists
+      flash[:success] = "User already exists!"
+      redirect_to login_url
+    end
+  	
+    @user = User.new(user_params)
   	if @user.save
-      log_in user
+      log_in @user
   		flash[:success] = "Welcome to the Sample App!"
-  		redirect_to welcome
+  		redirect_to login_url
   	else
   		render 'new'
   	end	
@@ -24,6 +34,12 @@ class UsersController < ApplicationController
 
   def edit
   	@user = User.find(params[:id])
+    if get_id(@user) != get_id(current_user)
+      flash[:error] = "Invalid Operation"
+      redirect_to root_url
+    else
+      @user
+    end
   end
 
   def update
@@ -34,7 +50,6 @@ class UsersController < ApplicationController
   	else
   		render 'edit'
   	end
-
   end
 
   def account
@@ -75,11 +90,8 @@ class UsersController < ApplicationController
   end
 
   private
-  
-  def user_params
+
+ 	def user_params
   	params.require(:user).permit(:name, :email,:password,:password_confirmation)
   end
-
-
-
 end
