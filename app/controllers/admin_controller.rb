@@ -11,7 +11,7 @@ class AdminController < ApplicationController
 	#page after admin logs in
 	def home
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- Entering the admin home page")
-		@admin = Admin.find(1)
+		@admin = Admin.find(params[:id])
 	end
 
 	# manage admins part -------------------------------------------------------------------------------------
