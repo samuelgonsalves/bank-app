@@ -24,8 +24,16 @@ module SessionsHelper
         @current_user ||= User.find_by(id: user_id)
       elsif (user_id = cookies.signed[:user_id])
         user = User.find_by(id: user_id)
-      
+        admin = Admins.find_by_user_id(user.id)
+
         if user && user.authenticated?(cookies[:remember_token])
+          if admin.nil?
+            user.is_admin = false
+            user.admin = nil
+          else
+            user.is_admin = true
+            user.admin = admin
+          end
           log_in user
           @current_user = user
         end
