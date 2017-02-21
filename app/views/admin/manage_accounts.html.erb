@@ -3,13 +3,13 @@
 <br>
   <h4>
     <ol>
-	<li><%= link_to "create an account for a user", create_account_path(@admin) %></li>
-	<li><%= link_to "view all the accounts", view_accounts_path(@admin) %></li>
-	<li><%= link_to "view transaction requests", view_transaction_requests_path(@admin) %></li>
+	<li><%= link_to "create an account for a user", create_accounts_path() %></li>
+	<li><%= link_to "view all the accounts", view_accounts_path() %></li>
+	<li><%= link_to "view transaction requests", view_transaction_requests_path() %></li>
     </ol>
   </h4>
 <br>
-  <%= link_to "Back to home page", admin_home_path(@admin) %>
+  <%= link_to "Back to home page", admin_home_path() %>
 </div>
 
 

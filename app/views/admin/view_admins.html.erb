@@ -2,13 +2,13 @@
 <h2>Admins</h2>
 <br>
   <h4>
-	<% if !@users.nil? %>
-	<% @users.each do |user| %>
+	<% if !@admins.nil? %>
+	<% @admins.each do |admin| %>
 		<div>
-			<%= "Admin name: #{user.name}" %><br>
-			<%= "Email: #{user.email}" %><br>
-			<% if user.id != 1 %>			
-				<%= link_to "delete this admin", delete_user_path(user) %>
+			<%= "Admin name: #{admin.user.name}" %><br>
+			<%= "Email: #{admin.user.email}" %><br>
+			<% if admin.predefined != 1 && admin.user.id != current_user.id %>			
+				<%= link_to "delete this admin", delete_admin_path(admin) %>
 			<% end %>
 		</div>
 		<br><br>

@@ -1,0 +1,20 @@
+<div class="center jumbotron">
+<h2>Accounts</h2>
+<br>
+  <h4>
+	<% if !@account.nil? %>
+		<div>
+			<%= "Account number: #{@account.account_id}" %><br>
+			<%= "Balance: #{@account.balance}" %><br>
+			<%= "User: #{@account.user.name}, Email: #{@account.user.email}, Status: #{@account.status}" %><br>
+			<%= "Created at #{@account.created_at} and updated at #{@account.updated_at}" %><br>
+			<%= link_to "delete this account", delete_account_path(@account) %><br>
+		</div>
+		<br><br>
+	<% end %>
+  </h4>
+<br>
+  <%= link_to "Back to list of accounts", view_accounts_path() %>
+</div>
+
+
