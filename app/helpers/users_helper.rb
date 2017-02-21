@@ -8,4 +8,8 @@ module UsersHelper
 	def get_id(user)
 		user.id
 	end
+
+	def is_same_user?(user1,user2)
+		return get_id(user1) == get_id(user2)
+	end
 end

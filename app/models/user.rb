@@ -22,12 +22,8 @@ class User < ApplicationRecord
 
   #Search feature
   def self.search(search)
-    if search
-       self.where("name like ?", "%#{search}%")
-    else
-      self.all
-    end
-
+      puts "Search: #{search}"
+      where("name ilike ? or email ilike ?", "%#{search}%", "%#{search}%")
   end
 
   attr_accessor :is_admin, :admin

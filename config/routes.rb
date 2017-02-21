@@ -14,11 +14,20 @@ Rails.application.routes.draw do
   #get '/edit' , to: 'users#edit'
   #get 'account_details' , to: 'users#account_details'
   #patch '/edit' , to: 'users#update' #CHECK!
-  get 'users/:id/account' => 'users#account' , as: :account
+  get 'users/current_user/account' => 'users#account' , as: :account
 
-  get 'users/:id/account_create_request' => 'users#account_create_request', as: :account_create_request
-  get 'users/:id/search_for_users' => 'users#search_for_users', as: :search_for_users
-  get 'users/:id/show_friends' => 'users#show_friends', as: :show_friends
+  get '/users/current_user/account_create_request' => 'users#account_create_request', as: :account_create_request
+  get '/users/current_user/search_for_users' => 'users#search_for_users', as: :search_for_users
+  get '/users/current_user/show_friends' => 'users#show_friends', as: :show_friends
+  get '/users/current_user/transfer_money/:id' => 'users#transfer_money', as: :transfer_money
+  post '/users/current_user/transfer_money/:id' => 'users#transfer_money'
+  get '/users/current_user/deposit' => 'users#deposit', as: :deposit
+  post '/users/current_user/deposit' => 'users#deposit'
+
+  get '/users/current_user/withdraw' => 'users#withdraw', as: :withdraw
+  post '/users/current_user/withdraw' => 'users#withdraw'
+
+  get '/users/current_user/add_friend/:id' => 'users#add_friend', as: :add_friend
 
 
   get '/admins/' => 'admin#index', as: :admin_index

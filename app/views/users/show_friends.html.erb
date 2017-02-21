@@ -1,13 +1,14 @@
-<h1>ALL Friends</h1>
-<table class = "tables">
-	<tr>
-		<td>User ID</td>
-		<td>Friend ID</td>
-	</tr>
-<% @friends.each do |friend| %>
-	<tr>
-		<td><%= friend.user_id %></td>
-		<td><%= friend.friend_id %></td>
-	</tr>
-<% end %>	
-</table>
+<% #your_friends is an array of User objects %>
+
+<% if !@your_friends.empty? %>
+	<h1>Your Friends</h1>
+	
+		<% @your_friends.each do |friend| %>
+				
+				<h3><%= friend.name %></h3>
+				<h5><%= friend.email %></h5>
+				<h5><%= link_to "Transfer Money", transfer_money_url(friend) %></h5>
+		<% end %>	
+<% else %>
+	<h1>No friends</h1>
+<% end %>

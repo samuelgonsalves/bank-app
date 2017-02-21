@@ -6,8 +6,16 @@
     <%= form_tag(search_for_users_path, :method => "get", id: "search-form") do %>
     
     	<%= text_field_tag :search, params[:search], placeholder: "Search for users" %>
-    	<%= submit_tag "Search", :name => nil %>
+    	<%= submit_tag "Search", :name => nil %><br>
 
 	<% end %>
- 	</div>
+ </div>
 
+<div id = "search_results_list">
+<% @users.each do |user|%>	
+	<h3><%= user.name %></h3>
+	<h5><%= user.email %></h5>
+	<%= link_to "Add as a friend", add_friend_url(user) %>
+<% end %>
+
+</div>

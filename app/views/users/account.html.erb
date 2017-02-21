@@ -6,6 +6,7 @@
 		<tr>
 			<td>Account ID</td>
 			<td>Balance</td>
+			<td>Status</td>
 		</tr>
 	
 		<% @accounts.each do |each_account| %> 
@@ -13,8 +14,11 @@
 			<tr>
 				<td> <%= each_account.account_id %></td>
 				<td> <%= each_account.balance %></td>
-			</tr>
-		
+				<% if each_account.status == 1 %>
+					<td>Active</td>
+				<% elsif each_account.status == 3 %>
+					<td>Pending</td>
+				<% end %>	
 		<% end %>
 
 		</table>
