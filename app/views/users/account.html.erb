@@ -1,21 +1,26 @@
-<table id = "account_table">
-<h1>Account Details</h1>
-<tr>
+<% if !@accounts.blank? %>
+	<table class = "tables">
+	
+		<h1>Account Details</h1>
+		
+		<tr>
+			<td>Account ID</td>
+			<td>Balance</td>
+		</tr>
+	
+		<% @accounts.each do |each_account| %> 
 
+			<tr>
+				<td> <%= each_account.account_id %></td>
+				<td> <%= each_account.balance %></td>
+			</tr>
+		
+		<% end %>
 
-<td>Account ID</td>
-<td>Balance</td>
-
-</tr>
-
-<% @accounts.each do |account| %> 
-
-<tr>
-
-<td> <%= account.account_id %></td>
-<td> <%= account.balance %></td>
-
-</tr>
-
+		</table>
+<% else %>
+	<h1>No accounts found!</h1>
 <% end %>
-</table>
+
+
+

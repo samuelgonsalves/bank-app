@@ -7,7 +7,7 @@ module ApplicationHelper
 	type = {1 => :withdraw, 2 => :deposit, 3 => :transfer}
 	
 	def full_title(page_title = '')
-		base_title = "Ruby on Rails Tutorial Sample App"
+		base_title = "Bank App"
 		if page_title.empty?
 			base_title
 		else

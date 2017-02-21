@@ -20,6 +20,16 @@ class User < ApplicationRecord
 	validates :password, presence: true,
 						length: {minimum: 6}
 
+  #Search feature
+  def self.search(search)
+    if search
+       self.where("name like ?", "%#{search}%")
+    else
+      self.all
+    end
+
+  end
+
   attr_accessor :is_admin, :admin
 
 	# Returns the hash digest of the given string.
