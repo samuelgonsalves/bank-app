@@ -13,7 +13,6 @@ module UsersHelper
 		return get_id(user1) == get_id(user2)
 	end
 
-
 	def are_they_friends(user1, user2)
 		case1 = Friend.where(:user_id => user1.id, :friend_id => user2.friend_id)
 		#puts "CASE 1 USER ID:"
@@ -34,5 +33,4 @@ module UsersHelper
 		end
 		return true
 	end
-
 end

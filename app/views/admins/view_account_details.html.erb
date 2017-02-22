@@ -1,0 +1,28 @@
+<div class="center jumbotron">
+<h2>Accounts</h2>
+<br>
+  <h4>
+	<% if !@account.nil? %>
+		<div>
+			<%= "Account number: #{@account.account_id}" %><br>
+			<%= "Balance: #{@account.balance}" %><br>
+			<%= "User: #{@account.user.name}, Email: #{@account.user.email}, Status: #{status_name @account.status}" %><br>
+			<%= "Created at #{@account.created_at} and updated at #{@account.updated_at}" %><br>
+			<%= link_to "view transaction history", view_transaction_history_path(@account) %><br>
+			<%= link_to "delete this account", delete_account_path(@account) %><br>
+			<% if @account.status == 3 %>		
+				<%= link_to "activate this account", view_account_details_path(:id => @account.id, :decision => '1') %><br> 
+			<% elsif @account.status == 1 %>
+				<%= link_to "close this account", view_account_details_path(:id => @account.id, :decision => '2') %><br>			
+			<% else %>
+				<%= link_to "reopen this account", view_account_details_path(:id => @account.id, :decision => '1') %><br>			
+			<% end %>	
+		</div>
+		<br><br>
+	<% end %>
+  </h4>
+<br>
+  <%= link_to "Back to list of accounts", view_accounts_path() %>
+</div>
+
+
