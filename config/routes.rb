@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get    '/contact', to: 'static_pages#contact'
   get    '/signup',  to: 'users#new'
   post 	 '/signup',  to: 'users#create'
-  post	 '/signup_admin' => 'admin#create', as: :signup_admin
+  post	 '/signup_admin' => 'admins#create', as: :signup_admin
   get    '/login',   to: 'sessions#new', as: :login
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
@@ -31,28 +31,30 @@ Rails.application.routes.draw do
   get '/users/current_user/add_friend/:id' => 'users#add_friend', as: :add_friend
 
 
-  get '/admins/' => 'admin#index', as: :admin_index
-  get '/admins/home' => 'admin#home', as: :admin_home
-  #get '/admins/:id/edit' => 'admin#edit'
+  get '/admins/' => 'admins#index', as: :admin_index
+  get '/admins/home' => 'admins#home', as: :admin_home
+  #get '/admins/:id/edit' => 'admins#edit'
   
-  get '/admins/manage_accounts' => 'admin#manage_accounts', as: :manage_accounts
-  get '/admins/manage_accounts/create_accounts' => 'admin#create_accounts', as: :create_accounts
-  get '/admins/manage_accounts/create_accounts/approve_or_decline_account' => 'admin#approve_or_decline_account', as: :approve_or_decline_account
-  get '/admins/manage_accounts/view_accounts' => 'admin#view_accounts', as: :view_accounts
-  get '/admins/manage_accounts/view_accounts/view_account_details/:id' => 'admin#view_account_details', as: :view_account_details
-  get '/admins/manage_accounts/view_transaction_requests' => 'admin#view_transaction_requests', as: :view_transaction_requests
-  get '/admins/manage_accounts/view_transaction_requests/approve_or_decline_transaction' => 'admin#approve_or_decline_transaction', as: :approve_or_decline_transaction
-  get '/admins/manage_accounts/view_accounts/delete_account/:id' => 'admin#delete_account', as: :delete_account  
- 
-  get '/admins/manage_users' => 'admin#manage_users', as: :manage_users
-  get '/admins/view_users' => 'admin#view_users', as: :view_users
-  get '/admins/view_transaction_history/:id' => 'admin#view_transaction_history', as: :view_transaction_history
-  get '/admins/destroy_user/:id' => 'admin#destroy_user', as: :destroy_user
+  get '/admins/manage_accounts' => 'admins#manage_accounts', as: :manage_accounts
+  get '/admins/manage_accounts/create_accounts' => 'admins#create_accounts', as: :create_accounts
+  get '/admins/manage_accounts/create_accounts/approve_or_decline_account' => 'admins#approve_or_decline_account', as: :approve_or_decline_account
+  get '/admins/manage_accounts/view_accounts' => 'admins#view_accounts', as: :view_accounts
+  get '/admins/manage_accounts/view_accounts/view_account_details/:id' => 'admins#view_account_details', as: :view_account_details
+  get '/admins/manage_accounts/view_accounts/view_account_details/view_transaction_history/:id' => 'admins#view_transaction_history', as: :view_transaction_history
 
-  get '/admins/manage_admins' => 'admin#manage_admins', as: :manage_admins
-  get '/admins/create_admin' => 'admin#create_admin', as: :create_admin
-  get '/admins/view_admins' => 'admin#view_admins', as: :view_admins
-  get '/admins/view_admins/delete_admin/:id' => 'admin#delete_admin', as: :delete_admin
+  get '/admins/manage_accounts/view_transaction_requests' => 'admins#view_transaction_requests', as: :view_transaction_requests
+  get '/admins/manage_accounts/view_transaction_requests/approve_or_decline_transaction' => 'admins#approve_or_decline_transaction', as: :approve_or_decline_transaction
+  get '/admins/manage_accounts/view_accounts/delete_account/:id' => 'admins#delete_account', as: :delete_account  
+ 
+  get '/admins/manage_users' => 'admins#manage_users', as: :manage_users
+  get '/admins/view_users' => 'admins#view_users', as: :view_users
+  get '/admins/view_transaction_history_of_user/:id' => 'admins#view_transaction_history_of_user', as: :view_transaction_history_of_user
+  get '/admins/destroy_user/:id' => 'admins#destroy_user', as: :destroy_user
+
+  get '/admins/manage_admins' => 'admins#manage_admins', as: :manage_admins
+  get '/admins/create_admin' => 'admins#create_admin', as: :create_admin
+  get '/admins/view_admins' => 'admins#view_admins', as: :view_admins
+  get '/admins/view_admins/delete_admin/:id' => 'admins#delete_admin', as: :delete_admin
   
 end
 

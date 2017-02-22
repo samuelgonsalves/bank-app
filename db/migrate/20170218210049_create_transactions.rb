@@ -1,11 +1,11 @@
 class CreateTransactions < ActiveRecord::Migration[5.0]
   def change
     create_table :transactions do |t|
-      t.integer :transaction_type
       t.integer :status 
       t.datetime :start
       t.datetime :finish
       t.float :amount
+      t.integer :transaction_type
       t.references :account, foreign_key: true
 
       t.timestamps
