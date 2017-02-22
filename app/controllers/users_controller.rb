@@ -80,7 +80,7 @@ class UsersController < ApplicationController
 
     @user = User.find(params[:id])
    
-    account = Account.create(:user_id => @user.id,:balance => 0, :status => 3, :account_id => 100000000)
+    account = Account.create(:user_id => @user.id,:balance => 0, :status => 3)
 
     if account.save
       flash[:success] = "Your request for a new account is awaiting administrator approval."
@@ -157,7 +157,7 @@ class UsersController < ApplicationController
       #puts current_user_account.nil?
       #account_balance = (current_user_account).balance
       #amount = params["amount"]
-      #if(account_balance>amount)
+      #if(account_balance>amount)x`x
       #  puts "can transfer"
       #else
       #  puts "can't transfer"
@@ -171,14 +171,13 @@ class UsersController < ApplicationController
 #GET ONLY ACCOUNTS THAT ARE ACTIVE
   def deposit
     @accounts = Account.where(:user_id => current_user, :status => 1)
-    #transaction = Transaction.new(:status => )
     if request.post?
       @account = Account.find(params[:account_id].to_i)
       @account.balance += params[:amount].to_f
-
+      
       if @account.save
         flash[:success] = "Deposit successful"
-
+        transaction = Transaction.create(:status => 1,:admin_status => 1,:start => Time.now, :finish => Time.now, :type => 2, :amount => params[:amount], :account_id => params[:account_id])
         redirect_to account_url
       else
         flash[:error] = "Deposit unsuccessful"
@@ -188,6 +187,8 @@ class UsersController < ApplicationController
   end
 
 
+#t = Transaction.new
+#t.status 
   def withdraw
     @accounts = Account.where(:user_id => current_user, :status => 1)
     if request.post?

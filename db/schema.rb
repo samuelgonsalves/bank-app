@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20170219013653) do
   create_table "accounts", force: :cascade do |t|
     t.float    "balance"
     t.integer  "status"
-    t.bigint   "account_id"
+    t.bigint   "account_id", default: -> { "nextval('account_id_seq'::regclass)" }
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                                                        null: false
+    t.datetime "updated_at",                                                        null: false
     t.index ["user_id"], name: "index_accounts_on_user_id", using: :btree
   end
 
@@ -42,14 +42,12 @@ ActiveRecord::Schema.define(version: 20170219013653) do
 
   create_table "transactions", force: :cascade do |t|
     t.integer  "status"
-    t.integer  "admin_status"
     t.datetime "start"
     t.datetime "finish"
-    t.integer  "type"
     t.float    "amount"
     t.integer  "account_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_transactions_on_account_id", using: :btree
   end
 
