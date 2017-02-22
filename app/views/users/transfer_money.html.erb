@@ -6,7 +6,7 @@
 
       <%= select_tag "source_account_id", options_from_collection_for_select(@source_accounts, "id", "account_id") %>
        <%= select_tag "destination_account_id", options_from_collection_for_select(@destination_accounts, "id", "account_id") %>
-	  <%= text_field_tag 'amount'%>
+	  <%= text_field_tag 'amount', params[:amount], placeholder: "Amount"%>
 	  <%= submit_tag "Transfer" ,:name => nil%>
 
     <% end %>
