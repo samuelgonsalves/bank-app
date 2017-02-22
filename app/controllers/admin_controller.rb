@@ -1,13 +1,17 @@
 class AdminController < ApplicationController
 
+	include AdminHelper
+
 	#page where admin can choose to login/signup
   	def index
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- Entering the admin index page")
+		session_check	
 	end
 
 	#page after admin logs in
 	def home
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- Entering the admin home page")
+		session_check
 	end
 
 	#creating admins
