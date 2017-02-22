@@ -12,4 +12,11 @@ module UsersHelper
 	def is_same_user?(user1,user2)
 		return get_id(user1) == get_id(user2)
 	end
+
+	def is_valid_withdraw(present, request)
+		if present < request
+			return false
+		end
+		return true
+	end
 end
