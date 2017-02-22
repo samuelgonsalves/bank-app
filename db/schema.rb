@@ -45,9 +45,10 @@ ActiveRecord::Schema.define(version: 20170219013653) do
     t.datetime "start"
     t.datetime "finish"
     t.float    "amount"
+    t.integer  "transaction_type"
     t.integer  "account_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.index ["account_id"], name: "index_transactions_on_account_id", using: :btree
   end
 

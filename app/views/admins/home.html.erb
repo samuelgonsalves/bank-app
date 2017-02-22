@@ -1,0 +1,15 @@
+<div class="center jumbotron">
+	<h1><%= "Welcome #{current_user.name}!" %></h1>  
+	<h2> Home Page</h2>
+<br>
+  <h4>
+    <ol>
+	<li><%= link_to "manage admins", manage_admins_path() %></li>
+	<li><%= link_to "manage accounts", manage_accounts_path() %></li>
+	<li><%= link_to "manage users", manage_users_path() %></li>
+    </ol>
+  </h4>
+<br>
+</div>
+
+

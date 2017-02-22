@@ -1,0 +1,23 @@
+<div class="center jumbotron">
+<h2>Transaction requests</h2>
+<br>
+  <h4>
+	<% if !@transactions.nil? %>
+	<% @transactions.each do |t| %>
+		<div>
+			<%= "Transaction ID: #{t.id}" %><br>
+			<%= "Amount: #{t.amount}" %><br>
+			<%= "Type: #{t.type}" %><br>
+			<%= "Requested at: #{t.created_at}" %><br>
+			<%= link_to "Approve transaction", approve_or_decline_transaction_path(:transaction_id => t.id, :decision => '1', :url => 'requests') %>
+			<%= link_to "Decline transaction", approve_or_decline_transaction_path(:transaction_id => t.id, :decision => '2', :url => 'requests') %>
+		</div>
+		<br><br>
+	<% end %>
+	<% end %>
+  </h4>
+<br>
+  <%= link_to "Back to manage accounts", manage_accounts_path() %>
+</div>
+
+
