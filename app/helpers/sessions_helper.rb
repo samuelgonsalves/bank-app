@@ -24,7 +24,12 @@ module SessionsHelper
         @current_user ||= User.find_by(id: user_id)
       elsif (user_id = cookies.signed[:user_id])
         user = User.find_by(id: user_id)
-        admin = Admins.find_by_user_id(user.id)
+        
+        if user.nil?
+          admin = Admin.find_by_user_id(user.id)
+        else
+          flash[:error] = "User has not logged into the portal."
+          redirect_to login_url
 
         if user && user.authenticated?(cookies[:remember_token])
           if admin.nil?
