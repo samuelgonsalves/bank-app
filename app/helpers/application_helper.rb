@@ -31,6 +31,10 @@ module ApplicationHelper
 		return @type[:transfer]
 	end
 
+	def transaction_name(value)
+		return @type_name[value]
+	end
+
 	def approved_status
 		return @status[:approved]
 	end
@@ -42,4 +46,9 @@ module ApplicationHelper
 	def pending_status
 		return @status[:pending]
 	end
+
+	def status_name(value)
+		return @status_name[value]
+	end
+
 end

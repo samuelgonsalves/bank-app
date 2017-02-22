@@ -173,6 +173,9 @@ class AdminsController < ApplicationController
 		@transaction = Transaction.find(params[:transaction_id])
 		if params[:decision] == '1'
 			@transaction.status = 1
+			@account = Account.find(@transaction.account_id)
+			@account.balance -= @transaction.amount
+			@account.save			
 			@transaction.save		
 		else
 			@transaction.status = 2

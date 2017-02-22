@@ -1,7 +1,6 @@
 class CreateTransactions < ActiveRecord::Migration[5.0]
   def change
     create_table :transactions do |t|
-      t.integer :transaction_type
       t.integer :status 
       t.datetime :start
       t.datetime :finish

@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   def set_enums
     @type = {:withdraw => 1, :deposit => 2, :transfer => 3}
     @status = {:approved => 1, :declined => 2, :pending => 3}
+    @status_name = {1 => "Approved", 2 => "Declined", 3 => "Pending"}
+    @type_name = {1 => "Withdraw", 2 => "Deposit", 3 => "Transfer"}
   end
 
   protected

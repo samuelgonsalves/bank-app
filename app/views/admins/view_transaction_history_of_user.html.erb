@@ -1,16 +1,16 @@
 <div class="center jumbotron">
 <h2>Transactions history</h2>
 <br>
-Account <%= @account.account_id %> of <%= @account.user.name %>:
-<%= "Account number: #{@account.account_id}" %>
+<%= @account.user.name %>:<br>
+<%= "Account number: #{@account.account_id}" %><br>
   <h4>
 	<% @account.transactions.each do |transaction| %>
 		<div>
 			<%= "Transaction ID: #{transaction.id}" %><br>
-			<%= "Transaction status: #{transaction.status}" %><br>
+			<%= "Transaction status: #{status_name transaction.status}" %><br>
 			<%= "Start time: #{transaction.start}" %><br>
 			<%= "Finish time: #{transaction.finish}" %><br>
-			<%= "Transaction is a #{transaction.transaction_type}" %><br>
+			<%= "#{transaction.transaction_type}" %><br>
 			<%= "Amount: #{transaction.amount}" %><br>
 			<%= "From account ID: #{transaction.account_id}" %><br>
 			<% if transaction.type == 3 %><br>
