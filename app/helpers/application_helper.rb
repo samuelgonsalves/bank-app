@@ -1,11 +1,5 @@
 module ApplicationHelper
 
-	admin_reverse_status = {:approved => '1', :declined => '2', :pending => '3'}
-	admin_status = {1 => :approved, 2 => :declined, 3 => :pending}
-	user_reverse_status = {:approved => '1', :declined => '2', :pending => '3'}	
-	user_status = {1 => :approved, 2 => :declined, 3 => :pending}
-	type = {1 => :withdraw, 2 => :deposit, 3 => :transfer}
-	
 	def full_title(page_title = '')
 		base_title = "Bank App"
 		if page_title.empty?
@@ -15,16 +9,28 @@ module ApplicationHelper
 		end
 	end
 
-	def admin_status_enum(status)
-		admin_status[status]	
+	def deposit_type
+		return @type[:deposit]
 	end
 
-	def user_status_enum(status)
-		user_status[status]
+	def withdraw_type
+		puts @type[:withdraw]
+		return @type[:withdraw]
 	end
 
-	def types_enum(type)
-		type[type]
+	def transfer_type
+		return @type[:transfer]
 	end
 
+	def approved_status
+		return @status[:approved]
+	end
+
+	def declined_status
+		return @status[:declined]
+	end
+
+	def pending_status
+		return @status[:pending]
+	end
 end

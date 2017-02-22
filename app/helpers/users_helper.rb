@@ -13,6 +13,7 @@ module UsersHelper
 		return get_id(user1) == get_id(user2)
 	end
 
+
 	def are_they_friends(user1, user2)
 		case1 = Friend.where(:friend_id => user1.id, :user_id => user2.id)
 		case2 = Friend.where(:friend_id => user2.id, :user_id => user1.id)
@@ -21,6 +22,13 @@ module UsersHelper
 		else
 			false
 		end	
+	end
+
+	def is_valid_withdraw(present, request)
+		if present < request
+			return false
+		end
+		return true
 	end
 
 end

@@ -178,13 +178,25 @@ class UsersController < ApplicationController
     if request.post?
       @account = Account.find(params[:account_id].to_i)
       @account.balance += params[:amount].to_f
-      
+
       if @account.save
-        flash[:success] = "Deposit successful"
-        transaction = Transaction.create(:status => 1,:admin_status => 1,:start => Time.now, :finish => Time.now, :type => 2, :amount => params[:amount], :account_id => params[:account_id])
-        redirect_to account_url
+        @Transaction = Transaction.new
+        @Transaction.transaction_type = deposit_type
+        @Transaction.status = approved_status
+        @Transaction.start = Time.now
+        @Transaction.finish = Time.now
+        @Transaction.amount = params[:amount].to_f
+        @Transaction.account_id = params[:account_id].to_i
+
+        if @Transaction.save
+          flash[:success] = "Deposit was Successful"
+          redirect_to account_url
+        else
+          flash[:danger] = "Deposit was Successful, but failed to record transaction"
+          redirect_to account_url
+        end
       else
-        flash[:error] = "Deposit unsuccessful"
+        flash[:error] = "Deposit was Unsuccessful"
         redirect_to root_url
       end
     end
@@ -200,13 +212,41 @@ class UsersController < ApplicationController
       withdraw_amount = params[:amount].to_f
 
       if withdraw_amount > 1000.0
-        flash[:success] = "Admin approval needed"
+        @Transaction = Transaction.new
+        @Transaction.transaction_type = withdraw_type
+        @Transaction.status = pending_status
+        @Transaction.start = Time.now
+        @Transaction.finish = Time.now
+        @Transaction.amount = withdraw_amount
+        @Transaction.account_id = params[:account_id].to_i
 
-      elsif (0..1000).include?(withdraw_amount.to_i)
+        if @Transaction.save
+          flash[:success] = "Transaction initiated. Admin approval needed"
+        else
+          flash[:error] = "Transaction failed. Retry again"
+          redirect_to withdraw_url
+        end
+      elsif (0..1000).include?(withdraw_amount)
         if(@account.balance > withdraw_amount)
           @account.balance -= withdraw_amount
+          
           if(@account.save)
-            flash[:success] = "Withdrawal successful"
+            @Transaction = Transaction.new
+            @Transaction.transaction_type = withdraw_type
+            @Transaction.status = approved_status
+            @Transaction.start = Time.now
+            @Transaction.finish = Time.now
+            @Transaction.amount = withdraw_amount
+            @Transaction.account_id = params[:account_id].to_i
+
+            if @Transaction.save
+              flash[:success] = "Withdrawal successful"
+            else
+              flash[:danger] = "Withdrawal was Successful, but failed to record transaction"
+            end
+          else
+            flash[:error] = "Transaction failed. Retry again"
+            redirect_to withdraw_url
           end
         else
           flash[:danger] = "Insufficient funds"

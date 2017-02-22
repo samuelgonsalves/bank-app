@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include ApplicationHelper
 
+  before_filter :set_enums
+  def set_enums
+    @type = {:withdraw => 1, :deposit => 2, :transfer => 3}
+    @status = {:approved => 1, :declined => 2, :pending => 3}
+  end
+
   protected
   def authenticate_user!
     if logged_in?
