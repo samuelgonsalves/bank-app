@@ -17,10 +17,11 @@ module UsersHelper
 	def are_they_friends(user1, user2)
 		case1 = Friend.where(:friend_id => user1.id, :user_id => user2.id)
 		case2 = Friend.where(:friend_id => user2.id, :user_id => user1.id)
+		
 		if case1.blank? and case2.blank?
-			true
-		else
 			false
+		else
+			true
 		end	
 	end
 

@@ -4,9 +4,11 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_tag("", method:"post") do %>
 
-      <%= select_tag "account_id", options_from_collection_for_select(@accounts, "id", "account_id") %>
+      <%= select_tag "source_account_id", options_from_collection_for_select(@accounts, "id", "account_id") %>
+       <%= select_tag "destination_account_id", options_from_collection_for_select(@accounts, "id", "account_id") %>
 	  <%= text_field_tag 'amount'%>
-	<%= submit_tag "Transfer" ,:name => nil%>
+	  <%= submit_tag "Transfer" ,:name => nil%>
 
     <% end %>
   </div>
+
