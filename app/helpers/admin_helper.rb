@@ -1,9 +1,11 @@
 module AdminHelper
-	def get_all_users_who_are_admins(admins)
-		users = []
-		admins.each do |admin| 
-			users << User.find_by(id: admin.user_id)
+	def session_check
+		if !current_user.nil? && current_user.is_admin
+			return 
+		elsif !current_user.nil? && !current_user.is_admin
+			redirect_to root_url
+		else
+			redirect_to login_url
 		end
-		users
 	end
 end

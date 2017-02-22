@@ -21,15 +21,26 @@ module SessionsHelper
   	# Returns the user corresponding to the remember token cookie.
     def current_user
       if (user_id = session[:user_id])
-        @current_user ||= User.find_by(id: user_id)
+	user = User.find_by(id: user_id)
+	admin = Admin.find_by_user_id(user.id)
+	
+	if admin.nil?
+            user.is_admin = false
+            user.admin = nil
+        else
+            user.is_admin = true
+            user.admin = admin
+        end
+	@current_user ||= user
       elsif (user_id = cookies.signed[:user_id])
         user = User.find_by(id: user_id)
-        
+
         if user.nil?
           admin = Admin.find_by_user_id(user.id)
         else
           flash[:error] = "User has not logged into the portal."
           redirect_to login_url
+	end
 
         if user && user.authenticated?(cookies[:remember_token])
           if admin.nil?

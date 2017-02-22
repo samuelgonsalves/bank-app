@@ -9,8 +9,8 @@
 			<%= "Amount: #{t.amount}" %><br>
 			<%= "Type: #{t.type}" %><br>
 			<%= "Requested at: #{t.created_at}" %><br>
-			<%= link_to "Approve transaction", _path(1) %>
-			<%= link_to "Decline transaction", _path(2) %>
+			<%= link_to "Approve transaction", approve_or_decline_transaction_path(:transaction_id => t.id, :decision => '1') %>
+			<%= link_to "Decline transaction", approve_or_decline_transaction_path(:transaction_id => t.id, :decision => '2') %>
 		</div>
 		<br><br>
 	<% end %>
