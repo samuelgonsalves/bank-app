@@ -105,10 +105,9 @@ class UsersController < ApplicationController
     f.user_id = current_user.id
     f.friend_id = params[:id]
 
-    if are_they_friends(f,current_user)
+    if are_they_friends(current_user,f)
       flash[:danger] = "You are already friends"
     else
-      
       if f.save
         flash[:success] = "You are now friends" 
       else
@@ -153,9 +152,11 @@ class UsersController < ApplicationController
   #Not transfering as yet, consider using a POST
   def transfer_money
     @friend = User.find(params[:id])
-    @accounts = Account.where(:user_id => current_user)
-
+    @source_accounts = Account.where(:user_id => current_user)
+    @destination_accounts = Account.where(:user_id => @friend.id)
     if request.post?
+
+
       #current_user_account = Account.find_by(account_id: params["account_id"].to_i)
       #puts BigNum(params["account_id"].to_i).class
       #puts current_user_account.nil?
