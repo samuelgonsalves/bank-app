@@ -93,24 +93,28 @@ class UsersController < ApplicationController
   def search_for_users
      if params[:search]
       @users = User.search(params[:search]).order("created_at DESC")
-      puts @users
-    else
-      @users = User.all.order('created_at DESC')
-    end
+    #else
+    #  @users = User.all.order('created_at DESC')
+      end
     #redirect_to users_path
   end
 
   def add_friend
+    
     f = Friend.new
     f.user_id = current_user.id
     f.friend_id = params[:id]
 
-    if f.save
-      flash[:success] = "You are now friends" 
+    if are_they_friends(f,current_user)
+      flash[:danger] = "You are already friends"
     else
-      flash[:danger] = "Error occurred"
-      puts f.errors.messages.inspect
-
+      
+      if f.save
+        flash[:success] = "You are now friends" 
+      else
+        flash[:error] = "Failed to save in the database"
+        puts f.errors.messages.inspect
+      end
     end
     redirect_to search_for_users_url
   end
