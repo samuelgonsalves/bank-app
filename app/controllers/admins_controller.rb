@@ -85,17 +85,18 @@ class AdminsController < ApplicationController
 	def view_transaction_history_of_user
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- Entering the view transaction history page")	   	
 		session_check
-		@user = User.find(params[:id])
-	    	@accounts = Account.find_by(user_id: @user.id)
-		@transactions = []
-		@transfers = []
-		if !@accounts.nil?		
-			@accounts.each do |account|
-				#@transactions = account.transactions
-				@transactions += Transaction.find_by(account_id: account.id)
-				@transfers += Transfer.find_by(account_id: account.id)	
-			end
-		end
+		@account = Account.find(params[:id])		
+		#@user = User.find(params[:id])
+	    	#@accounts = Account.find_by(user_id: @user.id)
+		#@transactions = []
+		#@transfers = []
+		#if !@accounts.nil?		
+		#	@accounts.each do |account|
+		#		#@transactions = account.transactions
+		#		@transactions += Transaction.find_by(account_id: account.id)
+		#		@transfers += Transfer.find_by(account_id: account.id)	
+		#	end
+		#end
 
 
 	end
@@ -158,6 +159,7 @@ class AdminsController < ApplicationController
 	def view_transaction_history
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- Entering view_transaction history page")
 		session_check
+		#puts debug(params)
 		@account = Account.find(params[:id])
 	end
 
@@ -170,6 +172,7 @@ class AdminsController < ApplicationController
 	def approve_or_decline_transaction
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- approve_or_decline_transaction page")		
 		session_check
+		puts "params: #{params[:transaction_id]}"
 		@transaction = Transaction.find(params[:transaction_id])
 		if params[:decision] == '1'
 			@transaction.status = 1
@@ -188,7 +191,7 @@ class AdminsController < ApplicationController
 		    	end
 		elsif !params[:url].nil? && params[:url] == 'history'
 			respond_to do |format|
-		      		format.html { redirect_to view_transaction_history_url() }
+		      		format.html { redirect_to view_transaction_history_url(params[:account]) }
 		      		format.json { head :no_content }
 		    	end		
 		else
@@ -202,11 +205,19 @@ class AdminsController < ApplicationController
 	def delete_account
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- delete account page")	
 		session_check
+		account = Account.find(params[:id])
+		transactions = account.transactions
+		#transfer = transactions.transfers
 		Account.destroy(params[:id])
 		respond_to do |format|
 	      		format.html { redirect_to view_accounts_url() }
 	      		format.json { head :no_content }
 	    	end
+	end
+
+	private
+	def admin_params
+		params.require(:admin).permit(:transaction_id, :url, :decision)
 	end
 
 end

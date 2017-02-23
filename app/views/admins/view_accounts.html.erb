@@ -5,7 +5,7 @@
 	<% if !@accounts.nil? %>
 	<% @accounts.each do |account| %>
 		<div>
-			<%= "Account ID: #{account.id}" %><br>
+			<%= "Account ID: #{account.account_id}" %><br>
 			<%= "Balance: #{account.balance}" %><br>
 			<%= link_to "view details", view_account_details_path(account) %><br>
 			<%= link_to "view transaction history", view_transaction_history_path(account) %><br>

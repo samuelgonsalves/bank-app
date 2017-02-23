@@ -13,10 +13,10 @@
 			<%= "#{transaction.transaction_type}" %><br>
 			<%= "Amount: #{transaction.amount}" %><br>
 			<%= "From account ID: #{transaction.account_id}" %><br>
-			<% if transaction.type == 3 %><br>
-				<%= "transfer to account ID: #{transaction.transfer.account_id}" %>
+			<% if transaction.transaction_type == 3 %><br>
+				<%= "transfer to account ID: #{transaction.transfer.account_id.account_id}" %>
 			<% end %>
-			<% if transaction.status == 3 && transaction.type == 1 %>
+			<% if transaction.status == 3 && transaction.transaction_type == 1 %>
 				<%= link_to "approve transaction", approve_or_decline_transaction_path(:transaction_id => t.id, :decision => '1', :url => 'history') %>
 				<%= link_to "decline transaction", approve_or_decline_transaction_path(:transaction_id => t.id, :decision => '2', :url => 'history') %>
 			<% end %>
