@@ -155,20 +155,25 @@ class UsersController < ApplicationController
     @source_accounts = Account.where(:user_id => current_user)
     @destination_accounts = Account.where(:user_id => @friend.id)
     if request.post?
+      amount = params[:amount].to_f
+      source_account = Account.find(params[:source_account_id])
+      destination_account = Account.find(params[:destination_account_id])
 
-
-      #current_user_account = Account.find_by(account_id: params["account_id"].to_i)
-      #puts BigNum(params["account_id"].to_i).class
-      #puts current_user_account.nil?
-      #account_balance = (current_user_account).balance
-      #amount = params["amount"]
-      #if(account_balance>amount)x`x
-      #  puts "can transfer"
-      #else
-      #  puts "can't transfer"
-      #end
-
+      if source_account.balance > amount
+        source_account.balance -= amount
+        destination_account.balance += amount
+        if source_account.save and destination_account.save
+          flash[:success] = "Transfer Successful"
+          redirect_to account_url
+        else
+          flash[:error] = "Failed to save in at least one account"
+        end
+      else
+        flash[:danger] = "Transfer Unsuccessful due to Insufficient funds"
+        redirect_to account_url
+      end
     end
+
   end
 
 
