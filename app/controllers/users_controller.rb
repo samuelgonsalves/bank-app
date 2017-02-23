@@ -236,6 +236,7 @@ class UsersController < ApplicationController
               end
             end
           end
+        end
         redirect_to account_url
       end    
     end
