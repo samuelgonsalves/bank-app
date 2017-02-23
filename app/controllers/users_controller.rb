@@ -93,10 +93,9 @@ class UsersController < ApplicationController
 
     def add_friend   
       f = Friend.new
-      f.user_id = current_user.id
-      f.friend_id = params[:id]
+      user_to_add_as_friend = User.find(params[:id].to_i)
 
-      if are_they_friends(current_user,f)
+      if are_they_friends(current_user,user_to_add_as_friend)
         flash[:danger] = "You are already friends"
       else
         if f.save
@@ -237,8 +236,6 @@ class UsersController < ApplicationController
               end
             end
           end
-        else
-          flash[:danger] = "Insufficient funds"
         end
         redirect_to account_url
       end    
@@ -259,7 +256,9 @@ class UsersController < ApplicationController
     end
 
     private
+
  	  def user_params
   	  params.require(:user).permit(:name, :email,:password,:password_confirmation)
     end
+
 end

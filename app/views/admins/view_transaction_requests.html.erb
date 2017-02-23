@@ -5,7 +5,7 @@
 	<% if !@transactions.nil? %>
 	<% @transactions.each do |t| %>
 		<div>
-			<%= "Transaction ID: #{t.id}" %><br>
+			<%= "Transaction ID: #{t.id} , Accound number: #{t.account.account_id}" %><br>
 			<%= "Amount: #{t.amount}" %><br>
 			<%= "Type: #{transaction_name t.transaction_type}" %><br>
 			<%= "Requested at: #{t.created_at}" %><br>

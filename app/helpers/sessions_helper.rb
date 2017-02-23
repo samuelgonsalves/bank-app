@@ -22,7 +22,7 @@ module SessionsHelper
     def current_user
       if (user_id = session[:user_id])
 	user = User.find_by(id: user_id)
-	admin = Admin.find_by_user_id(user.id)
+	admin = Admin.find_by_user_id(user.id) if !user.nil?
 	
 	if admin.nil?
             user.is_admin = false

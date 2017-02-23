@@ -1,12 +1,22 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Bank App", root_path, id: "logo" %>
+      <% if !current_user.nil? %>
+        <% if current_user.is_admin %>
+           <%= link_to "Bank App", admin_home_path, id: "logo" %>
+        <% else %>
+           <%= link_to "Bank App", root_path, id: "logo" %>
+        <% end %>
+      <% end %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", help_path %></li>
+      <% if !current_user.nil? %>
+        <% if current_user.is_admin %>
+            <li><%= link_to "Home", admin_home_path %></li>
+          <% else %>
+            <li><%= link_to "Home", root_path %></li>
+          <% end %>
+      <% end %>
         <% if logged_in? %>
-          <li><%= link_to "Users", '#' %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>

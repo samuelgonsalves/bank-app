@@ -1,0 +1,17 @@
+# Logfile created on 2017-02-20 00:23:51 -0500 by logger.rb/56438
+[2017-02-20 00:23:52] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-20 00:23:52] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[2017-02-20 00:23:52] DEBUG --  [1m[35m (12.9ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "admins" DISABLE TRIGGER ALL;ALTER TABLE "transactions" DISABLE TRIGGER ALL;ALTER TABLE "friends" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "transfers" DISABLE TRIGGER ALL[0m
+[2017-02-20 00:23:52] DEBUG --  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-20 00:24:42] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-20 00:24:42] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[2017-02-20 00:24:42] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "admins" DISABLE TRIGGER ALL;ALTER TABLE "transactions" DISABLE TRIGGER ALL;ALTER TABLE "friends" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "transfers" DISABLE TRIGGER ALL[0m
+[2017-02-20 00:24:42] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-20 00:31:38] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-20 00:31:38] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[2017-02-20 00:31:38] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "admins" DISABLE TRIGGER ALL;ALTER TABLE "transactions" DISABLE TRIGGER ALL;ALTER TABLE "friends" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "transfers" DISABLE TRIGGER ALL[0m
+[2017-02-20 00:31:38] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-20 00:32:29] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-20 00:32:29] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[2017-02-20 00:32:29] DEBUG --  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "admins" DISABLE TRIGGER ALL;ALTER TABLE "transactions" DISABLE TRIGGER ALL;ALTER TABLE "friends" DISABLE TRIGGER ALL;ALTER TABLE "accounts" DISABLE TRIGGER ALL;ALTER TABLE "transfers" DISABLE TRIGGER ALL[0m
+[2017-02-20 00:32:29] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m

@@ -50,5 +50,9 @@ module ApplicationHelper
 	def status_name(value)
 		return @status_name[value]
 	end
+	
+	def account_status_name value
+		return @account_status_name[value]
+	end
 
 end
