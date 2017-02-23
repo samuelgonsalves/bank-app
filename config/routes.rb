@@ -21,7 +21,10 @@ Rails.application.routes.draw do
   get '/users/current_user/search_for_users' => 'users#search_for_users', as: :search_for_users
   get '/users/current_user/show_friends' => 'users#show_friends', as: :show_friends
   get '/users/current_user/show_transactions' => 'users#show_transactions', as: :show_transactions
-  get '/users/current_user/cancel_transaction' => 'users#cancel_transaction', as: :cancel_transaction
+
+  get '/users/current_user/cancel/:id' => 'users#cancel', as: :cancel
+
+
   get '/users/current_user/transfer_money/:id' => 'users#transfer_money', as: :transfer_money
   post '/users/current_user/transfer_money/:id' => 'users#transfer_money'
   get '/users/current_user/deposit' => 'users#deposit', as: :deposit
