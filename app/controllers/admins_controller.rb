@@ -49,8 +49,11 @@ class AdminsController < ApplicationController
 	def delete_admin
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- destroying an admin")	   	
 		session_check		
-		Admin.destroy(params[:id])
-
+		admin = Admin.find(params[:id])
+		if admin.predefined != 1
+			Admin.destroy(params[:id])
+		end
+		
 	    	respond_to do |format|
 	      		format.html { redirect_to view_admins_url() }
 	      		format.json { head :no_content }
@@ -67,6 +70,18 @@ class AdminsController < ApplicationController
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- Entering the view users page")
 		session_check	
 		@users = User.all
+		@users.each do |user|
+			admin = Admin.find_by(:user_id => user.id)
+			if admin.nil?
+				user.is_admin = false
+				user.admin = nil
+			else
+				user.is_admin = true
+				user.admin = admin			
+			end
+			#puts "ID-------------------#{user.admin}-----------"
+		end
+		@users
 	end
 
 	def destroy_user
@@ -85,7 +100,8 @@ class AdminsController < ApplicationController
 	def view_transaction_history_of_user
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- Entering the view transaction history page")	   	
 		session_check
-		@account = Account.find(params[:id])		
+		@user = User.find(params[:id])
+		@accounts = @user.accounts
 		#@user = User.find(params[:id])
 	    	#@accounts = Account.find_by(user_id: @user.id)
 		#@transactions = []
@@ -206,9 +222,8 @@ class AdminsController < ApplicationController
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- delete account page")	
 		session_check
 		account = Account.find(params[:id])
-		transactions = account.transactions
-		#transfer = transactions.transfers
-		Account.destroy(params[:id])
+		account.status = cancelled_status
+		account.save
 		respond_to do |format|
 	      		format.html { redirect_to view_accounts_url() }
 	      		format.json { head :no_content }

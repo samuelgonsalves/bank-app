@@ -98,6 +98,8 @@ class UsersController < ApplicationController
       if are_they_friends(current_user,user_to_add_as_friend)
         flash[:danger] = "You are already friends"
       else
+        f.user_id = current_user.id
+        f.friend_id = user_to_add_as_friend.id
         if f.save
           flash[:success] = "You are now friends" 
         else

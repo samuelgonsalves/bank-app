@@ -26,7 +26,7 @@ module UsersHelper
 
 	def is_valid_withdraw(present, request)
 		#Get transactions which are active
-		transactions = present.transactions.where("transaction_type = #{withdraw_type} and status = #{status_name(3)}")
+		transactions = present.transactions.where("transaction_type = #{withdraw_type} and status = #{pending_status}")
 		
 		sum_withdrawals = 0.0
 		transactions.each do |t|

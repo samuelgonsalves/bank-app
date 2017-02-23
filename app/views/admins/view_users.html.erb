@@ -8,7 +8,7 @@
 			<%= "Name: #{user.name}" %><br>
 			<%= "Email: #{user.email}" %><br>
 			<%= link_to "view transaction history\n", view_transaction_history_of_user_path(user) %><br>
-			<% if user.id != 3 %>
+			<% if (user.is_admin && user.admin.predefined != 1) || !user.is_admin  %>
 				<%= link_to "delete this user\n", destroy_user_path(user) %><br>
 			<% end %>
 		</div>

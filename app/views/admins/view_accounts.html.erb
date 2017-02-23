@@ -4,6 +4,7 @@
   <h4>
 	<% if !@accounts.nil? %>
 	<% @accounts.each do |account| %>
+	<% if account.status != cancelled_status %>
 		<div>
 			<%= "Account ID: #{account.account_id}" %><br>
 			<%= "Balance: #{account.balance}" %><br>
@@ -12,6 +13,7 @@
 			<%= link_to "delete this account", delete_account_path(account) %><br>
 		</div>
 		<br><br>
+	<% end %>
 	<% end %>
 	<% end %>
   </h4>
