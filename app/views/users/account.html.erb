@@ -14,11 +14,7 @@
 			<tr>
 				<td> <%= each_account.account_id %></td>
 				<td> <%= each_account.balance %></td>
-				<% if each_account.status == 1 %>
-					<td>Active</td>
-				<% elsif each_account.status == 3 %>
-					<td>Pending</td>
-				<% end %>	
+				<td> <%= account_status_name each_account.status %> </td>	
 		<% end %>
 
 		</table>

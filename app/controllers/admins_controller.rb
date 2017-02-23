@@ -67,6 +67,18 @@ class AdminsController < ApplicationController
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- Entering the view users page")
 		session_check	
 		@users = User.all
+		@users.each do |user|
+			admin = Admin.find_by(:user_id => user.id)
+			if admin.nil?
+				user.is_admin = false
+				user.admin = nil
+			else
+				user.is_admin = true
+				user.admin = admin			
+			end
+			#puts "ID-------------------#{user.admin}-----------"
+		end
+		@users
 	end
 
 	def destroy_user
@@ -85,7 +97,8 @@ class AdminsController < ApplicationController
 	def view_transaction_history_of_user
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- Entering the view transaction history page")	   	
 		session_check
-		@account = Account.find(params[:id])		
+		@user = User.find(params[:id])
+		@accounts = @user.accounts
 		#@user = User.find(params[:id])
 	    	#@accounts = Account.find_by(user_id: @user.id)
 		#@transactions = []
