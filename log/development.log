@@ -1,0 +1,468 @@
+# Logfile created on 2017-02-22 23:33:47 -0500 by logger.rb/56815
+[2017-02-22 23:35:43] INFO --Started GET "/" for 127.0.0.1 at 2017-02-22 23:35:43 -0500
+[2017-02-22 23:35:43] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-22 23:35:43] WARN --DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/samuel/mytestapp/app/controllers/application_controller.rb:6)
+[2017-02-22 23:35:43] INFO --Processing by WelcomeController#home as HTML
+[2017-02-22 23:35:43] DEBUG --  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:43] DEBUG --  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:43] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:43] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:43] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:43] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:43] INFO --(WelcomeController) (home) -- Entering Bank App Home Page
+[2017-02-22 23:35:43] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:43] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:43] INFO --  Rendering welcome/home.html.erb within layouts/application
+[2017-02-22 23:35:43] INFO --  Rendered shared/_error_messages.html.erb (1.0ms)
+[2017-02-22 23:35:43] INFO --  Rendered welcome/home.html.erb within layouts/application (10.5ms)
+[2017-02-22 23:35:44] INFO --Started GET "/" for 127.0.0.1 at 2017-02-22 23:35:44 -0500
+[2017-02-22 23:35:52] INFO --  Rendered layouts/_shim.html.erb (0.2ms)
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] INFO --  Rendered layouts/_header.html.erb (5.8ms)
+[2017-02-22 23:35:52] INFO --  Rendered layouts/_footer.html.erb (0.2ms)
+[2017-02-22 23:35:52] INFO --Completed 200 OK in 8764ms (Views: 8669.0ms | ActiveRecord: 6.9ms)
+
+
+[2017-02-22 23:35:52] WARN --DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/samuel/mytestapp/app/controllers/application_controller.rb:6)
+[2017-02-22 23:35:52] INFO --Processing by WelcomeController#home as HTML
+[2017-02-22 23:35:52] DEBUG --  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] INFO --(WelcomeController) (home) -- Entering Bank App Home Page
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] INFO --  Rendering welcome/home.html.erb within layouts/application
+[2017-02-22 23:35:52] INFO --  Rendered shared/_error_messages.html.erb (0.3ms)
+[2017-02-22 23:35:52] INFO --  Rendered welcome/home.html.erb within layouts/application (1.7ms)
+[2017-02-22 23:35:52] INFO --  Rendered layouts/_shim.html.erb (0.2ms)
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:52] INFO --  Rendered layouts/_header.html.erb (5.5ms)
+[2017-02-22 23:35:52] INFO --  Rendered layouts/_footer.html.erb (0.2ms)
+[2017-02-22 23:35:52] INFO --Completed 200 OK in 150ms (Views: 111.0ms | ActiveRecord: 7.1ms)
+
+
+[2017-02-22 23:35:56] INFO --Started DELETE "/logout" for 127.0.0.1 at 2017-02-22 23:35:56 -0500
+[2017-02-22 23:35:56] INFO --Processing by SessionsController#destroy as HTML
+[2017-02-22 23:35:56] INFO --  Parameters: {"authenticity_token"=>"6+hNYTWf4x5MhtoqKlAvotZRop1NWY4V//gV/wy35cUJg6ggPQ5U+Kc8PLYsyDPSh6gz9PaUnsYCVxBZwC7SLQ=="}
+[2017-02-22 23:35:56] DEBUG --  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:56] DEBUG --  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:56] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:56] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:56] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:56] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:56] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:56] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-22 23:35:56] DEBUG --  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[2017-02-22 23:35:56] DEBUG --  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_digest", nil], ["updated_at", 2017-02-23 04:35:56 UTC], ["id", 1]]
+[2017-02-22 23:35:56] DEBUG --  [1m[35m (79.2ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-22 23:35:56] INFO --Redirected to http://localhost:3000/login
+[2017-02-22 23:35:56] INFO --Completed 302 Found in 87ms (ActiveRecord: 80.7ms)
+
+
+[2017-02-22 23:35:56] INFO --Started GET "/login" for 127.0.0.1 at 2017-02-22 23:35:56 -0500
+[2017-02-22 23:35:56] INFO --Processing by SessionsController#new as HTML
+[2017-02-22 23:35:56] INFO --  Rendering sessions/new.html.erb within layouts/application
+[2017-02-22 23:35:56] INFO --  Rendered sessions/new.html.erb within layouts/application (18.1ms)
+[2017-02-22 23:35:57] INFO --  Rendered layouts/_shim.html.erb (0.2ms)
+[2017-02-22 23:35:57] INFO --  Rendered layouts/_header.html.erb (3.3ms)
+[2017-02-22 23:35:57] INFO --  Rendered layouts/_footer.html.erb (0.3ms)
+[2017-02-22 23:35:57] INFO --Completed 200 OK in 163ms (Views: 159.7ms | ActiveRecord: 0.0ms)
+
+
+[2017-02-22 23:44:16] INFO --Started GET "/" for 127.0.0.1 at 2017-02-22 23:44:16 -0500
+[2017-02-22 23:44:16] INFO --Processing by WelcomeController#home as HTML
+[2017-02-22 23:44:16] INFO --Redirected to http://localhost:3000/login
+[2017-02-22 23:44:16] INFO --Filter chain halted as :authenticate_user! rendered or redirected
+[2017-02-22 23:44:16] INFO --Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+[2017-02-22 23:44:16] INFO --Started GET "/login" for 127.0.0.1 at 2017-02-22 23:44:16 -0500
+[2017-02-22 23:44:16] INFO --Processing by SessionsController#new as HTML
+[2017-02-22 23:44:16] INFO --  Rendering sessions/new.html.erb within layouts/application
+[2017-02-22 23:44:16] INFO --  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+[2017-02-22 23:44:16] INFO --  Rendered layouts/_shim.html.erb (0.4ms)
+[2017-02-22 23:44:16] INFO --  Rendered layouts/_header.html.erb (1.0ms)
+[2017-02-22 23:44:16] INFO --  Rendered layouts/_footer.html.erb (0.3ms)
+[2017-02-22 23:44:16] INFO --Completed 200 OK in 203ms (Views: 202.5ms | ActiveRecord: 0.0ms)
+
+
+[2017-02-22 23:44:26] INFO --Started GET "/" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Processing by WelcomeController#home as HTML
+[2017-02-22 23:44:26] INFO --Redirected to http://localhost:3000/login
+[2017-02-22 23:44:26] INFO --Filter chain halted as :authenticate_user! rendered or redirected
+[2017-02-22 23:44:26] INFO --Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+[2017-02-22 23:44:26] INFO --Started GET "/login" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Processing by SessionsController#new as HTML
+[2017-02-22 23:44:26] INFO --  Rendering sessions/new.html.erb within layouts/application
+[2017-02-22 23:44:26] INFO --  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+[2017-02-22 23:44:26] INFO --  Rendered layouts/_shim.html.erb (0.6ms)
+[2017-02-22 23:44:26] INFO --  Rendered layouts/_header.html.erb (0.8ms)
+[2017-02-22 23:44:26] INFO --  Rendered layouts/_footer.html.erb (0.2ms)
+[2017-02-22 23:44:26] INFO --Completed 200 OK in 142ms (Views: 141.3ms | ActiveRecord: 0.0ms)
+
+
+[2017-02-22 23:44:26] INFO --Started GET "/assets/admins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/custom.self-ec41725a6209d1d425181ee58ee992cdb1e4068b5bad6b9588c1dc24b6825021.css?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/custom_BACKUP_22882.self-38cd7adfd25f1b1f478bb55efa075e4a178053785390dd846e6374f325f08f2c.css?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/custom_BASE_22882.self-9bf8d507c84c74d4b5ae96c4e869b8e91969a66f3654f62fffa6ba703900a8ae.css?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/custom_LOCAL_22882.self-37dc9d31f260f46d3ca73c040966dc2486660f125f4dc0199facc6890bf113dc.css?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/custom_REMOTE_22882.self-1b62394fcf53259bdfcbe1d479ac6ff9e1298ecad996cb1550917aafd1cb2fcb.css?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/application.self-af04b226fd7202dfc532ce7aedb95a0128277937e90d3b3a3d35e1cce9e16886.css?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/version.self-c8e3d1203da26ea7efdf83c1eabb3f0ba55cb68e463f5ccf0d77bd15ce6a8e61.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/data.self-2067c82e6fe39a9cba5623206a5dc28d5c60d26b95cd100855b78cacf72865b8.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/disable-selection.self-5675f71f2fbbc6857ea700ba843af748b50dbc0150cc87932a7d05ec016bb659.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/focusable.self-426e99e67d1f1bd4cb444fd878ee63a6de1f5d1d61451e43022c86214b9eec64.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/form.self-711978b53107be2d9ef1b7369beb151b229cefa8c1405a056d3c34262d5b477e.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/ie.self-163eb039dcb1e0c3471b7d91386eabb8753da6906e84824c019f9ff56bdb83a6.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/keycode.self-ad63cd20acf49dd333bbbc537454d7d475bd610eb5b88de0dca009f0c3d314b1.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/escape-selector.self-43e4d61501e4ffb1ecba387affbae1eb3e1c863ab0b0e71897851cddd246e50e.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/labels.self-c0448a3cb597a9a9429be814ab0e9ed2a14d85604555b4cff897adf3f0415f38.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/jquery-1-7.self-22c197e38fc01a29431530c4c5c7263e26d2b611994b1f9c5c8c900a97b4bc44.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/plugin.self-d8f576c8e073ca51f095505f47bd09d306b875404cd90afcbb6338287cfb0247.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/safe-active-element.self-a1f1a1a7dae3269ce03f6fffb2dcc9b4a7490f5d546c65d54417bec3be24b668.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/safe-blur.self-2cc24c46132d51c7724f6371154241b0a81c9bae5d5681d8f62b01ce46236726.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/scroll-parent.self-38e26a71a450a29fb63425e8f589a7046862f927eb0a1dbf6a6c44da05196d2e.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/tabbable.self-f3f62ceed772d3a325cebd6a03221f8a8cb02c6150f4feba738c6525a2953690.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/unique-id.self-66e85ac85cd0b6b8b1bb89369fc65f608f716869dc0930862a8d421a57a9580a.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/core.self-886760af898381620a8980841c646ae70e894b5292c3138e6dfd75b6904deffb.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/effect.self-776455da1682afff3a4974146aa96ca840597b879ed3797af0604063527443c6.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/form-reset-mixin.self-3a447942586b5719fdd7f1d1a3ac0da9e757a0eb8f4a7cb145f6deb820d2dc54.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/position.self-1b49c8c521e67a4a88bfdad6b4d944d33686d25009a0e40a1e170acdd7b6962a.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widget.self-fca20bcec06d192f97cffa6e734e24360e227237b8ae7d7e7e60754df7d5444f.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/effects/effect-blind.self-2f8923f5c3073717dad35ac1f9bd4dbc13d2f9c8128f7dbea9819921338271f4.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/effects/effect-bounce.self-ca3686abc7c667b5380422af36b618923c2fc8e901b3eb2ff627f1cdef60486a.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/effects/effect-clip.self-9e606afd1b0d1679f42b1ce5c2ad29f242ed98a9b1a473a9ef8a8bf10df2afe4.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/effects/effect-drop.self-481600061a28b5621b1d78187468e63f057665ce6af6401db851f9b79e345965.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/effects/effect-explode.self-b5f68a634df4bc19111474eb15bcd99597dc19c721b33647fbb04f2bb6d52ca3.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/effects/effect-fade.self-60febf4d2a1f6f013852a42da59c74d840f205715162a2b11e734fd4dd73a519.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/effects/effect-fold.self-78adc6cc7f2d8dac25e8c82164ae61cc3160bb5280ed3d24dd96a576e37a6e46.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/effects/effect-highlight.self-842a0db414abed8fbccb48908bd933b32c93c6b9d725160c85dc2bde708fa753.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/effects/effect-size.self-2094878ac7ba38dcd4539cd4595fa4d6ed7182be8bb6f03785684a5e470a293d.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/effects/effect-scale.self-88872e591cdbf30b3d09946e82e96e25bcd99b03857ead844a503301e6de71f3.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/effects/effect-puff.self-be0ba8a98762bf10054deb4e8bdf92c44de0d570714624d16c396f1ffe3a82d6.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/effects/effect-pulsate.self-bf83d1979be265f242fceb95cc3cfeca5467e4aab9cdea27ebb6f2e17bdaae2e.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/effects/effect-shake.self-867270f4e72f7895d38b10fdf9a6ba20f22bee88ac4d79654a9227c14141e1ca.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/effects/effect-slide.self-b59b0b36df7b3e5e4f4190ab51e5c212744d2b34d5ed14c96bfe9c8a3096c00b.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/effects/effect-transfer.self-5ab6d30ecb0b73e2b9a528f6d66c0732ba43a93a5326d88dae547f0c7c759e79.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/accordion.self-267aabfe487e53fce0399a77f9030a87b9d8a409eb30c4c85c5637da9ac35429.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/menu.self-0730fe713007bd93e6db569352a20ed92448299505ff6f525bc0dc6dd488254e.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/autocomplete.self-6a89d7a43741ec810ef95de143a7c0297e2e4368ebecff64493ebb7a9ac3a524.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/controlgroup.self-0b7409f97114a33de116bd5429e9df199cbdea3f276d8bd725c4c2c60f244711.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/checkboxradio.self-60f68cb16012ef210c931076ada2d65d54a8c74a2dc71ce383af758460f8b686.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/button.self-659b51f6fb5303f90ed8cf551509063770a50168a15795ba834b08f8bf2e0ce0.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/datepicker.self-2af0dec09da99d687c31fc224e940687a4eb3694e7b38b0871bba475cad86120.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/mouse.self-f0790a202dcf54fab051e71b042335d5346f9cceb0f645223c1dab93f349a04b.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/draggable.self-42c3eda0b49f105628cea7580fe38c7ed77467cee384bb2c4e095a2bd0a172e6.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/resizable.self-1a46c2f5b876918e02bf979080e56f57846590cd880721bca5058e84f7f60bae.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/dialog.self-2bd687f9580c0be4213c50b4bb1211c28ceedb045eba954e63d40bfbb4d1affd.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/droppable.self-4e3be0d7524dd1852e3b37ae00cd0c351c6178bcad39b17315cca941ddd44148.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/progressbar.self-3bf965ce4e8ade2f07336ae5ffce7fe58897333238561761ffcb16f31af673fc.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/selectable.self-a364da09c555890f5bb64704711594a88e94988edb285735bda59431a749226e.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/selectmenu.self-43e0fc6b5fba037933a7d89a5b2a7127aa9c7494cc605c2dcd3146265e2d3d35.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/slider.self-f166e8b345d6a2376ab8f43b05ab7629016706df83f2d96113cf5d8905c3d028.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/sortable.self-6e5e1f07a29b5a89ec1d359363d2800904e3ae548a38ab2f8eded36746d1adbe.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/spinner.self-2769386b6b06e175a13ccdcd6d2d0cd40c45cec19607bcb818cee0704c165557.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/tabs.self-b7f60535e992224ca66c3f11dc943eba9ef42a9605241e27b9dba24c7efb287e.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui/widgets/tooltip.self-50ae9488af573c99a78b60209bce5c7a4affc4e175fef523942acb163dd8deb8.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery-ui.self-d4c1ae19d9b853ec1c8c83784fa979bbe4075a84932a080bbd7d7706240410e1.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/bootstrap.self-d0e973a52d36a01036265aeefaf2d1ae3499d2cb231a9be3bd846432daf231de.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/admins.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/action_cable.self-17ebe4af84895fa064a951f57476799066237d7bb5dc4dc351a8b01cca19cce9.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/cable.self-6e0514260c1aa76eaf252412ce74e63f68819fd19bf740595f592c5ba4c36537.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-22 23:44:26] INFO --Started GET "/assets/application.self-afe802b04eaf1de2ea762489c83c08aa4c4ff3ff13c21566e43cb710683f5abc.js?body=1" for 127.0.0.1 at 2017-02-22 23:44:26 -0500
+[2017-02-23 00:06:35] INFO --Started DELETE "/logout" for 127.0.0.1 at 2017-02-23 00:06:35 -0500
+[2017-02-23 00:06:35] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-23 00:06:35] WARN --DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/samuel/mytestapp/app/controllers/application_controller.rb:6)
+[2017-02-23 00:06:35] INFO --Processing by SessionsController#destroy as HTML
+[2017-02-23 00:06:35] INFO --  Parameters: {"authenticity_token"=>"FFiyYb3kz31d0mMHhHavLSEjesNcPBXGvHmGAfgJ3HL2M1cgtXV4m7ZohZuC7rNdcNrrqufxBRVB1oOnNJDrmg=="}
+[2017-02-23 00:06:35] INFO --Redirected to http://localhost:3000/login
+[2017-02-23 00:06:35] INFO --Completed 302 Found in 35ms (ActiveRecord: 0.0ms)
+
+
+[2017-02-23 00:06:35] INFO --Started GET "/login" for 127.0.0.1 at 2017-02-23 00:06:35 -0500
+[2017-02-23 00:06:35] INFO --Processing by SessionsController#new as HTML
+[2017-02-23 00:06:35] INFO --  Rendering sessions/new.html.erb within layouts/application
+[2017-02-23 00:06:35] INFO --  Rendered sessions/new.html.erb within layouts/application (98.9ms)
+[2017-02-23 00:06:37] INFO --  Rendered layouts/_shim.html.erb (0.8ms)
+[2017-02-23 00:06:37] INFO --  Rendered layouts/_header.html.erb (2.9ms)
+[2017-02-23 00:06:37] INFO --  Rendered layouts/_footer.html.erb (1.0ms)
+[2017-02-23 00:06:37] INFO --Completed 200 OK in 1788ms (Views: 1779.5ms | ActiveRecord: 0.0ms)
+
+
+[2017-02-23 00:07:39] INFO --Started POST "/login" for 127.0.0.1 at 2017-02-23 00:07:39 -0500
+[2017-02-23 00:07:39] INFO --Processing by SessionsController#create as HTML
+[2017-02-23 00:07:39] INFO --  Parameters: {"utf8"=>"✓", "authenticity_token"=>"10V3YfZQXbAvoctXC+Dy40smE71Tu0AIJhE6cIuXtLMuHR2+iLH0PcjFaWG823gWrStBC330idlmCpcRyehL7w==", "session"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+[2017-02-23 00:07:39] DEBUG --  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+[2017-02-23 00:07:39] DEBUG --  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[2017-02-23 00:07:40] DEBUG --  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_digest", "$2a$10$6EXqyLprCXrIxHg5j7hd7eQeeDzSUAzaJsCiZD4LzDtN7g.1/AI52"], ["updated_at", 2017-02-23 05:07:40 UTC], ["id", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[35m (34.2ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-23 00:07:40] INFO --Redirected to http://localhost:3000/admins/home?id=1
+[2017-02-23 00:07:40] INFO --Completed 302 Found in 188ms (ActiveRecord: 36.0ms)
+
+
+[2017-02-23 00:07:40] INFO --Started GET "/admins/home?id=1" for 127.0.0.1 at 2017-02-23 00:07:40 -0500
+[2017-02-23 00:07:40] INFO --Processing by AdminsController#home as HTML
+[2017-02-23 00:07:40] INFO --  Parameters: {"id"=>"1"}
+[2017-02-23 00:07:40] INFO --(AdminsController) (home) -- Entering the admin home page
+[2017-02-23 00:07:40] DEBUG --  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] INFO --  Rendering admins/home.html.erb within layouts/application
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] INFO --  Rendered admins/home.html.erb within layouts/application (1.5ms)
+[2017-02-23 00:07:40] INFO --  Rendered layouts/_shim.html.erb (0.3ms)
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:40] INFO --  Rendered layouts/_header.html.erb (7.0ms)
+[2017-02-23 00:07:40] INFO --  Rendered layouts/_footer.html.erb (0.3ms)
+[2017-02-23 00:07:40] INFO --Completed 200 OK in 139ms (Views: 120.8ms | ActiveRecord: 1.0ms)
+
+
+[2017-02-23 00:07:45] INFO --Started DELETE "/logout" for 127.0.0.1 at 2017-02-23 00:07:45 -0500
+[2017-02-23 00:07:45] INFO --Processing by SessionsController#destroy as HTML
+[2017-02-23 00:07:45] INFO --  Parameters: {"authenticity_token"=>"PQJHe4CnGV2VmM6+y2aMBHdBzzm7mk32yWvSTNvt2GfEWi2k/kaw0HL8bIh8XQbxkUydj5XVhCeJcH8tmZInOw=="}
+[2017-02-23 00:07:45] DEBUG --  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:45] DEBUG --  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:45] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:45] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:45] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:45] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:45] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:45] DEBUG --  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+[2017-02-23 00:07:45] DEBUG --  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[2017-02-23 00:07:45] DEBUG --  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_digest", nil], ["updated_at", 2017-02-23 05:07:45 UTC], ["id", 1]]
+[2017-02-23 00:07:45] DEBUG --  [1m[35m (25.0ms)[0m  [1m[35mCOMMIT[0m
+[2017-02-23 00:07:45] INFO --Redirected to http://localhost:3000/login
+[2017-02-23 00:07:45] INFO --Completed 302 Found in 35ms (ActiveRecord: 26.5ms)
+
+
+[2017-02-23 00:07:45] INFO --Started GET "/login" for 127.0.0.1 at 2017-02-23 00:07:45 -0500
+[2017-02-23 00:07:45] INFO --Processing by SessionsController#new as HTML
+[2017-02-23 00:07:45] INFO --  Rendering sessions/new.html.erb within layouts/application
+[2017-02-23 00:07:45] INFO --  Rendered sessions/new.html.erb within layouts/application (4.9ms)
+[2017-02-23 00:07:45] INFO --  Rendered layouts/_shim.html.erb (0.3ms)
+[2017-02-23 00:07:45] INFO --  Rendered layouts/_header.html.erb (0.7ms)
+[2017-02-23 00:07:45] INFO --  Rendered layouts/_footer.html.erb (0.2ms)
+[2017-02-23 00:07:45] INFO --Completed 200 OK in 143ms (Views: 140.4ms | ActiveRecord: 0.0ms)
+
+
+[2017-02-23 00:10:45] INFO --Started GET "/signup" for 127.0.0.1 at 2017-02-23 00:10:45 -0500
+[2017-02-23 00:10:45] FATAL --  
+[2017-02-23 00:10:45] FATAL --SyntaxError (/home/samuel/mytestapp/app/controllers/users_controller.rb:302: syntax error, unexpected end-of-input, expecting keyword_end):
+[2017-02-23 00:10:45] FATAL --  
+[2017-02-23 00:10:45] FATAL --app/controllers/users_controller.rb:302: syntax error, unexpected end-of-input, expecting keyword_end
+[2017-02-23 00:10:46] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+[2017-02-23 00:10:46] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+[2017-02-23 00:10:46] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+[2017-02-23 00:10:46] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+[2017-02-23 00:10:46] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+[2017-02-23 00:10:46] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+[2017-02-23 00:10:46] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+[2017-02-23 00:10:46] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.5ms)
+[2017-02-23 00:10:46] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/index.html.erb
+[2017-02-23 00:10:46] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+[2017-02-23 00:10:46] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/console.js.erb within layouts/javascript
+[2017-02-23 00:10:46] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+[2017-02-23 00:10:46] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+[2017-02-23 00:10:46] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+[2017-02-23 00:10:46] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+[2017-02-23 00:10:46] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+[2017-02-23 00:10:46] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+[2017-02-23 00:10:46] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/console.js.erb within layouts/javascript (25.3ms)
+[2017-02-23 00:10:46] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/main.js.erb within layouts/javascript
+[2017-02-23 00:10:46] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+[2017-02-23 00:10:46] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+[2017-02-23 00:10:46] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+[2017-02-23 00:10:46] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/index.html.erb (51.8ms)
+[2017-02-23 00:12:40] INFO --Started GET "/" for 127.0.0.1 at 2017-02-23 00:12:40 -0500
+[2017-02-23 00:12:40] INFO --Processing by WelcomeController#home as HTML
+[2017-02-23 00:12:40] INFO --Redirected to http://localhost:3000/login
+[2017-02-23 00:12:40] INFO --Filter chain halted as :authenticate_user! rendered or redirected
+[2017-02-23 00:12:40] INFO --Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+[2017-02-23 00:12:40] INFO --Started GET "/login" for 127.0.0.1 at 2017-02-23 00:12:40 -0500
+[2017-02-23 00:12:40] INFO --Processing by SessionsController#new as HTML
+[2017-02-23 00:12:40] INFO --  Rendering sessions/new.html.erb within layouts/application
+[2017-02-23 00:12:40] INFO --  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+[2017-02-23 00:12:40] INFO --  Rendered layouts/_shim.html.erb (0.2ms)
+[2017-02-23 00:12:40] INFO --  Rendered layouts/_header.html.erb (0.6ms)
+[2017-02-23 00:12:40] INFO --  Rendered layouts/_footer.html.erb (0.2ms)
+[2017-02-23 00:12:40] INFO --Completed 200 OK in 164ms (Views: 163.5ms | ActiveRecord: 0.0ms)
+
+
+[2017-02-23 00:12:47] INFO --Started GET "/signup" for 127.0.0.1 at 2017-02-23 00:12:47 -0500
+[2017-02-23 00:12:47] FATAL --  
+[2017-02-23 00:12:47] FATAL --SyntaxError (/home/samuel/mytestapp/app/controllers/users_controller.rb:302: syntax error, unexpected end-of-input, expecting keyword_end):
+[2017-02-23 00:12:47] FATAL --  
+[2017-02-23 00:12:47] FATAL --app/controllers/users_controller.rb:302: syntax error, unexpected end-of-input, expecting keyword_end
+[2017-02-23 00:12:47] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+[2017-02-23 00:12:47] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+[2017-02-23 00:12:47] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+[2017-02-23 00:12:47] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+[2017-02-23 00:12:47] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+[2017-02-23 00:12:47] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+[2017-02-23 00:12:47] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+[2017-02-23 00:12:47] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.4ms)
+[2017-02-23 00:12:47] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/index.html.erb
+[2017-02-23 00:12:47] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+[2017-02-23 00:12:47] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/console.js.erb within layouts/javascript
+[2017-02-23 00:12:47] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+[2017-02-23 00:12:47] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+[2017-02-23 00:12:47] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+[2017-02-23 00:12:47] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+[2017-02-23 00:12:47] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+[2017-02-23 00:12:47] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+[2017-02-23 00:12:47] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.0ms)
+[2017-02-23 00:12:47] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/main.js.erb within layouts/javascript
+[2017-02-23 00:12:47] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+[2017-02-23 00:12:47] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+[2017-02-23 00:12:47] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+[2017-02-23 00:12:47] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/index.html.erb (40.4ms)
+[2017-02-23 00:14:48] INFO --Started GET "/" for 127.0.0.1 at 2017-02-23 00:14:48 -0500
+[2017-02-23 00:14:49] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-23 00:14:49] WARN --DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/samuel/mytestapp/app/controllers/application_controller.rb:6)
+[2017-02-23 00:14:49] INFO --Processing by WelcomeController#home as HTML
+[2017-02-23 00:14:49] INFO --Redirected to http://localhost:3000/login
+[2017-02-23 00:14:49] INFO --Filter chain halted as :authenticate_user! rendered or redirected
+[2017-02-23 00:14:49] INFO --Completed 302 Found in 17ms (ActiveRecord: 0.0ms)
+
+
+[2017-02-23 00:14:49] INFO --Started GET "/login" for 127.0.0.1 at 2017-02-23 00:14:49 -0500
+[2017-02-23 00:14:49] INFO --Processing by SessionsController#new as HTML
+[2017-02-23 00:14:49] INFO --  Rendering sessions/new.html.erb within layouts/application
+[2017-02-23 00:14:49] INFO --  Rendered sessions/new.html.erb within layouts/application (18.3ms)
+[2017-02-23 00:14:49] INFO --Started GET "/" for 127.0.0.1 at 2017-02-23 00:14:49 -0500
+[2017-02-23 00:14:49] DEBUG --  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+[2017-02-23 00:14:49] WARN --DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/samuel/mytestapp/app/controllers/application_controller.rb:6)
+[2017-02-23 00:14:49] INFO --Processing by WelcomeController#home as HTML
+[2017-02-23 00:14:49] INFO --Redirected to http://localhost:3000/login
+[2017-02-23 00:14:49] INFO --Filter chain halted as :authenticate_user! rendered or redirected
+[2017-02-23 00:14:49] INFO --Completed 302 Found in 19ms (ActiveRecord: 0.0ms)
+
+
+[2017-02-23 00:14:49] INFO --Started GET "/login" for 127.0.0.1 at 2017-02-23 00:14:49 -0500
+[2017-02-23 00:14:49] INFO --Processing by SessionsController#new as HTML
+[2017-02-23 00:14:49] INFO --  Rendering sessions/new.html.erb within layouts/application
+[2017-02-23 00:14:49] INFO --  Rendered sessions/new.html.erb within layouts/application (22.5ms)
+[2017-02-23 00:14:49] INFO --  Rendered layouts/_shim.html.erb (0.3ms)
+[2017-02-23 00:14:49] INFO --  Rendered layouts/_header.html.erb (0.7ms)
+[2017-02-23 00:14:49] INFO --  Rendered layouts/_footer.html.erb (0.2ms)
+[2017-02-23 00:14:49] INFO --Completed 200 OK in 466ms (Views: 464.2ms | ActiveRecord: 0.0ms)
+
+
+[2017-02-23 00:14:49] INFO --  Rendered layouts/_shim.html.erb (0.4ms)
+[2017-02-23 00:14:49] INFO --  Rendered layouts/_header.html.erb (0.8ms)
+[2017-02-23 00:14:49] INFO --  Rendered layouts/_footer.html.erb (0.6ms)
+[2017-02-23 00:14:49] INFO --Completed 200 OK in 406ms (Views: 402.0ms | ActiveRecord: 0.0ms)
+
+
+[2017-02-23 00:14:57] INFO --Started GET "/signup" for 127.0.0.1 at 2017-02-23 00:14:57 -0500
+[2017-02-23 00:14:57] FATAL --  
+[2017-02-23 00:14:57] FATAL --SyntaxError (/home/samuel/mytestapp/app/controllers/users_controller.rb:301: syntax error, unexpected end-of-input, expecting keyword_end):
+[2017-02-23 00:14:57] FATAL --  
+[2017-02-23 00:14:57] FATAL --app/controllers/users_controller.rb:301: syntax error, unexpected end-of-input, expecting keyword_end
+[2017-02-23 00:14:57] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+[2017-02-23 00:14:58] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+[2017-02-23 00:14:58] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+[2017-02-23 00:14:58] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+[2017-02-23 00:14:58] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+[2017-02-23 00:14:58] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+[2017-02-23 00:14:58] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+[2017-02-23 00:14:58] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.7ms)
+[2017-02-23 00:14:58] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/index.html.erb
+[2017-02-23 00:14:58] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+[2017-02-23 00:14:58] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/console.js.erb within layouts/javascript
+[2017-02-23 00:14:58] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+[2017-02-23 00:14:58] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+[2017-02-23 00:14:58] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+[2017-02-23 00:14:58] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+[2017-02-23 00:14:58] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+[2017-02-23 00:14:58] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+[2017-02-23 00:14:58] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.8ms)
+[2017-02-23 00:14:58] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/main.js.erb within layouts/javascript
+[2017-02-23 00:14:58] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+[2017-02-23 00:14:58] INFO --  Rendering /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+[2017-02-23 00:14:58] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+[2017-02-23 00:14:58] INFO --  Rendered /home/samuel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/web-console-3.4.0/lib/web_console/templates/index.html.erb (39.7ms)
+[2017-02-23 00:19:46] INFO --Started GET "/signup" for 127.0.0.1 at 2017-02-23 00:19:46 -0500
+[2017-02-23 00:19:46] WARN --DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/samuel/mytestapp/app/controllers/application_controller.rb:6)
+[2017-02-23 00:19:46] INFO --Processing by UsersController#new as HTML
+[2017-02-23 00:19:46] INFO --(UsersController) (new) -- Entering the SignUp page
+[2017-02-23 00:19:46] INFO --  Rendering users/new.html.erb within layouts/application
+[2017-02-23 00:19:46] INFO --  Rendered shared/_error_messages.html.erb (0.4ms)
+[2017-02-23 00:19:46] INFO --  Rendered users/new.html.erb within layouts/application (3.3ms)
+[2017-02-23 00:19:46] INFO --  Rendered layouts/_shim.html.erb (0.3ms)
+[2017-02-23 00:19:46] INFO --  Rendered layouts/_header.html.erb (0.7ms)
+[2017-02-23 00:19:46] INFO --  Rendered layouts/_footer.html.erb (0.2ms)
+[2017-02-23 00:19:46] INFO --Completed 200 OK in 224ms (Views: 123.5ms | ActiveRecord: 5.3ms)
+
+

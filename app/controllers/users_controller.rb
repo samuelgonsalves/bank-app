@@ -170,7 +170,8 @@ class UsersController < ApplicationController
     if request.post?
       @account = Account.find(params[:account_id].to_i)
       @account.balance += params[:amount].to_f
-
+    end
+  end
     def show_transactions
       @user = User.find(params[:id])
       @accounts = Account.where(:user_id => @user.id)
@@ -298,5 +299,4 @@ class UsersController < ApplicationController
  	  def user_params
   	  params.require(:user).permit(:name, :email,:password,:password_confirmation)
     end
-
 end
