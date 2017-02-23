@@ -15,22 +15,26 @@ module UsersHelper
 
 	def are_they_friends(user1, user2)
 		case1 = Friend.where(:user_id => user1.id, :friend_id => user2.friend_id)
-		#puts "CASE 1 USER ID:"
-		#puts case1.user.id 
-		
+	
 		if case1.blank? 
-			puts "NOT FRIENDS!"
 			false
 		else
-			puts "FRIENDS!"
 			true
 		end	
 	end
 
 	def is_valid_withdraw(present, request)
-		if present < request
+		#Get transactions which are active
+		transactions = present.transactions.where("transaction_type = #{withdraw_type} and status = #{status_name(3)}")
+		
+		sum_withdrawals = 0.0
+		transactions.each do |t|
+			sum_withdrawals += t.amount
+		end
+
+		if (present.balance - sum_withdrawals) < request
 			return false
 		end
-		return true
+			return true
 	end
 end
