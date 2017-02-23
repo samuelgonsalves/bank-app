@@ -19,6 +19,9 @@
 						<% if transaction.transaction_type == 3 %><br>
 							<%= "transfer to account ID: #{transaction.transfer.account_id.account_id}" %>
 						<% end %>
+						<% if transaction.status == 3 %>
+							<%= link_to "cancel transaction", cancel_path(transaction) %>
+						<% end %>
 					</div>
 					<br><br>
 				<% end %>
