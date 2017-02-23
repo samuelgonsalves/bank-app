@@ -219,9 +219,8 @@ class AdminsController < ApplicationController
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- delete account page")	
 		session_check
 		account = Account.find(params[:id])
-		transactions = account.transactions
-		#transfer = transactions.transfers
-		Account.destroy(params[:id])
+		account.status = cancelled_status
+		account.save
 		respond_to do |format|
 	      		format.html { redirect_to view_accounts_url() }
 	      		format.json { head :no_content }

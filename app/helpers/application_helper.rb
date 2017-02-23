@@ -47,6 +47,10 @@ module ApplicationHelper
 		return @status[:pending]
 	end
 
+	def cancelled_status
+		return @status[:cancelled]
+	end
+
 	def status_name(value)
 		return @status_name[value]
 	end
