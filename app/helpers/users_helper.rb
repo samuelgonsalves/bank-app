@@ -13,10 +13,11 @@ module UsersHelper
 		return get_id(user1) == get_id(user2)
 	end
 
-	def are_they_friends(user1, user2)
-		case1 = Friend.where(:user_id => user1.id, :friend_id => user2.friend_id)
-	
-		if case1.blank? 
+	def are_they_friends(current_user, user_to_add_as_friend)
+		case1 = Friend.where(:user_id => current_user.id, :friend_id => user_to_add_as_friend.id)
+		case2 = Friend.where(:user_id => user_to_add_as_friend.id, :friend_id => current_user.id)
+		
+		if case1.blank? && case2.blank?
 			false
 		else
 			true
