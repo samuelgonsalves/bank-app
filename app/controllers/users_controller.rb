@@ -162,16 +162,6 @@ class UsersController < ApplicationController
 
   end
 
-
-#TRANSACTIONS TABLE NOT UPDATED!!!!!!!!!!!!!!!!!!!!!!!!!!
-#GET ONLY ACCOUNTS THAT ARE ACTIVE
-  def deposit
-    @accounts = Account.where(:user_id => current_user, :status => 1)
-    if request.post?
-      @account = Account.find(params[:account_id].to_i)
-      @account.balance += params[:amount].to_f
-    end
-  end
     def show_transactions
       @user = User.find(params[:id])
       @accounts = Account.where(:user_id => @user.id)
