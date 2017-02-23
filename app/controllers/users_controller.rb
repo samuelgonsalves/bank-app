@@ -133,6 +133,42 @@ class UsersController < ApplicationController
       end
     end
 
+  #Not transfering as yet, consider using a POST
+  def transfer_money
+    @friend = User.find(params[:id])
+    @source_accounts = Account.where(:user_id => current_user)
+    @destination_accounts = Account.where(:user_id => @friend.id)
+    if request.post?
+      amount = params[:amount].to_f
+      source_account = Account.find(params[:source_account_id])
+      destination_account = Account.find(params[:destination_account_id])
+
+      if source_account.balance > amount
+        source_account.balance -= amount
+        destination_account.balance += amount
+        if source_account.save and destination_account.save
+          flash[:success] = "Transfer Successful"
+          redirect_to account_url
+        else
+          flash[:error] = "Failed to save in at least one account"
+        end
+      else
+        flash[:danger] = "Transfer Unsuccessful due to Insufficient funds"
+        redirect_to account_url
+      end
+    end
+
+  end
+
+
+#TRANSACTIONS TABLE NOT UPDATED!!!!!!!!!!!!!!!!!!!!!!!!!!
+#GET ONLY ACCOUNTS THAT ARE ACTIVE
+  def deposit
+    @accounts = Account.where(:user_id => current_user, :status => 1)
+    if request.post?
+      @account = Account.find(params[:account_id].to_i)
+      @account.balance += params[:amount].to_f
+
     def show_transactions
       @user = User.find(params[:id])
       @accounts = Account.where(:user_id => @user.id)
