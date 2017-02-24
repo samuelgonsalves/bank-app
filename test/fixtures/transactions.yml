@@ -1,17 +1,1 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  status: 1
-  admin_status: 1
-  start: 
-  finish: 
-  type: 1
-  amount: 1.5
-
-two:
-  status: 1
-  admin_status: 1
-  start: 
-  finish: 
-  type: 1
-  amount: 1.5
