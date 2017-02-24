@@ -1,5 +1,9 @@
 # README
 
+<h3>Admin Email - admin@gmail.com</h3>
+<h3>Admin Password - admin123</h3>
+<a href="https://guarded-lake-26266.herokuapp.com">Heroku app link</a>
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
