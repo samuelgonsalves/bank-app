@@ -38,4 +38,16 @@ module UsersHelper
 		end
 			return true
 	end
+
+	def can_transfer(user1, user2,amount)
+		user1_active_accounts = Account.where(:user_id => user1.id,:status => 1)
+		user2_active_accounts = Account.where(:user_id => user1.id, :status => 1)
+		if user1_active_accounts.size == 0 || user2_active_accounts.size == 0 || amount <= 0
+			puts "CANNOT TRANSFER!!!!!!!!!!!!!!!!"
+			false
+		else
+			puts "CAN TRANSFER!!!!!!!!!!!!!!!!"
+			true
+		end
+	end
 end

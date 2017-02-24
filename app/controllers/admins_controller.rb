@@ -89,6 +89,31 @@ class AdminsController < ApplicationController
 		session_check
 		admin = Admin.where(user_id: params[:id])	   	
 		Admin.destroy(admin[0].id) if !admin.empty?	
+		user = User.find(params[:id])
+		accounts = user.accounts
+		if !accounts.nil?
+			accounts.each do |each_account|
+				
+				transactions = each_account.transactions
+	
+				transactions.each do |each_transaction|
+		 			
+		 			transfer = Transfer.find_by(:transaction_id => each_transaction.id)
+					
+					if !transfer.nil?
+						Transfer.destroy(transfer.id)
+					end
+					
+					Transaction.destroy(each_transaction)
+				end
+			
+				additional_transfer = Transfer.where(:account_id => each_account.id)
+				additional_transfer.each do |each_transfer|
+					Transfer.destroy(each_transfer)
+				end
+			Account.destroy(each_account)
+			end
+		end
 		User.destroy(params[:id])
 
 	    	respond_to do |format|

@@ -135,29 +135,52 @@ class UsersController < ApplicationController
       end
     end
 
-  #Not transfering as yet, consider using a POST
   def transfer_money
     @friend = User.find(params[:id])
-    @source_accounts = Account.where(:user_id => current_user)
-    @destination_accounts = Account.where(:user_id => @friend.id)
+    @source_accounts = Account.where(:user_id => current_user,:status => 1)
+    @destination_accounts = Account.where(:user_id => @friend.id,:status => 1)
     if request.post?
       amount = params[:amount].to_f
-      source_account = Account.find(params[:source_account_id])
-      destination_account = Account.find(params[:destination_account_id])
 
-      if source_account.balance > amount
-        source_account.balance -= amount
-        destination_account.balance += amount
-        if source_account.save and destination_account.save
-          flash[:success] = "Transfer Successful"
-          redirect_to account_url
-        else
-          flash[:error] = "Failed to save in at least one account"
+        if can_transfer(current_user,@friend,amount)
+          source_account = Account.find(params[:source_account_id].to_i)
+          destination_account = Account.find(params[:destination_account_id].to_i)
+        
+
+          if !source_account.nil? || !destination_account.nil?
+            if source_account.balance > amount
+              source_account.balance -= amount
+              destination_account.balance += amount
+              if source_account.save and destination_account.save
+                @transaction = Transaction.new
+                @transaction.transaction_type = transfer_type
+                @transaction.status = approved_status
+                @transaction.start = Time.now
+                @transaction.finish = Time.now
+                @transaction.amount = params[:amount].to_f
+                @transaction.account_id = params[:source_account_id].to_i
+                @transaction.save
+
+                @transfer = Transfer.new
+                @transfer.account_id = params[:destination_account_id].to_i
+                @transfer.transaction_id = @transaction.id
+                @transfer.save
+
+                
+                flash[:success] = "Transfer Successful"
+                redirect_to account_url
+              else
+                flash[:error] = "Failed to save in at least one account"
+              end
+            else
+              flash[:danger] = "Transfer Unsuccessful due to Insufficient funds"
+              redirect_to account_url
+            end        
+          else
+            flash[:danger] = "Cannot transfer because either the source or destination account is invalid"
+            redirect_to transfer_money_url
+          end
         end
-      else
-        flash[:danger] = "Transfer Unsuccessful due to Insufficient funds"
-        redirect_to account_url
-      end
     end
 
   end
@@ -165,34 +188,6 @@ class UsersController < ApplicationController
     def show_transactions
       @user = User.find(params[:id])
       @accounts = Account.where(:user_id => @user.id)
-    end
-
-  #Not transfering as yet, consider using a POST
-    def transfer_money
-      @friend = User.find(params[:id])
-      @source_accounts = Account.where(:user_id => current_user, :status => 1)
-      @destination_accounts = Account.where(:user_id => @friend.id, :status => 1)
-    
-      if request.post?
-        amount = params[:amount].to_f
-        source_account = Account.find(params[:source_account_id])
-        destination_account = Account.find(params[:destination_account_id])
-
-     
-        if source_account.balance > amount
-          source_account.balance -= amount
-          destination_account.balance += amount
-          if source_account.save and destination_account.save
-            flash[:success] = "Transfer Successful"
-            redirect_to account_url
-          else
-            flash[:error] = "Failed to save in at least one account"
-          end
-        else
-          flash[:danger] = "Transfer Unsuccessful due to Insufficient funds"
-          redirect_to account_url
-        end
-      end
     end
 
     def deposit
