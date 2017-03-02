@@ -38,6 +38,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Mailer using Mailgun
+gem 'mailgun-ruby', '~>1.1.4', require: 'mailgun'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

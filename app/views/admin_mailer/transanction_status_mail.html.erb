@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  	<% if @transaction.status == 1 %>
+    	<h1> Action from: <%= @transaction.account.account_id %> was Approved</h1>
+    <% elsif @transaction.status == 2 %>
+    	<h1> Action from: <%= @transaction.account.account_id %> was Declined</h1>
+    <% end %>
+  </body>
+</html>

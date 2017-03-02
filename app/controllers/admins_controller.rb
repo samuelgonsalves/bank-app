@@ -165,19 +165,6 @@ class AdminsController < ApplicationController
 		session_check
 		@user = User.find(params[:id])
 		@accounts = @user.accounts
-		#@user = User.find(params[:id])
-	    	#@accounts = Account.find_by(user_id: @user.id)
-		#@transactions = []
-		#@transfers = []
-		#if !@accounts.nil?		
-		#	@accounts.each do |account|
-		#		#@transactions = account.transactions
-		#		@transactions += Transaction.find_by(account_id: account.id)
-		#		@transfers += Transfer.find_by(account_id: account.id)	
-		#	end
-		#end
-
-
 	end
 	
 	# manage accounts part -------------------------------------------------------------------------------------
@@ -251,7 +238,7 @@ class AdminsController < ApplicationController
 	def approve_or_decline_transaction
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- approve_or_decline_transaction page")		
 		session_check
-		puts "params: #{params[:transaction_id]}"
+
 		@transaction = Transaction.find(params[:transaction_id])
 		if params[:decision] == '1'
 			@transaction.status = 1
@@ -263,6 +250,8 @@ class AdminsController < ApplicationController
 			@transaction.status = 2
 			@transaction.save
 		end
+
+		AdminMailer.transanction_status_mail(@transaction).deliver		
 		if !params[:url].nil? && params[:url] == 'requests'
 			respond_to do |format|
 		      		format.html { redirect_to view_transaction_requests_url() }
