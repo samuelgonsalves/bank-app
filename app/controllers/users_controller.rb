@@ -168,6 +168,7 @@ class UsersController < ApplicationController
 
                 
                 flash[:success] = "Transfer Successful"
+                UserMailer.transaction_status_mail(@transfer).deliver
                 redirect_to account_url
               else
                 flash[:error] = "Failed to save in at least one account"
