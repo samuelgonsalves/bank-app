@@ -1,1 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+test_user:
+  name: admin
+  email: admin@gmail.com
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  password_digest: <%= User.digest('admin123') %>
+
+user1:
+  name: user1
+  email: user1@gmail.com
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  password_digest: <%= User.digest('user123') %>
+
+
+
