@@ -45,3 +45,9 @@ Admins
 
 
 <h3>Email Functionality added for transactions!!</h3>
+
+<h4>Edge cases:<h4>
+<ol>
+<li>If an admin deletes a user, all the user's transactions will be deleted regardless of status
+<li>If a user cancels a transaction request, the transaction is deleted from the system
+</ol>
