@@ -43,11 +43,27 @@ module UsersHelper
 		user1_active_accounts = Account.where(:user_id => user1.id,:status => 1)
 		user2_active_accounts = Account.where(:user_id => user1.id, :status => 1)
 		if user1_active_accounts.size == 0 || user2_active_accounts.size == 0 || amount <= 0
-			puts "CANNOT TRANSFER!!!!!!!!!!!!!!!!"
 			false
 		else
-			puts "CAN TRANSFER!!!!!!!!!!!!!!!!"
 			true
 		end
+	end
+
+	def create_transaction_model(transfer_type, status, amount, account_id)
+		transaction = Transaction.new
+		transaction.transaction_type = transfer_type
+        transaction.status = status
+        transaction.start = Time.now
+        transaction.finish = Time.now
+        transaction.amount = amount
+        transaction.account_id = account_id
+        return transaction
+	end
+
+	def create_transfer_model(destination_account_id, transaction_id)
+		transfer = Transfer.new
+		transfer.account_id = destination_account_id
+        transfer.transaction_id = transaction_id
+        return transfer
 	end
 end

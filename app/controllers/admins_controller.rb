@@ -127,19 +127,6 @@ class AdminsController < ApplicationController
 		session_check
 		@user = User.find(params[:id])
 		@accounts = @user.accounts
-		#@user = User.find(params[:id])
-	    	#@accounts = Account.find_by(user_id: @user.id)
-		#@transactions = []
-		#@transfers = []
-		#if !@accounts.nil?		
-		#	@accounts.each do |account|
-		#		#@transactions = account.transactions
-		#		@transactions += Transaction.find_by(account_id: account.id)
-		#		@transfers += Transfer.find_by(account_id: account.id)	
-		#	end
-		#end
-
-
 	end
 	
 	# manage accounts part -------------------------------------------------------------------------------------
