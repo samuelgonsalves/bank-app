@@ -1,0 +1,33 @@
+<div class="center jumbotron">
+<h2>Update profile</h2>
+<br>
+  <h4>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(@admin, url: update_admin_path) do |admin_form| %>
+
+	<%= admin_form.fields_for @user do |f| %>
+
+		<%= f.label :name %>
+		<%= f.text_field :name, :input_html => { :value => @user.name }, class: 'form-control' %>
+
+		<%= f.label :email %>
+		<%= f.email_field :email, :input_html => { :value => @user.email }, class: 'form-control' %>
+
+		<%= f.label :password %>
+		<%= f.password_field :password, class: 'form-control' %>
+
+		<%= f.label :password_confirmation, "Confirm Password" %>
+		<%= f.password_field :password_confirmation, class: 'form-control' %>
+
+	<% end %> 
+       <%= admin_form.submit "Update profile", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+  </h4>
+<br>
+  <%= link_to "Back to manage admins", admin_home_path() %>
+</div>
+
+

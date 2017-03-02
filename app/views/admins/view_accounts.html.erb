@@ -6,6 +6,7 @@
 	<% @accounts.each do |account| %>
 	<% if account.status != cancelled_status %>
 		<div>
+			<%= "Account owner: #{account.user.name}" %><br>
 			<%= "Account ID: #{account.account_id}" %><br>
 			<%= "Balance: #{account.balance}" %><br>
 			<%= link_to "view details", view_account_details_path(account) %><br>

@@ -8,7 +8,7 @@
 			<%= "Admin name: #{admin.user.name}" %><br>
 			<%= "Email: #{admin.user.email}" %><br>
 			<% if admin.predefined != 1 && admin.user.id != current_user.id %>			
-				<%= link_to "delete this admin", delete_admin_path(admin) %>
+				<%= link_to "delete this admin", destroy_user_path(admin.user) %>
 			<% end %>
 		</div>
 		<br><br>

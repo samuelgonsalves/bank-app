@@ -27,6 +27,43 @@ class AdminsController < ApplicationController
   		end
 	end
 
+	def update_profile 
+		logger.info("(#{self.class.to_s}) (#{action_name}) -- Entering the update_profile admin page")
+		session_check		
+		@user = current_user
+		@admin = Admin.find_by(:user_id => current_user.id)
+		if @admin.predefined == 1
+			flash[:danger] = "Can't update preconfigured admins profile"
+			redirect_to admin_home_url
+		end
+	end
+
+	def update_admin
+		@user = current_user
+		@admin = Admin.find_by(:user_id => @user.id)
+	
+		user = params[:admin][:user]
+		if user[:password] == user[:password_confirmation] && user[:password].length >= 6
+			puts "USER ID: #{@user.id}"
+			if User.update(@user.id, :name => user[:name], :email => user[:email], :password => user[:password])
+				flash[:success] = "Admin profile updated!"
+				redirect_to admin_home_url
+			else
+				flash[:danger] = "Unable to update"
+				redirect_to update_profile_url
+			end
+		elsif user[:password] != user[:password_confirmation] && (user[:password].length > 0 || user[:password_confirmation].length > 0)
+			flash[:danger] = "Passwords not matching"
+			redirect_to update_profile_url
+		elsif (user[:password].length > 0 || user[:password_confirmation].length > 0) && user[:password].length < 6
+			flash[:danger] = "Minimum password length is 6"
+			redirect_to update_profile_url
+		elsif user[:password].length == 0 && user[:password_confirmation].length == 0
+			flash[:danger] = "Enter passwords to update profile!"
+			redirect_to update_profile_url
+		end
+	end
+
 
 	# manage admins part -------------------------------------------------------------------------------------
 	def manage_admins
@@ -87,6 +124,7 @@ class AdminsController < ApplicationController
 	def destroy_user
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- destroying a user")
 		session_check
+		session[:return_to] ||= request.referer
 		admin = Admin.where(user_id: params[:id])	   	
 		Admin.destroy(admin[0].id) if !admin.empty?	
 		user = User.find(params[:id])
@@ -117,7 +155,7 @@ class AdminsController < ApplicationController
 		User.destroy(params[:id])
 
 	    	respond_to do |format|
-	      		format.html { redirect_to view_users_url() }
+			format.html { redirect_to session.delete(:return_to) }
 	      		format.json { head :no_content }
 	    	end
 	end
@@ -257,7 +295,7 @@ class AdminsController < ApplicationController
 
 	private
 	def admin_params
-		params.require(:admin).permit(:transaction_id, :url, :decision)
+		params.require(:admin).permit(:transaction_id, :url, :decision, :user, :name, :email, :password, :password_confirmation)
 	end
 
 end

@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.create([{name: 'admin', email: 'admin@gmail.com', password: 'admin123', password_confirmation: 'admin123'}])
-admin = Admin.create([{predefined: 1, user_id: 1, created_at: Time.now, updated_at: Time.now}])
+admin = Admin.create([{predefined: 1, user_id: user[0].id, created_at: Time.now, updated_at: Time.now}])
