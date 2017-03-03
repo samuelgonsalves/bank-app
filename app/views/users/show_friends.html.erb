@@ -8,6 +8,7 @@
 				<h3><%= friend.name %></h3>
 				<h5><%= friend.email %></h5>
 				<h5><%= link_to "Transfer Money", transfer_money_url(friend) %></h5>
+				<h5><%= link_to "Borrow Money", borrow_money_url(friend) %></h5>
 		<% end %>	
 <% else %>
 	<h1>No friends</h1>

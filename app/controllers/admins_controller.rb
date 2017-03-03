@@ -27,44 +27,6 @@ class AdminsController < ApplicationController
   		end
 	end
 
-	def update_profile 
-		logger.info("(#{self.class.to_s}) (#{action_name}) -- Entering the update_profile admin page")
-		session_check		
-		@user = current_user
-		@admin = Admin.find_by(:user_id => current_user.id)
-		if @admin.predefined == 1
-			flash[:danger] = "Can't update preconfigured admins profile"
-			redirect_to admin_home_url
-		end
-	end
-
-	def update_admin
-		@user = current_user
-		@admin = Admin.find_by(:user_id => @user.id)
-	
-		user = params[:admin][:user]
-		if user[:password] == user[:password_confirmation] && user[:password].length >= 6
-			puts "USER ID: #{@user.id}"
-			if User.update(@user.id, :name => user[:name], :email => user[:email], :password => user[:password])
-				flash[:success] = "Admin profile updated!"
-				redirect_to admin_home_url
-			else
-				flash[:danger] = "Unable to update"
-				redirect_to update_profile_url
-			end
-		elsif user[:password] != user[:password_confirmation] && (user[:password].length > 0 || user[:password_confirmation].length > 0)
-			flash[:danger] = "Passwords not matching"
-			redirect_to update_profile_url
-		elsif (user[:password].length > 0 || user[:password_confirmation].length > 0) && user[:password].length < 6
-			flash[:danger] = "Minimum password length is 6"
-			redirect_to update_profile_url
-		elsif user[:password].length == 0 && user[:password_confirmation].length == 0
-			flash[:danger] = "Enter passwords to update profile!"
-			redirect_to update_profile_url
-		end
-	end
-
-
 	# manage admins part -------------------------------------------------------------------------------------
 	def manage_admins
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- Entering the manage admins page")
@@ -243,9 +205,25 @@ class AdminsController < ApplicationController
 		if params[:decision] == '1'
 			@transaction.status = 1
 			@account = Account.find(@transaction.account_id)
-			@account.balance -= @transaction.amount
+			if @transaction.transaction_type == deposit_type
+				@account.balance += @transaction.amount
+			elsif @transaction.transaction_type == borrow_type
+				if @account.balance >= @transaction.amount
+					@account.balance -= @transaction.amount
+					transfer = Transfer.find_by(:transaction_id => @transaction.id)
+					transfer.account.balance += @transaction.amount
+					transfer.account.save				
+				else
+					flash[:danger] = "Unsuccessful due to Insufficient funds in the source account"
+					'redirect_to borrow_requests_url() and return'
+					return
+				end
+			elsif @transaction.transaction_type == withdraw_type
+				@account.balance -= @transaction.amount
+			end
 			@account.save			
-			@transaction.save		
+			@transaction.save
+			flash[:success] = "Transaction approved successfully"					
 		else
 			@transaction.status = 2
 			@transaction.save
@@ -254,17 +232,22 @@ class AdminsController < ApplicationController
 		AdminMailer.transanction_status_mail(@transaction).deliver		
 		if !params[:url].nil? && params[:url] == 'requests'
 			respond_to do |format|
-		      		format.html { redirect_to view_transaction_requests_url() }
+		      		format.html { 'redirect_to view_transaction_requests_url() and return' }
 		      		format.json { head :no_content }
 		    	end
 		elsif !params[:url].nil? && params[:url] == 'history'
 			respond_to do |format|
-		      		format.html { redirect_to view_transaction_history_url(params[:account]) }
+		      		format.html { 'redirect_to view_transaction_history_url(params[:account]) and return' }
 		      		format.json { head :no_content }
 		    	end		
+		elsif !params[:url].nil? && params[:url] == 'borrow'
+			respond_to do |format|
+		      		format.html { 'redirect_to borrow_requests_url() and return' }
+		      		format.json { head :no_content }
+		    	end
 		else
 			respond_to do |format|
-		      		format.html { redirect_to view_accounts_url() }
+		      		format.html { 'redirect_to view_accounts_url() and return' }
 		      		format.json { head :no_content }
 		    	end
 		end

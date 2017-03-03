@@ -177,7 +177,7 @@ class UsersController < ApplicationController
               UserMailer.transaction_status_mail(@transfer).deliver
               redirect_to account_url
             else
-              flash[:error] = "Failed to save in at least one account"
+              flash[:danger] = "Failed to save in at least one account"
             end
           else
             flash[:danger] = "Transfer Unsuccessful due to Insufficient funds"
@@ -274,6 +274,54 @@ class UsersController < ApplicationController
     end
 
 
+    def borrow_money
+    logger.info("(#{self.class.to_s}) (#{action_name}) -- Borrow money from a friend")
+    @friend = User.find(params[:id])
+    @destination_accounts = Account.where(:user_id => current_user,:status => 1)
+    @source_accounts = Account.where(:user_id => @friend.id,:status => 1)
+    
+    if request.post?
+      amount = params[:amount].to_f
+
+      if can_transfer(current_user, @friend, amount)
+        source_account = Account.find(params[:source_account_id].to_i)
+        destination_account = Account.find(params[:destination_account_id].to_i)
+        
+        if !source_account.nil? || !destination_account.nil?        
+              account_id = params[:source_account_id].to_i
+              @transaction = create_transaction_model(borrow_type, pending_status, amount, account_id)
+              @transaction.save
+
+              destination_account_id = params[:destination_account_id].to_i
+              transaction_id = @transaction.id
+              @transfer = create_transfer_model(destination_account_id, transaction_id)
+              @transfer.save
+
+              flash[:success] = "Successfully sent a borrow request!"
+              #UserMailer.transaction_status_mail(@transfer).deliver
+              redirect_to account_url
+        else
+          flash[:danger] = "Cannot borrow because either the source or destination account is invalid"
+          redirect_to borrow_money_url
+        end
+      end
+    end
+  end
+
+  def borrow_requests
+	logger.info("(#{self.class.to_s}) (#{action_name}) -- Borrow requets")
+	@accounts = current_user.accounts
+	@transactions = []
+	if !@accounts.nil?
+		@accounts.each do |a|
+			if !Transaction.where(:account_id => a.id).nil?
+				@transactions += Transaction.where(:account_id => a.id)
+			end
+		end
+	end
+  end
+
+ 
     def new_account
       render 'home'
     end
