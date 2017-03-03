@@ -5,9 +5,10 @@
    		<h4 style="text-align: center">No accounts to deposit!</h4>
    <% else %>
 	  <%= form_tag("", method:"post") do %>
-
+    <%= label_tag "Source account number"%>
       <%= select_tag "account_id", options_from_collection_for_select(@accounts, "id", "account_id") %>
-	  <%= text_field_tag 'amount'%>
+	  <%= label_tag "Amount"%>
+    <%= text_field_tag 'amount'%>
 	  <%= submit_tag "Deposit" ,:name => nil%>
 
    	  <% end %>
