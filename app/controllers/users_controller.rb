@@ -203,24 +203,17 @@ class UsersController < ApplicationController
       
       if request.post?
         @account = Account.find(params[:account_id].to_i)
+        
         amount = params[:amount].to_f
-        @account.balance += amount
-
-        if @account.save
-          amount = params[:amount].to_f
-          account_id = params[:account_id].to_i
-          @Transaction = create_transaction_model(deposit_type, approved_status, amount, account_id)
+        account_id = params[:account_id].to_i
+        @Transaction = create_transaction_model(deposit_type, pending_status, amount, account_id)
           
-          if @Transaction.save
-            flash[:success] = "Deposit was Successful"
-            redirect_to account_url
-          else
-            flash[:danger] = "Deposit was Successful, but failed to record transaction"
-            redirect_to account_url
-          end
+        if @Transaction.save
+          flash[:success] = "Transaction initiated, admin approval needed"
+          redirect_to account_url
         else
-          flash[:error] = "Deposit was Unsuccessful"
-          redirect_to root_url
+          flash[:danger] = "Deposit Unsuccessful"
+          redirect_to account_url
         end
       end
     end
