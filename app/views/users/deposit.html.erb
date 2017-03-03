@@ -1,11 +1,16 @@
 <h1>Deposits</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_tag("", method:"post") do %>
+   <% if @accounts.empty? %>
+   		<h4 style="text-align: center">No accounts to deposit!</h4>
+   <% else %>
+	  <%= form_tag("", method:"post") do %>
 
       <%= select_tag "account_id", options_from_collection_for_select(@accounts, "id", "account_id") %>
 	  <%= text_field_tag 'amount'%>
 	  <%= submit_tag "Deposit" ,:name => nil%>
 
-    <% end %>
+   	  <% end %>
+   <% end %>
+   
   </div>

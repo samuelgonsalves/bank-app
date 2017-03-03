@@ -151,6 +151,13 @@ class UsersController < ApplicationController
     @destination_accounts = Account.where(:user_id => @friend.id,:status => 1)
     
     if request.post?
+      if !is_number?(params[:amount])
+        flash[:danger] = "Incorrect amount format"
+        redirect_to account_url
+        return
+      end
+
+
       amount = params[:amount].to_f
 
       if can_transfer(current_user,@friend,amount)
@@ -204,6 +211,12 @@ class UsersController < ApplicationController
       if request.post?
         @account = Account.find(params[:account_id].to_i)
         
+        if !is_number?(params[:amount])
+          flash[:danger] = "Incorrect amount format"
+          redirect_to account_url
+          return
+        end
+
         amount = params[:amount].to_f
         account_id = params[:account_id].to_i
         @Transaction = create_transaction_model(deposit_type, pending_status, amount, account_id)
@@ -224,6 +237,13 @@ class UsersController < ApplicationController
       
       if request.post?
         @account = Account.find(params[:account_id].to_i)
+
+        if !is_number?(params[:amount])
+          flash[:danger] = "Incorrect amount format"
+          redirect_to account_url
+          return
+        end
+
         withdraw_amount = params[:amount].to_f
 
         if is_valid_withdraw(@account, withdraw_amount)
@@ -251,7 +271,10 @@ class UsersController < ApplicationController
               end
             end
           end
+        else
+          flash[:danger] = "Insufficient funds for your withdrawal request/s"
         end
+
         redirect_to account_url
       end    
     end
