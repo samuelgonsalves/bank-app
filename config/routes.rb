@@ -23,10 +23,14 @@ Rails.application.routes.draw do
   get '/users/current_user/show_transactions' => 'users#show_transactions', as: :show_transactions
 
   get '/users/current_user/cancel/:id' => 'users#cancel', as: :cancel
-
+  get '/users/current_user/borrow_requests' => 'users#borrow_requests', as: :borrow_requests
 
   get '/users/current_user/transfer_money/:id' => 'users#transfer_money', as: :transfer_money
   post '/users/current_user/transfer_money/:id' => 'users#transfer_money'
+
+  get '/users/current_user/borrow_money/:id' => 'users#borrow_money', as: :borrow_money
+  post '/users/current_user/borrow_money/:id' => 'users#borrow_money'
+
   get '/users/current_user/deposit' => 'users#deposit', as: :deposit
   post '/users/current_user/deposit' => 'users#deposit'
 
@@ -38,6 +42,7 @@ Rails.application.routes.draw do
 
   get '/admins/' => 'admins#index', as: :admin_index
   get '/admins/home' => 'admins#home', as: :admin_home
+  
   #get '/admins/:id/edit' => 'admins#edit'
   
   get '/admins/manage_accounts' => 'admins#manage_accounts', as: :manage_accounts

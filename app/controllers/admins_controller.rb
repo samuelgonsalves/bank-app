@@ -205,9 +205,25 @@ class AdminsController < ApplicationController
 		if params[:decision] == '1'
 			@transaction.status = 1
 			@account = Account.find(@transaction.account_id)
-			@account.balance -= @transaction.amount
+			if @transaction.transaction_type == deposit_type
+				@account.balance += @transaction.amount
+			elsif @transaction.transaction_type == borrow_type
+				if @account.balance >= @transaction.amount
+					@account.balance -= @transaction.amount
+					transfer = Transfer.find_by(:transaction_id => @transaction.id)
+					transfer.account.balance += @transaction.amount
+					transfer.account.save				
+				else
+					flash[:danger] = "Unsuccessful due to Insufficient funds in the source account"
+					'redirect_to borrow_requests_url() and return'
+					return
+				end
+			elsif @transaction.transaction_type == withdraw_type
+				@account.balance -= @transaction.amount
+			end
 			@account.save			
-			@transaction.save		
+			@transaction.save
+			flash[:success] = "Transaction approved successfully"					
 		else
 			@transaction.status = 2
 			@transaction.save
@@ -216,17 +232,22 @@ class AdminsController < ApplicationController
 		AdminMailer.transanction_status_mail(@transaction).deliver		
 		if !params[:url].nil? && params[:url] == 'requests'
 			respond_to do |format|
-		      		format.html { redirect_to view_transaction_requests_url() }
+		      		format.html { 'redirect_to view_transaction_requests_url() and return' }
 		      		format.json { head :no_content }
 		    	end
 		elsif !params[:url].nil? && params[:url] == 'history'
 			respond_to do |format|
-		      		format.html { redirect_to view_transaction_history_url(params[:account]) }
+		      		format.html { 'redirect_to view_transaction_history_url(params[:account]) and return' }
 		      		format.json { head :no_content }
 		    	end		
+		elsif !params[:url].nil? && params[:url] == 'borrow'
+			respond_to do |format|
+		      		format.html { 'redirect_to borrow_requests_url() and return' }
+		      		format.json { head :no_content }
+		    	end
 		else
 			respond_to do |format|
-		      		format.html { redirect_to view_accounts_url() }
+		      		format.html { 'redirect_to view_accounts_url() and return' }
 		      		format.json { head :no_content }
 		    	end
 		end

@@ -22,6 +22,10 @@ module ApplicationHelper
 		return @type[:transfer]
 	end
 
+	def borrow_type
+		return @type[:borrow]
+	end	
+
 	def transaction_name(value)
 		return @type_name[value]
 	end
