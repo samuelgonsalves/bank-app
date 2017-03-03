@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <% if @transaction.status == 1 %>
+      <h1> Borrow Action from friend's account: <%= @transaction.account.account_id %> to my account: <%= @transfer.account.account_id %> was Approved for an amount: $ <%= @transaction.amount %></h1>
+    <% elsif @transaction.status == 2 %>
+      <h1> Borrow Action from friend's account: <%= @transaction.account.account_id %> to my account: <%= @transfer.account.account_id %> was Declined for an amount: $ <%= @transaction.amount %></h1>
+    <% end %>
+  </body>
+</html>

@@ -221,23 +221,32 @@ class AdminsController < ApplicationController
 			elsif @transaction.transaction_type == withdraw_type
 				@account.balance -= @transaction.amount
 			end
-			@account.save			
-			@transaction.save
+
+			if @account.save			
+				if @transaction.save
+					if @transaction.transaction_type == deposit_type || @transaction.transaction_type == withdraw_type
+						AdminMailer.transanction_status_mail(@transaction).deliver
+					elsif @transaction.transaction_type == borrow_type
+						AdminMailer.borrow_status_mail(@transaction, Transfer.find_by(:transaction_id => @transaction.id)).deliver
+						AdminMailer.borrow_status_mail_friend(@transaction, Transfer.find_by(:transaction_id => @transaction.id)).deliver
+					end
+				end
+			end
 			flash[:success] = "Transaction approved successfully"					
 		else
 			@transaction.status = 2
 			@transaction.save
 		end
 
-		AdminMailer.transanction_status_mail(@transaction).deliver		
+				
 		if !params[:url].nil? && params[:url] == 'requests'
 			respond_to do |format|
-		      		format.html { 'redirect_to view_transaction_requests_url() and return' }
+		      		format.html { redirect_to view_transaction_requests_url() }
 		      		format.json { head :no_content }
 		    	end
 		elsif !params[:url].nil? && params[:url] == 'history'
 			respond_to do |format|
-		      		format.html { 'redirect_to view_transaction_history_url(params[:account]) and return' }
+		      		format.html { redirect_to view_transaction_history_url(params[:account]) }
 		      		format.json { head :no_content }
 		    	end		
 		elsif !params[:url].nil? && params[:url] == 'borrow'
@@ -247,7 +256,7 @@ class AdminsController < ApplicationController
 		    	end
 		else
 			respond_to do |format|
-		      		format.html { 'redirect_to view_accounts_url() and return' }
+		      		format.html { redirect_to view_accounts_url() }
 		      		format.json { head :no_content }
 		    	end
 		end

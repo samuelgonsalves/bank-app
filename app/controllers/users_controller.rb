@@ -182,6 +182,7 @@ class UsersController < ApplicationController
 
               flash[:success] = "Transfer Successful"
               UserMailer.transaction_status_mail(@transfer).deliver
+              UserMailer.transaction_status_mail_friend(@transfer).deliver
               redirect_to account_url
             else
               flash[:danger] = "Failed to save in at least one account"
@@ -314,7 +315,6 @@ class UsersController < ApplicationController
               @transfer.save
 
               flash[:success] = "Successfully sent a borrow request!"
-              #UserMailer.transaction_status_mail(@transfer).deliver
               redirect_to account_url
         else
           flash[:danger] = "Cannot borrow because either the source or destination account is invalid"

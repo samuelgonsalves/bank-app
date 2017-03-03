@@ -4,10 +4,18 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
+  <% if @transaction.transaction_type == 2 %>
     <% if @transaction.status == 1 %>
-      <h1> Action from: <%= @transaction.account.account_id %> was Approved</h1>
+      <h1> Deposit Action from: <%= @transaction.account.account_id %> was Approved for an amount: $ <%= @transaction.amount %></h1>
     <% elsif @transaction.status == 2 %>
-      <h1> Action from: <%= @transaction.account.account_id %> was Declined</h1>
+      <h1> Deposit Action from: <%= @transaction.account.account_id %> was Declined for an amount: $ <%= @transaction.amount %></h1>
     <% end %>
+  <% elsif @transaction.transaction_type == 1 %>
+    <% if @transaction.status == 1 %>
+      <h1> Withdraw Action from: <%= @transaction.account.account_id %> was Approved for an amount: $ <%= @transaction.amount %></h1>
+    <% elsif @transaction.status == 2 %>
+      <h1> Withdraw Action from: <%= @transaction.account.account_id %> was Declined for an amount: $ <%= @transaction.amount %></h1>
+    <% end %>
+  <% end %>
   </body>
 </html>
