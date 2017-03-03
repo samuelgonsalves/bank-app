@@ -2,7 +2,7 @@
 
 <h3>Admin Email - admin@gmail.com</h3>
 <h3>Admin Password - admin123</h3>
-<a href="https://guarded-lake-26266.herokuapp.com">Link to the app on Heroku</a>
+<a href="https://new-test-app-123.herokuapp.com">Link to the app on Heroku</a>
 
 <h3>Functionality</h3>
 
@@ -45,7 +45,7 @@ Admins
 
 
 <h3>Email Functionality added for transactions!!</h3>
-
+<h3>Borrow Functionality added</h3>
 <h4>Edge cases:<h4>
 <ol>
 <li>If an admin deletes a user, all the user's transactions will be deleted regardless of status
