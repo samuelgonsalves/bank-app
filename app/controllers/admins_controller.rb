@@ -232,12 +232,17 @@ class AdminsController < ApplicationController
 		AdminMailer.transanction_status_mail(@transaction).deliver		
 		if !params[:url].nil? && params[:url] == 'requests'
 			respond_to do |format|
-		      		format.html { 'redirect_to view_transaction_requests_url() and return' }
+		      		format.html { redirect_to view_transaction_requests_url() }
 		      		format.json { head :no_content }
 		    	end
-		elsif !params[:url].nil? && params[:url] == 'history'
+		elsif !params[:url].nil? && params[:url] == 'history1'
 			respond_to do |format|
-		      		format.html { 'redirect_to view_transaction_history_url(params[:account]) and return' }
+		      		format.html { redirect_to view_transaction_history_url(params[:account]) }
+		      		format.json { head :no_content }
+		    	end
+		elsif !params[:url].nil? && params[:url] == 'history2'
+			respond_to do |format|
+		      		format.html { redirect_to view_transaction_history_of_user_url(params[:id]) }
 		      		format.json { head :no_content }
 		    	end		
 		elsif !params[:url].nil? && params[:url] == 'borrow'
@@ -247,7 +252,7 @@ class AdminsController < ApplicationController
 		    	end
 		else
 			respond_to do |format|
-		      		format.html { 'redirect_to view_accounts_url() and return' }
+		      		format.html { redirect_to view_accounts_url() }
 		      		format.json { head :no_content }
 		    	end
 		end

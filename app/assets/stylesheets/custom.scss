@@ -192,18 +192,42 @@ footer {
   }
 }
 
-.tables
+#account_table
 {
   text-align:center;
-  font-size:20px;
-  margin-top:50px;
+  font-size:15px;
+  
+margin-top:10px;
+  margin-bottom:10px;
+  
+display: block;
+  td {
+	text-align:center;
+
+	padding-left:5px;	
+    padding-right:5px;
+    border: 1px solid black;
+  }
+}
+
+#transaction_table
+{
+  text-align:center;
+  font-size:15px;
+  margin-top:10px;
   margin-bottom:10px;
   display: block;
   td {
-    padding-right:15px;
+
+	text-align:center;
+	padding-left:5px;
+    padding-right:5px;
     
+    border: 1px solid black;
   }
+
 }
+
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;

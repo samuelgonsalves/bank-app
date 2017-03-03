@@ -4,6 +4,7 @@
   <h4>
 	<% if !@transactions.nil? %>
 	<% @transactions.each do |t| %>
+		<% if t.transaction_type != borrow_type %>
 		<div>
 			<%= "Transaction ID: #{t.id} , Accound number: #{t.account.account_id}" %><br>
 			<%= "Amount: #{t.amount}" %><br>
@@ -12,6 +13,7 @@
 			<%= link_to "Approve transaction", approve_or_decline_transaction_path(:transaction_id => t.id, :decision => '1', :url => 'requests') %>
 			<%= link_to "Decline transaction", approve_or_decline_transaction_path(:transaction_id => t.id, :decision => '2', :url => 'requests') %>
 		</div>
+		<% end %>
 		<br><br>
 	<% end %>
 	<% end %>

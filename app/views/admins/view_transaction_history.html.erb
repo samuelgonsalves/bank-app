@@ -19,9 +19,9 @@ Account details of <%= @account.user.name %>:<br>
 				<% dest_account = Account.find_by(:id => transfer.account_id) %>
 				<%= "transfer to destination account number: #{dest_account.account_id}" %>
 			<% end %>
-			<% if transaction.status == 3 && transaction.transaction_type == 1 %>
-				<%= link_to "Approve transaction", approve_or_decline_transaction_path(:transaction_id => transaction.id, :decision => '1', :url => 'history', :account => @account) %>
-			<%= link_to "Decline transaction", approve_or_decline_transaction_path(:transaction_id => transaction.id, :decision => '2', :url => 'history', :account => @account) %>
+			<% if transaction.status == pending_status && (transaction.transaction_type == deposit_type || transaction.transaction_type == withdraw_type) %>
+				<%= link_to "Approve transaction", approve_or_decline_transaction_path(:transaction_id => transaction.id, :decision => '1', :url => 'history1', :account => @account) %>
+			<%= link_to "Decline transaction", approve_or_decline_transaction_path(:transaction_id => transaction.id, :decision => '2', :url => 'history1', :account => @account) %>
 			<% end %>
 		</div>
   <%= link_to "Go to account details", view_account_details_path(@account) %>
