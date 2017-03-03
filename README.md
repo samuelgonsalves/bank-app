@@ -2,7 +2,7 @@
 
 <h3>Admin Email - admin@gmail.com</h3>
 <h3>Admin Password - admin123</h3>
-<a href="new-test-app-123.herokuapp.com">Link to the app on Heroku</a>
+<a href="https://new-test-app-123.herokuapp.com">Link to the app on Heroku</a>
 
 <h3>Functionality</h3>
 
