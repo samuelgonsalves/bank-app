@@ -8,4 +8,12 @@ class UserMailer < ApplicationMailer
 
 		mail(to: user.email, subject: 'Transfer to Friend')
 	end
+
+	def transaction_status_mail_friend(transfer)
+		@transfer = transfer
+		@transaction = Transaction.find(transfer.transaction_id)
+		user = @transfer.account.user
+
+		mail(to: user.email, subject: 'Transfer to Friend')
+	end
 end

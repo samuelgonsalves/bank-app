@@ -66,4 +66,8 @@ module UsersHelper
         transfer.transaction_id = transaction_id
         return transfer
 	end
+
+	def is_number? string
+  		true if Float(string) rescue false
+	end
 end
