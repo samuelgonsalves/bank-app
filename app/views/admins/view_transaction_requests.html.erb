@@ -3,19 +3,31 @@
 <br>
   <h4>
 	<% if !@transactions.nil? %>
-	<% @transactions.each do |t| %>
+		<table id="transaction_table">
+			<tr>
+				<td>Transaction ID</td>
+				<td>Account ID</td>				
+				<td>Amount</td>
+				<td>Type</td>
+				<td>Requested at</td>
+				<td>Action</td>
+			</tr>  
+		<% @transactions.each do |t| %>
 		<% if t.transaction_type != borrow_type %>
 		<div>
-			<%= "Transaction ID: #{t.id} , Accound number: #{t.account.account_id}" %><br>
-			<%= "Amount: #{t.amount}" %><br>
-			<%= "Type: #{transaction_name t.transaction_type}" %><br>
-			<%= "Requested at: #{t.created_at}" %><br>
-			<%= link_to "Approve transaction", approve_or_decline_transaction_path(:transaction_id => t.id, :decision => '1', :url => 'requests') %>
-			<%= link_to "Decline transaction", approve_or_decline_transaction_path(:transaction_id => t.id, :decision => '2', :url => 'requests') %>
+			<tr>
+			<td><%= "#{t.id}" %>
+			<td><%= "#{t.account.account_id}" %>
+			<td><%= "#{t.amount}" %>
+			<td><%= "#{transaction_name t.transaction_type}" %>
+			<td><%= "#{t.created_at}" %>
+			<td><%= link_to "Approve", approve_or_decline_transaction_path(:transaction_id => t.id, :decision => '1', :url => 'requests') %><%= " / " %>
+			<%= link_to "Decline", approve_or_decline_transaction_path(:transaction_id => t.id, :decision => '2', :url => 'requests') %>
+			</tr>
 		</div>
 		<% end %>
-		<br><br>
-	<% end %>
+		<% end %>
+		</table>
 	<% end %>
   </h4>
 <br>

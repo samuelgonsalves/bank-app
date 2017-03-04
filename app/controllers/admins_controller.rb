@@ -52,6 +52,7 @@ class AdminsController < ApplicationController
 		if admin.predefined != 1
 			Admin.destroy(params[:id])
 		end
+		#User.destroy(admin.user.id)
 		
 	    	respond_to do |format|
 	      		format.html { redirect_to view_admins_url() }
@@ -91,6 +92,12 @@ class AdminsController < ApplicationController
 		Admin.destroy(admin[0].id) if !admin.empty?	
 		user = User.find(params[:id])
 		accounts = user.accounts
+	
+		# delete friends
+		Friend.where(:user_id => user.id).delete_all
+		Friend.where(:friend_id => user.id).delete_all 
+
+		# delete accounts and transactions of selected user
 		if !accounts.nil?
 			accounts.each do |each_account|
 				

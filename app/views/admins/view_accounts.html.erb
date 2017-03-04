@@ -3,19 +3,28 @@
 <br>
   <h4>
 	<% if !@accounts.nil? %>
+		<table id="transaction_table">
+			<tr>
+				<td>Account Owner</td>
+				<td>Account ID</td>				
+				<td>Balance</td>
+				<td colspan=3>Actions</td> 
+			</tr>  
 	<% @accounts.each do |account| %>
 	<% if account.status != cancelled_status %>
 		<div>
-			<%= "Account owner: #{account.user.name}" %><br>
-			<%= "Account ID: #{account.account_id}" %><br>
-			<%= "Balance: #{account.balance}" %><br>
-			<%= link_to "view details", view_account_details_path(account) %><br>
-			<%= link_to "view transaction history", view_transaction_history_path(account) %><br>
-			<%= link_to "delete this account", delete_account_path(account) %><br>
+		<tr>
+			<td><%= "#{account.user.name}" %>
+			<td><%= "#{account.account_id}" %>
+			<td><%= "#{account.balance}" %>
+			<td><%= link_to "Details", view_account_details_path(account) %>
+			<td><%= link_to "Transaction history", view_transaction_history_path(account) %>
+			<td><%= link_to "Delete account", delete_account_path(account) %>
+		</tr>
 		</div>
-		<br><br>
 	<% end %>
 	<% end %>
+		</table>
 	<% end %>
   </h4>
 <br>
