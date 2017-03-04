@@ -1,13 +1,15 @@
 <div class="center jumbotron">
-<h2>Accounts</h2>
+<h2>Account Details</h2>
 <br>
   <h4>
 	<% if !@account.nil? %>
 		<div>
-			<%= "Account number: #{@account.account_id}" %><br>
-			<%= "Balance: #{@account.balance}" %><br>
-			<%= "User: #{@account.user.name}, Email: #{@account.user.email}, Status: #{account_status_name @account.status}" %><br>
-			<%= "Created at #{@account.created_at} and updated at #{@account.updated_at}" %><br>
+			<b><%= "Account number:" %></b> <%= "#{@account.account_id}" %><br>
+			<b><%= "Balance:" %></b> <%= "#{@account.balance}" %><br>
+			<b><%= "User:" %></b> <%= "#{@account.user.name}" %><br>
+			<b><%= "Status:" %></b> <%= "#{account_status_name @account.status}" %><br>
+			<b><%= "Created at:" %></b> <%= "#{@account.created_at}" %><br>
+			<b><%= "Updated at:" %></b> <%= "#{@account.updated_at}" %><br><br>
 			<%= link_to "view transaction history", view_transaction_history_path(@account) %><br>
 			<%= link_to "delete this account", delete_account_path(@account) %><br>
 			<% if @account.status == 3 %>		

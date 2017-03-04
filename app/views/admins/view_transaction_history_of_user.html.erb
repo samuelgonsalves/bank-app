@@ -4,33 +4,47 @@
 <%= @user.name %>:<br>
 <% if !@accounts.empty? %>
 	<% @accounts.each do |account| %> 
-	<%= "Account number: #{account.account_id}" %><br>
-	  <h4>
+	<%= "Account number: #{account.account_id}" %>
+		<table id="transaction_table">
+			<tr>
+				<td>Transaction ID</td>
+				<td>Transaction status</td>
+				<td>Start time</td>
+				<td>Finish time</td>
+				<td>Type</td>
+				<td>Amount</td>
+				<td>Source Account Number</td>
+				<td>Destination Account Number</td>
+				<td>Action</td>
+			</tr>  
+	
+	<h4>
 		<% account.transactions.each do |transaction| %>
 		<% if transaction.status != 4 %>
 			<div>
-				<%= "Transaction ID: #{transaction.id}" %><br>
-				<%= "Transaction status: #{status_name transaction.status}" %><br>
-				<%= "Start time: #{transaction.start}" %><br>
-				<%= "Finish time: #{transaction.finish}" %><br>
-				<%= "#{transaction_name transaction.transaction_type}" %><br>
-				<%= "Amount: #{transaction.amount}" %><br>
-				<%= "From account number: #{transaction.account.account_id}" %><br>
-				<% if transaction.transaction_type == transfer_type || transaction.transaction_type == borrow_type %><br>
+			<tr>
+				<td><%= "#{transaction.id}" %>
+				<td><%= "#{status_name transaction.status}" %>
+				<td><%= "#{transaction.start}" %>
+				<td><%= "#{transaction.finish}" %>
+				<td><%= "#{transaction_name transaction.transaction_type}" %>
+				<td><%= "#{transaction.amount}" %>
+				<td><%= "#{transaction.account.account_id}" %>
+				<td><% if transaction.transaction_type == transfer_type || transaction.transaction_type == borrow_type %>
 					<% transfer = Transfer.find_by(:transaction_id => transaction.id) %>
  					<% dest_account = Account.find_by(:id => transfer.account_id) %>
- 					<%= "transfer to destination account number: #{dest_account.account_id}" %>
+ 					<%= "#{dest_account.account_id}" %>
 				<% end %>
-				<% if transaction.status == pending_status && (transaction.transaction_type == deposit_type || transaction.transaction_type == withdraw_type) %>
-					<%= link_to "approve transaction", approve_or_decline_transaction_path(:transaction_id => transaction.id, :decision => '1', :url => 'history2', :id => @user.id) %>
-					<%= link_to "decline transaction", approve_or_decline_transaction_path(:transaction_id => transaction.id, :decision => '2', :url => 'history2', :id => @user.id) %>
+				<td><% if transaction.status == pending_status && (transaction.transaction_type == deposit_type || transaction.transaction_type == withdraw_type) %>
+					<%= link_to "approve", approve_or_decline_transaction_path(:transaction_id => transaction.id, :decision => '1', :url => 'history2', :id => @user.id) %><%= "/" %>
+					<%= link_to "decline", approve_or_decline_transaction_path(:transaction_id => transaction.id, :decision => '2', :url => 'history2', :id => @user.id) %>
 				<% end %>
+			</tr>			
 			</div>
-			<br><br>
 		<% end %>
 		<% end %>
+		</table>
 	  </h4>
-	<br>
 	<% end %>
 <% else %>
 	<h2>No transactions</h2>

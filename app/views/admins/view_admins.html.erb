@@ -3,16 +3,24 @@
 <br>
   <h4>
 	<% if !@admins.nil? %>
+	<table id="transaction_table">
+			<tr>
+				<td>Admin name</td>
+				<td>Email</td>
+				<td>Action</td>
+			</tr>  
 	<% @admins.each do |admin| %>
 		<div>
-			<%= "Admin name: #{admin.user.name}" %><br>
-			<%= "Email: #{admin.user.email}" %><br>
-			<% if admin.predefined != 1 && admin.user.id != current_user.id %>			
-				<%= link_to "delete this admin", destroy_user_path(admin.user) %>
+		<tr>
+			<td><%= "#{admin.user.name}" %>
+			<td><%= "#{admin.user.email}" %>
+			<td><% if admin.predefined != 1 && admin.user.id != current_user.id %>			
+				<%= link_to "delete", destroy_user_path(admin.user) %>
 			<% end %>
+		</tr>		
 		</div>
-		<br><br>
 	<% end %>
+	</table>
 	<% end %>
   </h4>
 <br>
