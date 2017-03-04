@@ -43,41 +43,27 @@ class UserTest < ActiveSupport::TestCase
   	assert_not_nil @user.errors[:email], 'no validation error for email is not too long'
   end
 
-  test "email should be in the correct format" do
-    #valid_formats = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org first.last@foo.jp alice+bob@baz.cn]
-    assert true
-  end
-
-  test "email validation should reject invalid addresses" do
-    #invalid_addresses = %w[user@example,com user_at_foo.org user.name@example. foo@bar_baz.com foo@bar+baz.com]
-    assert true
-  end
-
   test "email should be unique" do 
-    #duplicate = @user.dup
-    #duplicate.email = @user.email.upcase
-    #@user.save
-    #assert_not duplicate.valid?
-    assert true
-  end
-
-  test "email addresses should be lowercase" do
-    #mixed_case_email = "fOo@ExAmplE.cOm"
-    #@user.email = mixed_case_email
-    #@user.save
-    #assert_equal mixed_case_email.downcase, @user.reload.email
-    assert true
+    @user.name = "test6"
+    @user.email = "test6@ncsu.edu"
+    @user.password = "test6123"
+    @user.save
+    duplicate = @user.dup
+    duplicate.email = @user.email
+    assert_not duplicate.valid?
   end
 
   test "password should be present" do
-    #@user.password = @user.password_confirmation = " " * 6
-    #assert_not @user.valid?
-    assert true
+    @user.name = "test7"
+    @user.email = "test7@ncsu.edu"
+    @user.password = @user.password_confirmation = " " * 6
+    assert_not @user.valid?
   end
 
   test "password should have a minimum length" do
-    #@user.password = @user.password_confirmation = "a" * 5
-    #assert_not @user.valid?
-    assert true
+    @user.name = "test8"
+    @user.email = "test8@ncsu.edu"
+    @user.password = @user.password_confirmation = "a" * 5
+    assert_not @user.valid?
   end
 end
