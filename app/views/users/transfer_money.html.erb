@@ -2,7 +2,8 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_tag("", method:"post") do %>
+  	<% if !@source_accounts.empty? && !@destination_accounts.empty? %>
+  		 <%= form_tag("", method:"post") do %>
 	  
 	  <%= label_tag "Source account number"%>
     
@@ -16,5 +17,10 @@
 	  <%= submit_tag "Transfer" ,:name => nil%>
 
     <% end %>
-  </div>
+
+	<% else %>
+		<h4 style="text-align: center">Required account/s not active!</h4>
+   
+	<% end %>
+</div>
 

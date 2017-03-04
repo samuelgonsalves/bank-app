@@ -2,11 +2,10 @@
   <h2>Manage accounts</h2>
 <br>
   <h4>
-    <ol>
-	<li><%= link_to "Approve bank accounts", create_accounts_path() %></li>
-	<li><%= link_to "View all the accounts", view_accounts_path() %></li>
-	<li><%= link_to "View transaction requests", view_transaction_requests_path() %></li>
-    </ol>
+    <%= link_to "Approve bank accounts", create_accounts_path() %><br>
+	<%= link_to "View all the accounts", view_accounts_path() %><br>
+	<%= link_to "View transaction requests", view_transaction_requests_path() %><br>
+    
   </h4>
 <br>
   <%= link_to "Back to home page", admin_home_path() %>
