@@ -54,7 +54,9 @@ class User < ApplicationRecord
   	end
 
     def db_authenticated?(current_user)
-      if current_user.remember_digest.nil?
+      if current_user.nil?
+        return false
+      elsif !current_user.nil? && current_user.remember_digest.nil?
         return false 
       else
         return true
