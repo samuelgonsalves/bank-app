@@ -1,7 +1,7 @@
 <%= render 'shared/error_messages' %>
 
 <p>
-  Hi <%= @user.name %><br>
+  <h3>Hi <%= @user.name %></h3>
   <%= link_to "Account details", account_url(id: @user.id) %><br>
   <%= link_to "Create New Account", account_create_request_url(id: @user.id) %><br>
   <%= link_to "Search for other users", search_for_users_url(id: @user.id) %><br>
