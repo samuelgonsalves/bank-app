@@ -51,4 +51,5 @@ Admins
 <li>If an admin deletes a user, all the user's transactions will be deleted regardless of status
 <li>If a user cancels a transaction request, the transaction is deleted from the system
 <li>Logout from the user's account, before you delete that user
+<li>The user must have a valid email ID to test out the mailer functionality
 </ol>
