@@ -151,7 +151,7 @@ class AdminsController < ApplicationController
 
 	def approve_or_decline_account
 		logger.info("(#{self.class.to_s}) (#{action_name}) -- approve_or_decline_account page")		
-		#session_check
+		session_check
 		@account = Account.find(params[:account_id])
 		puts "Admin decision: #{params[:decision]}"
 		if params[:decision] == '1'
