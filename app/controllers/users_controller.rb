@@ -1,5 +1,14 @@
 class UsersController < ApplicationController
     include UsersHelper
+    include SessionsHelper
+
+    before_action :user_logged_in?, :except => [:new, :create]
+    def user_logged_in?
+      if !logged_in?
+        flash[:error] = "User has not logged into the portal / User was deleted by admin."
+        redirect_to login_url
+      end
+    end
 
     def index
       if params[:search]
