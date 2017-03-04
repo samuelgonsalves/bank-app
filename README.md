@@ -4,6 +4,8 @@
 <h3>Admin Password - admin123</h3>
 <a href="https://new-test-app-123.herokuapp.com">Link to the app on Heroku</a>
 
+<p>Please note: The YouTube video does not reflect the same functionality in the app</p>
+
 <h3>Functionality</h3>
 
 Users<br>
@@ -45,7 +47,7 @@ Admins
 
 
 <h3>Email Functionality added for transactions!!</h3>
-<h3>Borrow Functionality added</h3>
+<h3>Borrow Functionality added!!</h3>
 <h4>Edge cases:<h4>
 <ol>
 <li>If an admin deletes a user, all the user's transactions will be deleted regardless of status
