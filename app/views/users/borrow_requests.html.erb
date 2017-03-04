@@ -1,24 +1,41 @@
 <div class="center jumbotron">
 <h2>Borrow requests</h2>
 <br>
+	
+<table id="transaction_table">
+<tr>
+<td>Transaction ID
+<td>Status
+<td>Requested at
+<td>Amount
+<td>Source account number
+<td>Destination account number
+<td>Action
+</tr>
+
+
 	<% @transactions.each do |transaction| %>
 		<div>
 		<% if transaction.status == pending_status %>
-			<%= "Transaction ID: #{transaction.id}" %><br>
-			<%= "Transaction status: #{status_name transaction.status}" %><br>
-			<%= "Requested at: #{transaction.start}" %><br>
-			<%= "Amount: #{transaction.amount}" %><br>
-			<%= "From account ID: #{transaction.account.account_id}" %><br>
+		<tr>
+			<td><%= "#{transaction.id}" %>
+			<td><%= "#{status_name transaction.status}" %>
+			<td><%= "#{transaction.start}" %>
+			<td><%= "#{transaction.amount}" %>
+			<td><%= "#{transaction.account.account_id}" %>
 			<% transfer = Transfer.find_by(:transaction_id => transaction.id) %>
 			<% dest_account = Account.find_by(:id => transfer.account_id) %>
-			<%= "transfer to destination account number: #{dest_account.account_id}" %><br>
+			<td><%= "#{dest_account.account_id}" %>
+			<td>
 			<% if transaction.status == pending_status %>
-				<%= link_to "Approve transaction", approve_or_decline_transaction_path(:transaction_id => transaction.id, :decision => '1', :url => 'borrow', :account => @account) %>
-			<%= link_to "Decline transaction", approve_or_decline_transaction_path(:transaction_id => transaction.id, :decision => '2', :url => 'borrow', :account => @account) %>
+				<%= link_to "Approve", approve_or_decline_transaction_path(:transaction_id => transaction.id, :decision => '1', :url => 'borrow', :account => @account) %>/
+			<%= link_to "Decline", approve_or_decline_transaction_path(:transaction_id => transaction.id, :decision => '2', :url => 'borrow', :account => @account) %>
 			<% end %>
+		</tr>
 		<% end %>
 		</div>
   	<% end %>
-</div>
+</table>
 
+</div>
 
